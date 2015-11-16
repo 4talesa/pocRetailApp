@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">RetailApp</string>
+    <string name="app_title">Retail App</string>
+    <string name="app_welcome_msg">Welcome,
+                                   Sign up for free
+                                   and start to enjoy our app.</string>
+    <string name="app_button_SignIn">Sign In</string>
+    <string name="app_button_SignUp">Create Account</string>
+    <string name="app_label_or">Or</string>
+    <string name="app_label_email">Email</string>
+    <string name="app_label_user_email">username@domain.com</string>
+    <string name="app_label_password">Password</string>
+    <string name="app_label_user_password">********</string>
+    <string name="app_label_SignIn_with_in_with_facebook">Sign In with Facebook</string>
+    <string name="app_label_SignUp_with_in_with_facebook">Sign Up with Facebook</string>
+    <string name="app_label_facebook">Facebook</string>
+    <string name="app_label_user_facebook">facebook.com/username</string>
+    <string name="app_label_name">Name</string>
+    <string name="app_label_user_name">User Name Example</string>
+    <string name="app_label_browse_store_title">Special Day - City</string>
+    <string name="app_label_browse_store_msg">Check what is happening in your city today.
+                                              You can win a price here.</string>
+    <string name="app_label_browse_store_choose_store">Choose a store in 94041</string>
+    <string name="app_label_browse_store_change_zip">Change ZIP</string>
+    <string name="app_label_browse_category_title">Special Day - Store</string>
+    <string name="app_label_browse_category_msg">Check what is happening in this store today.
+                                              You can win a price here.</string>
+    <string name="app_label_browse_product_title">Special Day - Category</string>
+    <string name="app_label_browse_product_msg">Check the promotions for this category today.
+                                              You can win a price here.</string>
+    <string name="app_label_rewards_congratulations">Congratulations</string>
+    <string name="app_label_rewards_achievement_unlocked">Achievement Unlocked!</string>
+    <string name="app_label_rewards_purchase_msg">When you register a purchase you win Purchase points!</string>
+    <string name="app_label_rewards_walk_in_msg">When walk in for the first
+                                                 time in the day
+                                                 you win a Walk In Achiement!</string>
+    <string name="app_label_rewards_scanning_msg">When you scan a product that
+                                                  is available in the scanning list
+                                                  you receive a Scanning Achiement!</string>
+    <string name="app_button_reward_ok">Ok</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.totvs.retailapp.WalkInAddActivity"
+    android:orientation="vertical"
+    android:background="@color/colorBackgroundLight">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView android:text="@string/app_label_rewards_congratulations"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorRewardsTitle"
+            android:textSize="@dimen/label_size_large"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <TextView android:text="@string/app_label_rewards_achievement_unlocked"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorRewardsMsg"
+            android:textSize="@dimen/label_size_medium"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="left|center"
+            android:layout_weight=".8"
+            android:src="@drawable/reward_walk_in_icon" />
+        <TextView android:text="@string/app_label_rewards_walk_in_msg"
+            android:id="@+id/labelFacebookSignIn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorLabelLight"
+            android:textSize="@dimen/label_size_small"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_button_reward_ok"
+            android:id="@+id/buttonRewardWalkInOk" />
+    </LinearLayout>
+
+</LinearLayout>
