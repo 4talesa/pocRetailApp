@@ -38,4 +38,6 @@
                                                   is available in the scanning list
                                                   you receive a Scanning Achiement!</string>
     <string name="app_button_reward_ok">Ok</string>
+    <string name="app_purchase_title">Purchase</string>
+    <string name="app_purchase_add_all_to_cart">Add all to cart</string>
 </resources>
