@@ -13,4 +13,6 @@
     <color name="colorFacebookText">#FFFFFF</color>
     <color name="colorRewardsTitle">#22c064</color>
     <color name="colorRewardsMsg">#adadad</color>
+    <color name="colorLabelButtonReward">#FFFFFF</color>
+    <color name="colorLabelBackgroundButtonReward">#22c064</color>
 </resources>

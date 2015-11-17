@@ -46,7 +46,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_button_reward_ok"
-            android:id="@+id/buttonRewardScanningOk" />
+            android:id="@+id/buttonRewardScanningOk"
+            android:textColor="@color/colorLabelButtonReward"
+            android:background="@color/colorLabelBackgroundButtonReward"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -47,6 +47,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="@color/colorLabelLight"
+            android:background="@color/colorBackgroundLight"
             android:textSize="@dimen/label_size_small"
             android:gravity="right|center"
             android:layout_weight="1"

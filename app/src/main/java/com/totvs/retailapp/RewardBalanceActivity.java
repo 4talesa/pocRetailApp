@@ -3,11 +3,11 @@ package com.totvs.retailapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class RewardBalancyActivity extends AppCompatActivity {
+public class RewardBalanceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reward_balancy);
+        setContentView(R.layout.activity_reward_balance);
     }
 }

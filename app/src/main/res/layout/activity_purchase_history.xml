@@ -9,4 +9,25 @@
     android:orientation="vertical"
     android:background="@color/colorBackgroundLight">
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4">
+        <TextView android:text="@string/app_purchase_history_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelLight"
+            android:textSize="@dimen/label_size_large"
+            android:gravity="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listViewPurchaseItem" />
+    </LinearLayout>
+
 </LinearLayout>

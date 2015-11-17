@@ -35,7 +35,7 @@
         </activity>
         <activity android:name=".ProductBrowseActivity" >
         </activity>
-        <activity android:name=".RewardBalancyActivity" >
+        <activity android:name=".RewardBalanceActivity" >
         </activity>
         <activity android:name=".PurchaseDetailActivity" >
         </activity>

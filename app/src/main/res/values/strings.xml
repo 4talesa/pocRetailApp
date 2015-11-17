@@ -40,4 +40,6 @@
     <string name="app_button_reward_ok">Ok</string>
     <string name="app_purchase_title">Purchase</string>
     <string name="app_purchase_add_all_to_cart">Add all to cart</string>
+    <string name="app_purchase_history_title">Purchases</string>
+    <string name="app_reward_balance_title">Reward Balance</string>
 </resources>
