@@ -35,7 +35,7 @@
                     android:layout_height="fill_parent"
                     android:gravity="center"
                     android:layout_weight=".1"
-                    android:src="@drawable/product_detail_preview" />
+                    android:src="@drawable/product_preview" />
                 <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -59,7 +59,7 @@
                 android:textSize="@dimen/label_size_small"
                 android:gravity="center"
                 android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_product_preview_price"
+            <TextView android:text="@string/app_label_product_preview_unit_value"
                 android:id="@+id/labelProductDetailPrice"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -99,32 +99,27 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:text="@string/app_button_plus"
+                        android:text="@string/app_button_minus"
                         android:textSize="@dimen/label_size_small"
-                        android:id="@+id/buttonProductDetailPlus"
+                        android:id="@+id/buttonProductDetailMinus"
                         android:textColor="@color/colorLabelLight"
-                        android:background="@color/colorBackgroundLight"
-                        android:layout_marginRight="@dimen/label_margin_small"/>
+                        android:background="@color/colorBackgroundLight"/>
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:inputType="number"
                         android:ems="3"
                         android:id="@+id/editTextProductDetailAmount"
-                        android:layout_marginRight="@dimen/label_margin_small"
-                        android:layout_marginLeft="@dimen/label_margin_small"
                         android:textColor="@color/colorLabelLight"
                         android:background="@color/colorBackgroundLight"/>
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:text="@string/app_button_minus"
+                        android:text="@string/app_button_plus"
                         android:textSize="@dimen/label_size_small"
-                        android:id="@+id/buttonProductDetailMinus"
+                        android:id="@+id/buttonProductDetailPlus"
                         android:textColor="@color/colorLabelLight"
-                        android:background="@color/colorBackgroundLight"
-                        android:layout_marginRight="@dimen/label_margin_small"
-                        android:layout_marginLeft="@dimen/label_margin_small"/>
+                        android:background="@color/colorBackgroundLight"/>
                 </LinearLayout>
                 <Button
                     android:layout_width="fill_parent"

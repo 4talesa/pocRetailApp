@@ -8,4 +8,12 @@
     <dimen name="label_margin_small">5dp</dimen>
     <dimen name="label_margin_medium">16dp</dimen>
     <dimen name="label_margin_big">24dp</dimen>
+    <dimen name="product_preview_thumb_width">95dp</dimen>
+    <dimen name="product_preview_thumb_height">95dp</dimen>
+    <dimen name="product_preview_width">225dp</dimen>
+    <dimen name="product_preview_height">135dp</dimen>
+    <dimen name="product_preview_desc_width">115dp</dimen>
+    <dimen name="product_preview_desc_height">135dp</dimen>
+    <dimen name="product_preview_amount_width">145dp</dimen>
+    <dimen name="product_preview_amount_height">135dp</dimen>
 </resources>
