@@ -16,4 +16,8 @@
     <dimen name="product_preview_desc_height">135dp</dimen>
     <dimen name="product_preview_amount_width">145dp</dimen>
     <dimen name="product_preview_amount_height">135dp</dimen>
+    <dimen name="store_preview_thumb_width">match_parent</dimen>
+    <dimen name="store_preview_thumb_height">225dp</dimen>
+    <dimen name="store_preview_desc_width">match_parent</dimen>
+    <dimen name="store_preview_desc_height">65dp</dimen>
 </resources>

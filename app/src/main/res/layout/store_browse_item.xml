@@ -3,4 +3,49 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="@dimen/store_preview_thumb_width"
+        android:layout_height="@dimen/store_preview_thumb_height"
+        android:gravity="center"
+        android:src="@drawable/store_preview"
+        android:scaleType="fitCenter"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:tag="store_browse_item_thumb"/>
+    <LinearLayout
+        android:layout_width="@dimen/store_preview_desc_width"
+        android:layout_height="@dimen/store_preview_desc_height"
+        android:orientation="vertical">
+        <TextView android:text="@string/app_label_browse_store_name"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textColor="@color/colorLabelLight"
+            android:textSize="@dimen/label_size_medium"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:tag="store_browse_item_store_name"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView android:text="@string/app_label_browse_store_address"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textColor="@color/colorLabelLight_Disabled"
+                android:textSize="@dimen/label_size_small"
+                android:layout_weight=".4"
+                android:gravity="left"
+                android:tag="store_browse_item_address"/>
+            <TextView android:text="@string/app_label_browse_store_distance"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textColor="@color/colorLabelLight_Highlight"
+                android:textSize="@dimen/label_size_small"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:tag="store_browse_item_distance"/>
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

@@ -16,6 +16,9 @@
     <string name="app_label_facebook">Facebook</string>
     <string name="app_label_user_facebook">facebook.com/username</string>
     <string name="app_label_name">Name</string>
+    <string name="app_label_browse_store_name">Suzan Store</string>
+    <string name="app_label_browse_store_address">123 Suzan Street, Mountain View, CA</string>
+    <string name="app_label_browse_store_distance">1.5 mi</string>
     <string name="app_label_user_name">User Name Example</string>
     <string name="app_label_browse_store_title">Special Day - City</string>
     <string name="app_label_browse_store_msg">Check what is happening in your city today.
