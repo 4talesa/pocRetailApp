@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".PurchaseDetailActivity" >
         </activity>
+        <activity android:name=".ProductDetailActivity" >
+        </activity>
     </application>
 
 </manifest>

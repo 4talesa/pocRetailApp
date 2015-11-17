@@ -6,6 +6,7 @@
     <color name="textColorPrimary_Enabled">#2a2a2a</color>
     <color name="textColorPrimary_Disabled">#3f3f3f</color>
     <color name="colorLabelLight">#000000</color>
+    <color name="colorLabelLight_Disabled">#3f3f3f</color>
     <color name="colorLabelDark">#FFFFFF</color>
     <color name="colorBackgroundLight">#FFFFFF</color>
     <color name="colorBackgroundDark">#0099FF</color>

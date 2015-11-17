@@ -42,4 +42,11 @@
     <string name="app_purchase_add_all_to_cart">Add all to cart</string>
     <string name="app_purchase_history_title">Purchases</string>
     <string name="app_reward_balance_title">Reward Balance</string>
+    <string name="app_button_product_add_to_cart">Add to cart</string>
+    <string name="app_button_plus">+</string>
+    <string name="app_button_minus">-</string>
+    <string name="app_label_product_preview_description">Description</string>
+    <string name="app_label_product_preview_unit">each</string>
+    <string name="app_label_product_preview_price">$2.99</string>
+    <string name="app_label_related_items">Related itens</string>
 </resources>

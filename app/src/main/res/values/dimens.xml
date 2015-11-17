@@ -5,4 +5,7 @@
     <dimen name="label_size_small">16dp</dimen>
     <dimen name="label_size_medium">24dp</dimen>
     <dimen name="label_size_large">46dp</dimen>
+    <dimen name="label_margin_small">5dp</dimen>
+    <dimen name="label_margin_medium">16dp</dimen>
+    <dimen name="label_margin_big">24dp</dimen>
 </resources>
