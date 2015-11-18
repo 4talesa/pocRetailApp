@@ -9,27 +9,56 @@
     android:orientation="vertical"
     android:background="@color/colorBackgroundLight">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="4"
-        android:orientation="vertical"
+        android:layout_weight="3"
         android:background="@color/colorBackgroundDark">
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:src="@drawable/category_preview"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:src="@drawable/rectangle_frame_light"
+            android:layout_weight="1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:src="@drawable/rectangle_frame_shadow"
+            android:layout_weight="1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:alpha=".90"/>
         <TextView android:text="@string/app_label_browse_category_title"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="@color/colorLabelDark"
             android:textSize="@dimen/label_size_medium"
-            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="gravity"
+            android:gravity="top|center"
             android:layout_weight="1"/>
         <TextView android:text="@string/app_label_browse_category_msg"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="@color/colorLabelDark"
             android:textSize="@dimen/label_size_small"
-            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="gravity"
+            android:gravity="bottom|center"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
