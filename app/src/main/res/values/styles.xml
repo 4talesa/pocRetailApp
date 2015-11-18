@@ -18,4 +18,8 @@
         <item name="android:textColor">@color/textColorPrimary_Enabled</item>
     </style>
 
+    <style name="TwoWayView">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
 </resources>
