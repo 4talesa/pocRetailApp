@@ -7,13 +7,11 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.totvs.retailapp.StoreBrowseActivity"
     android:orientation="vertical"
-    android:background="@color/colorBackgroundLight">
+    style="@style/linearLayoutLight">
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="4"
-        android:background="@color/colorBackgroundDark">
+        android:layout_height="@dimen/header_special_height">
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -43,8 +41,7 @@
         <TextView android:text="@string/app_label_browse_store_title"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textColor="@color/colorLabelDark"
-            android:textSize="@dimen/label_size_medium"
+            style="@style/largeLabelDark"
             android:layout_alignParentBottom="true"
             android:textAlignment="gravity"
             android:gravity="top|center"
@@ -52,8 +49,7 @@
         <TextView android:text="@string/app_label_browse_store_msg"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textColor="@color/colorLabelDark"
-            android:textSize="@dimen/label_size_small"
+            style="@style/smallLabelDark"
             android:layout_alignParentBottom="true"
             android:textAlignment="gravity"
             android:gravity="bottom|center"
@@ -68,16 +64,13 @@
         <TextView android:text="@string/app_label_browse_store_choose_store"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textColor="@color/colorLabelLight"
-            android:textSize="@dimen/label_size_small"
+            style="@style/smallLabelLight"
             android:gravity="left|center"
             android:layout_weight="0.5"/>
         <Button android:text="@string/app_label_browse_store_change_zip"
+            style="@style/smallButtonLight"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textColor="@color/colorLabelLight"
-            android:background="@color/colorBackgroundLight"
-            android:textSize="@dimen/label_size_small"
             android:gravity="right|center"
             android:layout_weight="1"
             android:textAlignment="center" />

@@ -20,4 +20,11 @@
     <dimen name="product_preview_amount_height">135dp</dimen>
     <dimen name="store_preview_thumb_height">225dp</dimen>
     <dimen name="store_preview_desc_height">65dp</dimen>
+    <dimen name="header_special_height">145dp</dimen>
+    <dimen name="button_small_width">30dp</dimen>
+    <dimen name="button_medium_width">175dp</dimen>
+    <dimen name="button_large_width">225dp</dimen>
+    <dimen name="button_small_height">35dp</dimen>
+    <dimen name="button_medium_height">35dp</dimen>
+    <dimen name="button_large_height">35dp</dimen>
 </resources>

@@ -22,4 +22,130 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="linearLayoutLight">
+        <item name="android:background">@color/colorBackgroundLight</item>
+    </style>
+
+    <style name="linearLayoutDark">
+        <item name="android:background">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="smallButton">
+        <item name="android:layout_width">@dimen/button_small_width</item>
+        <item name="android:layout_height">@dimen/button_small_height</item>
+        <item name="android:textSize">@dimen/label_size_small</item>
+    </style>
+
+    <style name="mediumButton">
+        <item name="android:layout_width">@dimen/button_medium_width</item>
+        <item name="android:layout_height">@dimen/button_medium_height</item>
+        <item name="android:textSize">@dimen/label_size_small</item>
+    </style>
+
+    <style name="largeButton">
+        <item name="android:layout_width">@dimen/button_large_width</item>
+        <item name="android:layout_height">@dimen/button_large_height</item>
+        <item name="android:textSize">@dimen/label_size_small</item>
+    </style>
+
+    <style name="smallButtonLight" parent="smallButton">
+        <item name="android:textColor">@color/colorLabelLight</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+    </style>
+
+    <style name="mediumButtonLight" parent="mediumButton">
+        <item name="android:textColor">@color/colorLabelLight</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+    </style>
+
+    <style name="largeButtonLight" parent="largeButton">
+        <item name="android:textColor">@color/colorLabelLight</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+    </style>
+
+    <style name="smallButtonDark" parent="smallButton">
+        <item name="android:textColor">@color/colorLabelDark</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="mediumButtonDark" parent="mediumButton">
+        <item name="android:textColor">@color/colorLabelDark</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="largeButtonDark" parent="largeButton">
+        <item name="android:textColor">@color/colorLabelDark</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="largeButtonFacebook" parent="largeButton">
+        <item name="android:textColor">@color/colorFacebookText</item>
+        <item name="android:background">@color/colorFacebookBackground</item>
+    </style>
+
+    <style name="largeButtonReward" parent="largeButton">
+        <item name="android:textColor">@color/colorLabelButtonReward</item>
+        <item name="android:background">@color/colorLabelBackgroundButtonReward</item>
+    </style>
+
+    <style name="smallLabel">
+        <item name="android:textSize">@dimen/label_size_small</item>
+    </style>
+
+    <style name="mediumLabel">
+        <item name="android:textSize">@dimen/label_size_medium</item>
+    </style>
+
+    <style name="largeLabel">
+        <item name="android:textSize">@dimen/label_size_large</item>
+    </style>
+
+    <style name="smallLabelLight" parent="smallLabel">
+        <item name="android:textColor">@color/colorLabelLight</item>
+    </style>
+
+    <style name="smallLabelDark" parent="smallLabel">
+        <item name="android:textColor">@color/colorLabelDark</item>
+    </style>
+
+    <style name="smallLabelReward" parent="smallLabel">
+        <item name="android:textColor">@color/colorRewardsTitle</item>
+    </style>
+
+    <style name="smallLabelDisabled" parent="smallLabel">
+        <item name="android:textColor">@color/colorLabelLight_Disabled</item>
+    </style>
+
+    <style name="mediumLabelLight" parent="mediumLabel">
+        <item name="android:textColor">@color/colorLabelLight</item>
+    </style>
+
+    <style name="mediumLabelDark" parent="mediumLabel">
+        <item name="android:textColor">@color/colorLabelDark</item>
+    </style>
+
+    <style name="mediumLabelReward" parent="mediumLabel">
+        <item name="android:textColor">@color/colorRewardsTitle</item>
+    </style>
+
+    <style name="mediumLabelDisabled" parent="mediumLabel">
+        <item name="android:textColor">@color/colorLabelLight_Disabled</item>
+    </style>
+
+    <style name="largeLabelLight" parent="largeLabel">
+        <item name="android:textColor">@color/colorLabelLight</item>
+    </style>
+
+    <style name="largeLabelDark" parent="largeLabel">
+        <item name="android:textColor">@color/colorLabelDark</item>
+    </style>
+
+    <style name="largeLabelReward" parent="largeLabel">
+        <item name="android:textColor">@color/colorRewardsTitle</item>
+    </style>
+
+    <style name="largeLabelDisabled" parent="largeLabel">
+        <item name="android:textColor">@color/colorLabelLight_Disabled</item>
+    </style>
+
 </resources>

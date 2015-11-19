@@ -102,13 +102,10 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        style="@style/smallButtonLight"
                         android:text="@string/app_button_minus"
                         android:textSize="@dimen/label_size_small"
-                        android:id="@+id/buttonProductDetailMinus"
-                        android:textColor="@color/colorLabelLight"
-                        android:background="@color/colorBackgroundLight"/>
+                        android:id="@+id/buttonProductDetailMinus"/>
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
@@ -118,22 +115,16 @@
                         android:textColor="@color/colorLabelLight"
                         android:background="@color/colorBackgroundLight"/>
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        style="@style/smallButtonLight"
                         android:text="@string/app_button_plus"
                         android:textSize="@dimen/label_size_small"
-                        android:id="@+id/buttonProductDetailPlus"
-                        android:textColor="@color/colorLabelLight"
-                        android:background="@color/colorBackgroundLight"/>
+                        android:id="@+id/buttonProductDetailPlus"/>
                 </LinearLayout>
                 <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    style="@style/largeButtonDark"
                     android:text="@string/app_button_product_add_to_cart"
                     android:textSize="@dimen/label_size_small"
                     android:id="@+id/buttonProductDetailAddToCart"
-                    android:textColor="@color/colorLabelDark"
-                    android:background="@color/colorBackgroundDark"
                     android:layout_marginLeft="@dimen/label_margin_small"
                     android:layout_weight="1"/>
             </LinearLayout>
