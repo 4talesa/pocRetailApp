@@ -10,8 +10,7 @@
     style="@style/linearLayoutLight">
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/header_special_height">
+        style="@style/headerSpecial">
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

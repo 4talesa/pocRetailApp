@@ -7,19 +7,24 @@
     <string name="app_button_SignIn">Sign In</string>
     <string name="app_button_SignUp">Create Account</string>
     <string name="app_label_or">Or</string>
+    <string name="app_label_name">Name</string>
     <string name="app_label_email">Email</string>
-    <string name="app_label_user_email">username@domain.com</string>
     <string name="app_label_password">Password</string>
+    <string name="app_label_profile">Profile</string>
+    <string name="app_label_address">Address</string>
+    <string name="app_label_phone">Phone</string>
+    <string name="app_label_user_name">User Name Example</string>
+    <string name="app_label_user_email">username@domain.com</string>
     <string name="app_label_user_password">********</string>
+    <string name="app_label_user_address">123 July Street</string>
+    <string name="app_label_user_phone">+1 555 1234-5678</string>
     <string name="app_label_SignIn_with_in_with_facebook">Sign In with Facebook</string>
     <string name="app_label_SignUp_with_in_with_facebook">Sign Up with Facebook</string>
     <string name="app_label_facebook">Facebook</string>
     <string name="app_label_user_facebook">facebook.com/username</string>
-    <string name="app_label_name">Name</string>
     <string name="app_label_browse_store_name">Suzan Store</string>
     <string name="app_label_browse_store_address">123 Suzan Street, Mountain View, CA</string>
     <string name="app_label_browse_store_distance">1.5 mi</string>
-    <string name="app_label_user_name">User Name Example</string>
     <string name="app_label_browse_store_title">Special Day - City</string>
     <string name="app_label_browse_store_msg">Check what is happening in your city today.
                                               You can win a price here.</string>
@@ -58,7 +63,4 @@
     <string name="app_label_product_preview_total_amount">Total amount</string>
     <string name="app_label_product_preview_total_amount_value">$29.90</string>
     <string name="app_label_related_items">Related itens</string>
-    <string name="app_label_profile">Profile</string>
-    <string name="app_label_address">Address</string>
-    <string name="app_label_address_name">123 July Street</string>
 </resources>

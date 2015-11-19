@@ -10,134 +10,127 @@
     style="@style/linearLayoutLight">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="4">
+        style="@style/headerTitle">
         <TextView android:text="@string/app_label_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/largeLabelLight"
             android:gravity="center" />
     </LinearLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/random_user_pic_79" />
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:orientation="horizontal">
-            <TextView android:text="@string/app_label_name"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="left|center"
-                android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_user_name"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="right|center"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <TextView android:text="@string/app_label_address"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="left|center"
-                android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_address_name"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="right|center"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/linearLayoutDisabled"
-            android:layout_width="fill_parent"
-            android:orientation="horizontal">
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <TextView android:text="@string/app_label_email"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="left|center"
-                android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_user_email"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="right|center"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <TextView android:text="@string/app_label_password"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="left|center"
-                android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_user_password"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/smallLabelLight"
-                android:gravity="right|center"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/linearLayoutDisabled"
-            android:layout_width="fill_parent"
-            android:orientation="horizontal">
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <ImageView
-                style="@style/largeButtonFacebook"
-                android:id="@+id/buttonFacebookSignUp"
-                android:gravity="left|center"
+                style="@style/profileThumb"
+                android:layout_gravity="center"
+                android:src="@drawable/random_user_pic_79" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:src="@drawable/facebook_logo" />
-            <TextView android:text="@string/app_label_facebook"
+                android:orientation="horizontal">
+                <TextView android:text="@string/app_label_name"
+                    style="@style/smallLabelLight"
+                    android:gravity="left|center"
+                    android:layout_weight="1"/>
+                <TextView android:text="@string/app_label_user_name"
+                    style="@style/smallLabelLight"
+                    android:gravity="right|center"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:id="@+id/labelFacebookConnect"
-                style="@style/smallButtonLight"
-                android:gravity="left|center"
-                android:layout_weight="1"/>
-            <Switch
-                style="@style/mediumButtonLight"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView android:text="@string/app_label_address"
+                    style="@style/smallLabelLight"
+                    android:gravity="left|center"
+                    android:layout_weight="1"/>
+                <TextView android:text="@string/app_label_user_address"
+                    style="@style/smallLabelLight"
+                    android:gravity="right|center"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:id="@+id/switchFacebookConnect"
-                android:layout_weight="1"/>
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView android:text="@string/app_label_phone"
+                    style="@style/smallLabelLight"
+                    android:gravity="left|center"
+                    android:layout_weight="1"/>
+                <TextView android:text="@string/app_label_user_phone"
+                    style="@style/smallLabelLight"
+                    android:gravity="right|center"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/linearLayoutSplliter">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView android:text="@string/app_label_email"
+                    style="@style/smallLabelLight"
+                    android:gravity="left|center"
+                    android:layout_weight="1"/>
+                <TextView android:text="@string/app_label_user_email"
+                    style="@style/smallLabelLight"
+                    android:gravity="right|center"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView android:text="@string/app_label_password"
+                    style="@style/smallLabelLight"
+                    android:gravity="left|center"
+                    android:layout_weight="1"/>
+                <TextView android:text="@string/app_label_user_password"
+                    style="@style/smallLabelLight"
+                    android:gravity="right|center"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/linearLayoutSplliter">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <ImageView
+                    style="@style/largeButtonFacebook"
+                    android:id="@+id/buttonFacebookSignUp"
+                    android:gravity="left|center"
+                    android:layout_weight="1"
+                    android:src="@drawable/facebook_logo" />
+                <TextView android:text="@string/app_label_facebook"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/labelFacebookConnect"
+                    style="@style/smallButtonLight"
+                    android:gravity="left|center"
+                    android:layout_weight="1"/>
+                <Switch
+                    style="@style/mediumButtonLight"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/switchFacebookConnect"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
