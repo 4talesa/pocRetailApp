@@ -116,6 +116,10 @@
         <item name="android:textColor">@color/colorLabelLight_Disabled</item>
     </style>
 
+    <style name="smallLabelHighlight" parent="smallLabel">
+        <item name="android:textColor">@color/colorLabelLight_Highlight</item>
+    </style>
+
     <style name="mediumLabelLight" parent="mediumLabel">
         <item name="android:textColor">@color/colorLabelLight</item>
     </style>
@@ -132,6 +136,10 @@
         <item name="android:textColor">@color/colorLabelLight_Disabled</item>
     </style>
 
+    <style name="mediumLabelHighlight" parent="mediumLabel">
+        <item name="android:textColor">@color/colorLabelLight_Highlight</item>
+    </style>
+
     <style name="largeLabelLight" parent="largeLabel">
         <item name="android:textColor">@color/colorLabelLight</item>
     </style>
@@ -146,6 +154,18 @@
 
     <style name="largeLabelDisabled" parent="largeLabel">
         <item name="android:textColor">@color/colorLabelLight_Disabled</item>
+    </style>
+
+    <style name="largeLabelHighlight" parent="largeLabel">
+        <item name="android:textColor">@color/colorLabelLight_Highlight</item>
+    </style>
+
+    <style name="productThumb">
+        <item name="android:layout_width">@dimen/product_preview_thumb_width</item>
+        <item name="android:layout_height">@dimen/product_preview_thumb_height</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentStart">true</item>
     </style>
 
 </resources>
