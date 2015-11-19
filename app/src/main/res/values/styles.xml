@@ -23,11 +23,21 @@
     </style>
 
     <style name="linearLayoutLight">
+        <item name="android:layout_width">@dimen/button_small_width</item>
+        <item name="android:layout_height">@dimen/button_small_height</item>
         <item name="android:background">@color/colorBackgroundLight</item>
     </style>
 
     <style name="linearLayoutDark">
+        <item name="android:layout_width">@dimen/button_small_width</item>
+        <item name="android:layout_height">@dimen/button_small_height</item>
         <item name="android:background">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="linearLayoutDisabled">
+        <item name="android:layout_width">@dimen/button_small_width</item>
+        <item name="android:layout_height">@dimen/button_small_height</item>
+        <item name="android:background">@color/colorBackgroundDisabled</item>
     </style>
 
     <style name="smallButton">

@@ -58,4 +58,7 @@
     <string name="app_label_product_preview_total_amount">Total amount</string>
     <string name="app_label_product_preview_total_amount_value">$29.90</string>
     <string name="app_label_related_items">Related itens</string>
+    <string name="app_label_profile">Profile</string>
+    <string name="app_label_address">Address</string>
+    <string name="app_label_address_name">123 July Street</string>
 </resources>

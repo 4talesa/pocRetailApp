@@ -18,4 +18,5 @@
     <color name="colorLabelButtonReward">#FFFFFF</color>
     <color name="colorLabelBackgroundButtonReward">#22c064</color>
     <color name="colorBackgroundShadow">#adadad</color>
+    <color name="colorBackgroundDisabled">#e0e0e0</color>
 </resources>
