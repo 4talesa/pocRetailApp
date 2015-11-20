@@ -9,7 +9,7 @@ import org.lucasr.twowayview.TwoWayView;
 
 import java.util.ArrayList;
 
-public class ProductDetailActivity extends AppCompatActivity {
+public class ProductDetailActivity extends AppRetailActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,4 @@ public class ProductDetailActivity extends AppCompatActivity {
         lvTest.setAdapter(aItems);
     }
 
-    @Override
-    public void onBackPressed() {
-
-        Intent it = new Intent(ProductDetailActivity.this, WelcomeActivity.class);
-        ProductDetailActivity.this.startActivity(it);
-
-        super.onBackPressed();
-        finish();
-    }
 }

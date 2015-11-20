@@ -10,16 +10,19 @@
     style="@style/linearLayoutLight">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        style="@style/headerTitle">
         <TextView android:text="@string/app_label_rewards_congratulations"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             style="@style/largeLabelReward"
             android:gravity="center"
             android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
         <TextView android:text="@string/app_label_rewards_achievement_unlocked"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

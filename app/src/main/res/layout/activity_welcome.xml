@@ -10,9 +10,7 @@
     style="@style/linearLayoutLight">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="2">
+        style="@style/headerTitle">
         <TextView android:text="@string/app_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,7 +38,7 @@
             <Button
                 style="@style/largeButtonLight"
                 android:layout_width="fill_parent"
-                android:text="@string/app_button_SignIn"
+                android:text="@string/app_label_sign_in"
                 android:id="@+id/buttonSignIn" />
             <TextView android:text="@string/app_label_or"
                 android:layout_width="fill_parent"
@@ -50,7 +48,7 @@
             <Button
                 style="@style/largeButtonLight"
                 android:layout_width="fill_parent"
-                android:text="@string/app_button_SignUp"
+                android:text="@string/app_label_sign_up"
                 android:id="@+id/buttonSignUp" />
         </LinearLayout>
 

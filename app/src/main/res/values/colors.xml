@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fafafa</color>
-    <color name="colorPrimaryDark">#e0e0e0</color>
-    <color name="colorAccent">#2a2a2a</color>
-    <color name="textColorPrimary_Enabled">#2a2a2a</color>
-    <color name="textColorPrimary_Disabled">#3f3f3f</color>
+    <color name="colorPrimary">#0099FF</color>
+    <color name="colorPrimaryDark">#0099FF</color>
+    <color name="colorAccent">#fafafa</color>
+    <color name="textColorPrimary_Enabled">#fafafa</color>
+    <color name="textColorPrimary_Disabled">#adadad</color>
     <color name="colorLabelLight">#000000</color>
     <color name="colorLabelLight_Disabled">#adadad</color>
     <color name="colorLabelLight_Highlight">#1352e2</color>

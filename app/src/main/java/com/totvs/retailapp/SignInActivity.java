@@ -16,19 +16,19 @@ public class SignInActivity extends AppCompatActivity {
         Button buttonSignIn = (Button) findViewById(R.id.buttonSignInAct);
         Button buttonSignUp = (Button) findViewById(R.id.buttonOrSignUp);
 
-        buttonSignIn.setOnClickListener(new View.OnClickListener() {
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(v.getContext(), UserProfileActivity.class);
+                Intent it = new Intent(v.getContext(), SignUpActivity.class);
 
                 v.getContext().startActivity(it);
             }
         });
 
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+        buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(v.getContext(), SignUpActivity.class);
+                Intent it = new Intent(v.getContext(), StoreBrowseActivity.class);
 
                 v.getContext().startActivity(it);
             }

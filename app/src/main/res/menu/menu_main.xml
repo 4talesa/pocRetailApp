@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_user_profile"
+        android:title="@string/app_label_profile"/>
+    <item android:id="@+id/menu_browse_store"
+        android:title="@string/app_label_browse_store"/>
+    <item android:id="@+id/menu_browse_category"
+        android:title="@string/app_label_browse_category"/>
+    <item android:id="@+id/menu_browse_product"
+        android:title="@string/app_label_browse_product"/>
+    <item android:id="@+id/menu_walk_in_add"
+        android:title="@string/app_label_walk_in"/>
+    <item android:id="@+id/menu_scan_product_add"
+        android:title="@string/app_label_scan_product"/>
+    <item android:id="@+id/menu_purchase_add"
+        android:title="@string/app_label_purchase"/>
+    <item android:id="@+id/menu_sign_in"
+        android:title="@string/app_label_sign_in" />
+    <item android:id="@+id/menu_sign_out"
+        android:title="@string/app_label_sign_out" />
+</menu>

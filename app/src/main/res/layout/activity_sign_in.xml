@@ -10,10 +10,8 @@
     style="@style/linearLayoutLight">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="4">
-        <TextView android:text="@string/app_button_SignIn"
+        style="@style/headerTitle">
+        <TextView android:text="@string/app_label_sign_in"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/colorLabelLight"
@@ -65,7 +63,7 @@
         <Button
             style="@style/mediumButtonLight"
             android:layout_width="fill_parent"
-            android:text="@string/app_button_SignIn"
+            android:text="@string/app_label_sign_in"
             android:id="@+id/buttonSignInAct" />
         <LinearLayout
             android:layout_width="fill_parent"
@@ -99,7 +97,7 @@
             <Button
                 style="@style/mediumButtonLight"
                 android:layout_width="fill_parent"
-                android:text="@string/app_button_SignUp"
+                android:text="@string/app_label_sign_up"
                 android:id="@+id/buttonOrSignUp" />
         </LinearLayout>
     </LinearLayout>

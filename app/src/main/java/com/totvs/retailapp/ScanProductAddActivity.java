@@ -3,7 +3,7 @@ package com.totvs.retailapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ScanProductAddActivity extends AppCompatActivity {
+public class ScanProductAddActivity extends AppRetailActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

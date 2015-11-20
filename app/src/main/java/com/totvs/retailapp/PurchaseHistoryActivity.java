@@ -3,7 +3,7 @@ package com.totvs.retailapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PurchaseHistoryActivity extends AppCompatActivity {
+public class PurchaseHistoryActivity extends AppRetailActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

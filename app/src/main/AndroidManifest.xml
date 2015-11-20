@@ -4,44 +4,81 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_retail_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelcomeActivity" >
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".SignInActivity" >
+        <activity
+            android:name=".SignInActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".SignUpActivity" >
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".StoreBrowseActivity" >
+        <activity
+            android:name=".StoreBrowseActivity"
+            android:label="@string/app_label_browse_store">
         </activity>
-        <activity android:name=".WalkInAddActivity" >
+        <activity
+            android:name=".WalkInAddActivity"
+            android:label="@string/app_label_achievement"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".PurchaseAddActivity" >
+        <activity
+            android:name=".PurchaseAddActivity"
+            android:label="@string/app_label_achievement"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".ScanProductAddActivity" >
+        <activity
+            android:name=".ScanProductAddActivity"
+            android:label="@string/app_label_achievement"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".PurchaseHistoryActivity" >
+        <activity
+            android:name=".PurchaseHistoryActivity"
+            android:label="@string/app_label_purchase">
         </activity>
-        <activity android:name=".CategoryBrowseActivity" >
+        <activity
+            android:name=".CategoryBrowseActivity"
+            android:label="@string/app_label_browse_category">
         </activity>
-        <activity android:name=".ProductBrowseActivity" >
+        <activity
+            android:name=".ProductBrowseActivity"
+            android:label="@string/app_label_browse_product">
         </activity>
-        <activity android:name=".RewardBalanceActivity" >
+        <activity
+            android:name=".RewardBalanceActivity"
+            android:label="@string/app_label_reward_balance">
         </activity>
-        <activity android:name=".PurchaseDetailActivity" >
+        <activity
+            android:name=".PurchaseDetailActivity"
+            android:label="@string/app_label_purchase">
         </activity>
-        <activity android:name=".ProductDetailActivity" >
+        <activity
+            android:name=".ProductDetailActivity"
+            android:label="@string/app_label_browse_product">
         </activity>
-        <activity android:name=".UserProfileActivity" >
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="@string/app_label_profile">
         </activity>
     </application>
 
