@@ -12,6 +12,8 @@ public class UserProfileActivity extends AppRetailActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        this.activityName = userProfileActivity;
     }
     
 }

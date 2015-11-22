@@ -29,36 +29,38 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
-            <TextView android:text="@string/app_label_email"
+            <TextView
+                android:text="@string/app_label_email"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:gravity="left|center"
                 android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_user_email"
+            <EditText
+                android:id="@+id/textViewsSignInEmail"
+                android:text="@string/app_label_user_email"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:gravity="right|center"
-                android:layout_weight="1"/>
+                android:layout_weight=".7"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
-            <TextView android:text="@string/app_label_password"
+            <TextView
+                android:text="@string/app_label_password"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:gravity="left|center"
                 android:layout_weight="1"/>
-            <TextView android:text="@string/app_label_user_password"
+            <EditText
+                android:id="@+id/textViewsSignInPassword"
+                android:text="@string/app_label_user_password"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:gravity="right|center"
-                android:layout_weight="1"/>
+                android:layout_weight=".7"/>
         </LinearLayout>
         <Button
             style="@style/mediumButtonLight"
@@ -72,15 +74,18 @@
             android:orientation="horizontal">
             <ImageView
                 style="@style/largeButtonFacebook"
-                android:id="@+id/buttonFacebookSignIn"
+                android:layout_width="fill_parent"
+                android:id="@+id/imageViewFacebookSignIn"
                 android:gravity="left|center"
                 android:layout_weight="1"
                 android:src="@drawable/facebook_logo" />
-            <TextView android:text="@string/app_label_SignIn_with_in_with_facebook"
-                android:id="@+id/labelFacebookSignIn"
+            <Button
+                android:text="@string/app_label_SignIn_with_in_with_facebook"
+                android:id="@+id/buttonFacebookSignIn"
                 style="@style/largeButtonFacebook"
+                android:layout_width="fill_parent"
                 android:gravity="right|center"
-                android:layout_weight="1"/>
+                android:layout_weight=".7"/>
 
         </LinearLayout>
 

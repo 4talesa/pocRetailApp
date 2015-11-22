@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -13,8 +15,14 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        TextView textViewsSignUpFullName = (TextView) findViewById(R.id.textViewsSignUpFullName);
+        TextView textViewsSignUpEmail = (TextView) findViewById(R.id.textViewsSignUpEmail);
+        TextView textViewsSignUpPassword = (TextView) findViewById(R.id.textViewsSignUpPassword);
+
         Button buttonSignIn = (Button) findViewById(R.id.buttonOrSignIn);
         Button buttonSignUp = (Button) findViewById(R.id.buttonSignUpAct);
+        Button buttonFacebookSignUp = (Button) findViewById(R.id.buttonFacebookSignUp);
+        ImageView imageViewFacebookSignUp = (ImageView) findViewById(R.id.imageViewFacebookSignUp);
 
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +36,24 @@ public class SignUpActivity extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), StoreBrowseActivity.class);
+
+                v.getContext().startActivity(it);
+            }
+        });
+
+        buttonFacebookSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), StoreBrowseActivity.class);
+
+                v.getContext().startActivity(it);
+            }
+        });
+
+        imageViewFacebookSignUp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
                 Intent it = new Intent(v.getContext(), StoreBrowseActivity.class);
 
                 v.getContext().startActivity(it);

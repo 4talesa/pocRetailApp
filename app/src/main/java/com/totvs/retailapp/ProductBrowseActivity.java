@@ -9,5 +9,7 @@ public class ProductBrowseActivity extends AppRetailActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_browse);
+
+        this.activityName = productBrowseActivity;
     }
 }

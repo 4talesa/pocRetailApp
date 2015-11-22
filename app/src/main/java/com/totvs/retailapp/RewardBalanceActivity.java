@@ -9,5 +9,7 @@ public class RewardBalanceActivity extends AppRetailActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reward_balance);
+
+        this.activityName = rewardBalanceActivity;
     }
 }

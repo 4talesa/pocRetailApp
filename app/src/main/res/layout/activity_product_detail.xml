@@ -23,48 +23,43 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.4"
+                android:gravity="center"
                 android:orientation="horizontal">
+                <ImageButton
+                    style="@style/arrowButton"
+                    android:id="@+id/buttonProductDetailArrowLeft"
+                    android:gravity="left|center"
+                    android:src="@drawable/arrow_left"/>
                 <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    style="@style/productPicture"
+                    android:id="@+id/imageViewProductDetail"
                     android:gravity="center"
-                    android:layout_weight="1"
-                    android:src="@drawable/arrow_left" />
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:layout_weight=".1"
-                    android:src="@drawable/product_preview" />
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:src="@drawable/arrow_right" />
+                    android:src="@drawable/product_preview"/>
+                <ImageButton
+                    style="@style/arrowButton"
+                    android:id="@+id/buttonProductDetailArrowRight"
+                    android:gravity="right|center"
+                    android:src="@drawable/arrow_right"/>
             </LinearLayout>
             <TextView android:text="@string/app_label_product_preview_description"
                 android:id="@+id/labelProductDetailName"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:textColor="@color/colorLabelLight"
-                android:textSize="@dimen/label_size_medium"
+                style="@style/mediumLabelLight"
                 android:gravity="center"
                 android:layout_weight=".9"/>
             <TextView android:text="@string/app_label_product_preview_unit"
                 android:id="@+id/labelProductDetailUnit"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:textColor="@color/colorLabelLight"
-                android:textSize="@dimen/label_size_small"
+                style="@style/smallLabelLight"
                 android:gravity="center"
                 android:layout_weight="1"/>
             <TextView android:text="@string/app_label_product_preview_unit_value"
                 android:id="@+id/labelProductDetailPrice"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:textColor="@color/colorLabelLight"
-                android:textSize="@dimen/label_size_medium"
+                style="@style/mediumLabelLight"
                 android:gravity="center"
                 android:layout_weight=".9"/>
         </LinearLayout>
@@ -76,8 +71,7 @@
             <TextView android:text="@string/app_label_related_items"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:textColor="@color/colorLabelLight_Disabled"
-                android:textSize="@dimen/label_size_small"
+                style="@style/smallLabelDisabled"
                 android:gravity="center"
                 android:layout_weight="1"/>
             <org.lucasr.twowayview.TwoWayView
@@ -103,8 +97,8 @@
                     android:orientation="horizontal">
                     <Button
                         style="@style/smallButtonLight"
+                        android:layout_height="fill_parent"
                         android:text="@string/app_button_minus"
-                        android:textSize="@dimen/label_size_small"
                         android:id="@+id/buttonProductDetailMinus"/>
                     <EditText
                         android:layout_width="wrap_content"
@@ -112,16 +106,18 @@
                         android:inputType="number"
                         android:ems="3"
                         android:id="@+id/editTextProductDetailAmount"
-                        android:textColor="@color/colorLabelLight"
-                        android:background="@color/colorBackgroundLight"/>
+                        style="@style/smallLabelLight"
+                        android:text="@string/app_label_product_detail_amount"
+                        android:gravity="center" />
                     <Button
                         style="@style/smallButtonLight"
+                        android:layout_height="fill_parent"
                         android:text="@string/app_button_plus"
-                        android:textSize="@dimen/label_size_small"
                         android:id="@+id/buttonProductDetailPlus"/>
                 </LinearLayout>
                 <Button
                     style="@style/largeButtonDark"
+                    android:layout_height="fill_parent"
                     android:text="@string/app_button_product_add_to_cart"
                     android:textSize="@dimen/label_size_small"
                     android:id="@+id/buttonProductDetailAddToCart"

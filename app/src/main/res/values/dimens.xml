@@ -10,8 +10,10 @@
     <dimen name="label_margin_big">24dp</dimen>
     <dimen name="product_preview_thumb_width">95dp</dimen>
     <dimen name="product_preview_thumb_height">95dp</dimen>
-    <dimen name="product_preview_width">225dp</dimen>
-    <dimen name="product_preview_height">135dp</dimen>
+    <dimen name="product_preview_width">175dp</dimen>
+    <dimen name="product_preview_height">175dp</dimen>
+    <dimen name="arrow_button_width">35dp</dimen>
+    <dimen name="arrow_button_height">175dp</dimen>
     <dimen name="product_browse_desc_width">135dp</dimen>
     <dimen name="product_browse_desc_height">95dp</dimen>
     <dimen name="product_preview_desc_width">115dp</dimen>
@@ -25,10 +27,10 @@
     <dimen name="button_small_width">30dp</dimen>
     <dimen name="button_medium_width">175dp</dimen>
     <dimen name="button_large_width">225dp</dimen>
-    <dimen name="button_small_height">35dp</dimen>
-    <dimen name="button_medium_height">35dp</dimen>
-    <dimen name="button_large_height">35dp</dimen>
-    <dimen name="profile_preview_thumb_width">175dp</dimen>
-    <dimen name="profile_preview_thumb_height">175dp</dimen>
+    <dimen name="button_small_height">45dp</dimen>
+    <dimen name="button_medium_height">45dp</dimen>
+    <dimen name="button_large_height">45dp</dimen>
+    <dimen name="profile_preview_width">175dp</dimen>
+    <dimen name="profile_preview_height">175dp</dimen>
     <dimen name="splitter_height">15dp</dimen>
 </resources>

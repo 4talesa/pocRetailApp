@@ -74,4 +74,6 @@
     <string name="app_label_purchase">Purchase</string>
     <string name="app_label_achievement">Achievement</string>
     <string name="app_label_reward_balance">Reward balance</string>
+    <string name="app_label_product_detail">Product detail</string>
+    <string name="app_label_product_detail_amount">1</string>
 </resources>

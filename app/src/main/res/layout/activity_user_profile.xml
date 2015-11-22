@@ -26,9 +26,9 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <ImageView
-                style="@style/profileThumb"
+                style="@style/profilePicture"
                 android:layout_gravity="center"
-                android:src="@drawable/random_user_pic_79" />
+                android:src="@drawable/random_user_pic_79"/>
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -38,10 +38,10 @@
                     style="@style/smallLabelLight"
                     android:gravity="left|center"
                     android:layout_weight="1"/>
-                <TextView android:text="@string/app_label_user_name"
+                <EditText android:text="@string/app_label_user_name"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight="1"/>
+                    android:layout_weight=".7"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -52,10 +52,10 @@
                     style="@style/smallLabelLight"
                     android:gravity="left|center"
                     android:layout_weight="1"/>
-                <TextView android:text="@string/app_label_user_address"
+                <EditText android:text="@string/app_label_user_address"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight="1"/>
+                    android:layout_weight=".7"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -66,10 +66,10 @@
                     style="@style/smallLabelLight"
                     android:gravity="left|center"
                     android:layout_weight="1"/>
-                <TextView android:text="@string/app_label_user_phone"
+                <EditText android:text="@string/app_label_user_phone"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight="1"/>
+                    android:layout_weight=".7"/>
             </LinearLayout>
             <LinearLayout
                 style="@style/linearLayoutSplliter">
@@ -83,10 +83,10 @@
                     style="@style/smallLabelLight"
                     android:gravity="left|center"
                     android:layout_weight="1"/>
-                <TextView android:text="@string/app_label_user_email"
+                <EditText android:text="@string/app_label_user_email"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight="1"/>
+                    android:layout_weight=".7"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -97,10 +97,10 @@
                     style="@style/smallLabelLight"
                     android:gravity="left|center"
                     android:layout_weight="1"/>
-                <TextView android:text="@string/app_label_user_password"
+                <EditText android:text="@string/app_label_user_password"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight="1"/>
+                    android:layout_weight=".7"/>
             </LinearLayout>
             <LinearLayout
                 style="@style/linearLayoutSplliter">
