@@ -1,12 +1,16 @@
 package com.totvs.retailapp;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.totvs.retailapp.adapters.StoreAdapter;
+import com.totvs.retailapp.models.StoreModel;
 
 import java.util.ArrayList;
 
 public class StoreBrowseActivity extends AppRetailActivity {
+
+    private StoreAdapter storeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,14 +19,15 @@ public class StoreBrowseActivity extends AppRetailActivity {
 
         this.activityName = storeBrowseActivity;
 
-        ArrayList<String> items = new ArrayList<String>();
-        for (int i = 0; i<10; i++){
-            items.add("Store Sample #"+i);
-        }
+        ListView listView = (ListView) findViewById(R.id.listViewStore);
 
-        ArrayAdapter<String> aItems = new ArrayAdapter<String>(this, R.layout.product_related_item, items);
-        ListView lvTest = (ListView) findViewById(R.id.listViewStore);
-        lvTest.setAdapter(aItems);
+        ArrayList<StoreModel> arrayOfStores = new ArrayList<StoreModel>();
+        storeAdapter = new StoreAdapter(this, R.layout.store_browse_item, arrayOfStores);
+        listView.setAdapter(storeAdapter);
+
+        for (int i = 0; i<10; i++){
+            arrayOfStores.add(new StoreModel(String.valueOf(i),"store "+i, "address "+i, "1.5", "http://lorempixel.com/325/175/food/Store/"));
+        }
     }
 
 }

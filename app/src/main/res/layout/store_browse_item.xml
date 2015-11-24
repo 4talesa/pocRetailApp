@@ -4,14 +4,14 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="@dimen/store_preview_thumb_height"
         android:gravity="center"
         android:src="@drawable/store_preview"
         android:scaleType="fitCenter"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:tag="store_browse_item_thumb"/>
+        android:id="@+id/store_browse_item_thumb"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/store_preview_desc_height"
@@ -22,7 +22,7 @@
             style="@style/mediumLabelLight"
             android:layout_weight="1"
             android:gravity="left"
-            android:tag="store_browse_item_store_name"/>
+            android:id="@+id/store_browse_item_store_name"/>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -34,14 +34,14 @@
                 style="@style/smallLabelDisabled"
                 android:layout_weight=".4"
                 android:gravity="left"
-                android:tag="store_browse_item_address"/>
+                android:id="@+id/store_browse_item_store_address"/>
             <TextView android:text="@string/app_label_browse_store_distance"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="@style/smallLabelHighlight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="store_browse_item_distance"/>
+                android:id="@+id/store_browse_item_store_distance"/>
         </LinearLayout>
     </LinearLayout>
 
