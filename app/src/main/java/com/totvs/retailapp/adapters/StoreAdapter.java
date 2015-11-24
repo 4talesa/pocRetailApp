@@ -1,10 +1,7 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,36 +14,28 @@ import java.util.ArrayList;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class StoreAdapter extends ArrayAdapter<StoreModel> {
-
-    private int layout;
+public class StoreAdapter extends AppRetailListAdapter<StoreModel> {
 
     public StoreAdapter(Context context, int layout, ArrayList<StoreModel> stores){
-        super(context, 0, stores);
-        this.layout = layout;
+        super(context, layout, stores);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    protected void populateView(View v, StoreModel model) {
+        try {
+            TextView store_browse_item_store_name = (TextView) v.findViewById(R.id.store_browse_item_store_name);
+            TextView store_browse_item_store_address = (TextView) v.findViewById(R.id.store_browse_item_store_address);
+            TextView store_browse_item_store_distance = (TextView) v.findViewById(R.id.store_browse_item_store_distance);
+            ImageView store_browse_item_thumb = (ImageView) v.findViewById(R.id.store_browse_item_thumb);
 
-        StoreModel store = getItem(position);
-
-        if (convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(this.layout, parent, false);
+            store_browse_item_store_name.setText(model.getName());
+            store_browse_item_store_address.setText(model.getAddress());
+            store_browse_item_store_distance.setText(model.getDistance());
+            Ion.with(store_browse_item_thumb)
+                    .fitCenter()
+                    .load(model.getUrlPicture());
+        }catch (Exception e){
+            System.out.println("StoreAdapter - populateView - Error: " + e.toString());
         }
-
-        TextView store_browse_item_store_name       = (TextView) convertView.findViewById(R.id.store_browse_item_store_name);
-        TextView store_browse_item_store_address    = (TextView) convertView.findViewById(R.id.store_browse_item_store_address);
-        TextView store_browse_item_store_distance   = (TextView) convertView.findViewById(R.id.store_browse_item_store_distance);
-        ImageView store_browse_item_thumb           = (ImageView) convertView.findViewById(R.id.store_browse_item_thumb);
-
-        store_browse_item_store_name.setText(store.getName());
-        store_browse_item_store_address.setText(store.getAddress());
-        store_browse_item_store_distance.setText(store.getDistance());
-        Ion.with(store_browse_item_thumb)
-                .fitCenter()
-                .load(store.getUrlPicture());
-
-        return convertView;
     }
 }
