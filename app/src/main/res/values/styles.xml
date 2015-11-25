@@ -28,7 +28,7 @@
         <item name="android:textColor">@color/textColorPrimary_Enabled</item>
     </style>
 
-    <style name="TwoWayView">
+    <style name="TwoWayViewRelatedProduct">
         <item name="android:orientation">horizontal</item>
     </style>
 

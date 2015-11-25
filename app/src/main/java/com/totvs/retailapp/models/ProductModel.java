@@ -1,5 +1,8 @@
 package com.totvs.retailapp.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by rond.borges on 23/11/2015.
  */
@@ -77,5 +80,15 @@ public class ProductModel {
         this.value          = value;
         this.category       = category;
         this.unit           = unit;
+    }
+
+    public static List<ProductModel> createContactsList(int numContacts) {
+        List<ProductModel> contacts = new ArrayList<ProductModel>();
+
+        for (int i = 1; i <= numContacts; i++) {
+            contacts.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/175/175/food/Product/", 1.99, "Category "+i, "each"));
+        }
+
+        return contacts;
     }
 }

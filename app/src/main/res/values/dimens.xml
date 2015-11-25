@@ -15,7 +15,7 @@
     <dimen name="arrow_button_width">35dp</dimen>
     <dimen name="arrow_button_height">175dp</dimen>
     <dimen name="product_browse_desc_width">135dp</dimen>
-    <dimen name="product_browse_desc_height">95dp</dimen>
+    <dimen name="product_browse_desc_height">35dp</dimen>
     <dimen name="product_preview_desc_width">115dp</dimen>
     <dimen name="product_preview_desc_height">135dp</dimen>
     <dimen name="product_preview_amount_width">145dp</dimen>

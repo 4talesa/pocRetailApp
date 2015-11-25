@@ -5,9 +5,14 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.totvs.retailapp.adapters.ProductAdapter;
+import com.totvs.retailapp.models.ProductModel;
+
 import java.util.ArrayList;
 
 public class ProductBrowseActivity extends AppRetailActivity {
+
+    private ProductAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,13 +21,14 @@ public class ProductBrowseActivity extends AppRetailActivity {
 
         this.activityName = productBrowseActivity;
 
-        ArrayList<String> items = new ArrayList<String>();
-        for (int i = 0; i<10; i++){
-            items.add("Product #"+i);
-        }
+        ListView listView = (ListView) findViewById(R.id.listViewProduct);
 
-        ArrayAdapter<String> aItems = new ArrayAdapter<String>(this, R.layout.product_related_item, items);
-        ListView lvTest = (ListView) findViewById(R.id.listViewProduct);
-        lvTest.setAdapter(aItems);
+        ArrayList<ProductModel> arrayOfStores = new ArrayList<ProductModel>();
+        productAdapter = new ProductAdapter(this, R.layout.product_browse_item, arrayOfStores);
+        listView.setAdapter(productAdapter);
+
+        for (int i = 0; i<10; i++){
+            arrayOfStores.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/325/175/food/Product/", 1.99, "Category "+i, "each"));
+        }
     }
 }

@@ -3,6 +3,8 @@ package com.totvs.retailapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,7 +12,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.lucasr.twowayview.TwoWayView;
+import com.totvs.retailapp.adapters.TwoWayViewAdapterModel;
+import com.totvs.retailapp.models.ProductModel;
+
+import org.lucasr.twowayview.widget.TwoWayView;
 
 import java.util.ArrayList;
 
@@ -44,14 +49,14 @@ public class ProductDetailActivity extends AppRetailActivity {
         ImageButton buttonProductDetailArrowRight = (ImageButton) findViewById(R.id.buttonProductDetailArrowRight);
         ImageView imageViewProductDetail = (ImageView) findViewById(R.id.imageViewProductDetail);
 
-        ArrayList<String> items = new ArrayList<String>();
-        for (int i = 0; i<10; i++){
-            items.add("Related Product #"+i);
+        try {
+            TwoWayViewAdapterModel adapter = new TwoWayViewAdapterModel(ProductModel.createContactsList(10));
+            TwoWayView lvTest = (TwoWayView) findViewById(R.id.listViewRelatedProduct);
+            lvTest.setAdapter(adapter);
+            //lvTest.setLayoutManager(new LinearLayoutManager(this));
+        }catch (Exception e){
+            System.out.println("ProductDetailActivity - TwoWayViewAdapterModel - Error: " + e.toString());
         }
-
-        ArrayAdapter<String> aItems = new ArrayAdapter<String>(this, R.layout.product_related_item, items);
-        TwoWayView lvTest = (TwoWayView) findViewById(R.id.listViewStore);
-        lvTest.setAdapter(aItems);
     }
 
     private void updateProductAmount(Integer incValue){
