@@ -1,6 +1,5 @@
 package com.totvs.retailapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -21,7 +20,7 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
             items.add("Store Sample #"+i);
         }
 
-        ArrayAdapter<String> aItems = new ArrayAdapter<String>(this, R.layout.product_related_item, items);
+        ArrayAdapter<String> aItems = new ArrayAdapter<String>(this, R.layout.product_thumb_item, items);
         ListView lvTest = (ListView) findViewById(R.id.listViewPurchaseItem);
         lvTest.setAdapter(aItems);
     }

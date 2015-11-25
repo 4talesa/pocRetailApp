@@ -1,11 +1,17 @@
 package com.totvs.retailapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
+import com.totvs.retailapp.models.ProductModel;
+
+import org.lucasr.twowayview.widget.TwoWayView;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryBrowseActivity extends AppRetailActivity {
 
@@ -16,13 +22,16 @@ public class CategoryBrowseActivity extends AppRetailActivity {
 
         this.activityName = categorytBrowseActivity;
 
-        ArrayList<String> items = new ArrayList<String>();
-        for (int i = 0; i<10; i++){
-            items.add("Category Product #"+i);
+        List<ProductModel> contacts = new ArrayList<ProductModel>();
+
+        for (int i = 1; i <= 10; i++) {
+            contacts.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/175/175/food/Product/", 1.99, "Category "+i, "each"));
         }
 
-        ArrayAdapter<String> aItems = new ArrayAdapter<String>(this, R.layout.product_related_item, items);
-        ListView lvTest = (ListView) findViewById(R.id.listViewCategory);
-        lvTest.setAdapter(aItems);
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(contacts, R.layout.product_thumb_item, this);
+        TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseCategory);
+        lvTest.setAdapter(adapter);
+
     }
+
 }

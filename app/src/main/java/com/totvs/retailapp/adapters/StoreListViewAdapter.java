@@ -14,9 +14,9 @@ import java.util.ArrayList;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class StoreAdapter extends AppRetailListAdapter<StoreModel> {
+public class StoreListViewAdapter extends ListViewAdapterModel<StoreModel> {
 
-    public StoreAdapter(Context context, int layout, ArrayList<StoreModel> stores){
+    public StoreListViewAdapter(Context context, int layout, ArrayList<StoreModel> stores){
         super(context, layout, stores);
     }
 
@@ -35,7 +35,7 @@ public class StoreAdapter extends AppRetailListAdapter<StoreModel> {
                     .fitCenter()
                     .load(model.getUrlPicture());
         }catch (Exception e){
-            System.out.println("StoreAdapter - populateView - Error: " + e.toString());
+            System.out.println("StoreListViewAdapter - populateView - Error: " + e.toString());
         }
     }
 }

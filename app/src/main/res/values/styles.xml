@@ -28,8 +28,12 @@
         <item name="android:textColor">@color/textColorPrimary_Enabled</item>
     </style>
 
-    <style name="TwoWayViewRelatedProduct">
+    <style name="TwoWayViewProductHorizontal">
         <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="TwoWayViewProductVertical">
+        <item name="android:orientation">vertical</item>
     </style>
 
     <style name="linearLayoutLight">

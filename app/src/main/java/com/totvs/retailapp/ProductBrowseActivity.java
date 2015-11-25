@@ -1,18 +1,21 @@
 package com.totvs.retailapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ListView;
 
-import com.totvs.retailapp.adapters.ProductAdapter;
+import com.totvs.retailapp.adapters.ProductListViewAdapter;
+import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
 import com.totvs.retailapp.models.ProductModel;
 
+import org.lucasr.twowayview.widget.TwoWayView;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductBrowseActivity extends AppRetailActivity {
 
-    private ProductAdapter productAdapter;
+    private ProductListViewAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +24,15 @@ public class ProductBrowseActivity extends AppRetailActivity {
 
         this.activityName = productBrowseActivity;
 
-        ListView listView = (ListView) findViewById(R.id.listViewProduct);
+        List<ProductModel> contacts = new ArrayList<ProductModel>();
 
-        ArrayList<ProductModel> arrayOfStores = new ArrayList<ProductModel>();
-        productAdapter = new ProductAdapter(this, R.layout.product_browse_item, arrayOfStores);
-        listView.setAdapter(productAdapter);
-
-        for (int i = 0; i<10; i++){
-            arrayOfStores.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/325/175/food/Product/", 1.99, "Category "+i, "each"));
+        for (int i = 1; i <= 10; i++) {
+            contacts.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/175/175/food/Product/", 1.99, "Category "+i, "each"));
         }
+
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(contacts, R.layout.product_thumb_item, this);
+        TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseProduct);
+        lvTest.setAdapter(adapter);
+
     }
 }

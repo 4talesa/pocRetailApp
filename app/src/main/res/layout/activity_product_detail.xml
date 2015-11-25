@@ -84,8 +84,8 @@
                 android:gravity="center"
                 android:layout_weight="1"/>
             <org.lucasr.twowayview.widget.TwoWayView
-                android:id="@+id/listViewRelatedProduct"
-                style="@style/TwoWayViewRelatedProduct"
+                android:id="@+id/twoWayViewRelatedProduct"
+                style="@style/TwoWayViewProductHorizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:drawSelectorOnTop="false"

@@ -16,11 +16,11 @@ import java.util.ArrayList;
 /**
  * Created by rond.borges on 24/11/2015.
  */
-public abstract class AppRetailListAdapter<T> extends ArrayAdapter<T> {
+public abstract class ListViewAdapterModel<T> extends ArrayAdapter<T> {
 
     private int layout;
 
-    public AppRetailListAdapter(Context context, int layout, ArrayList<T> arrayList){
+    public ListViewAdapterModel(Context context, int layout, ArrayList<T> arrayList){
         super(context, 0, arrayList);
         this.layout = layout;
     }
@@ -39,7 +39,7 @@ public abstract class AppRetailListAdapter<T> extends ArrayAdapter<T> {
 
             return convertView;
         }catch(Exception e){
-            System.out.println("AppRetailListAdapter - getView - Error: " + e.toString());
+            System.out.println("ListViewAdapterModel - getView - Error: " + e.toString());
             throw e;
         }
     }

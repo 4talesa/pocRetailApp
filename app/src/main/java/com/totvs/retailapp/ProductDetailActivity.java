@@ -1,23 +1,20 @@
 package com.totvs.retailapp;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.totvs.retailapp.adapters.TwoWayViewAdapterModel;
+import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
 import com.totvs.retailapp.models.ProductModel;
 
 import org.lucasr.twowayview.widget.TwoWayView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDetailActivity extends AppRetailActivity {
 
@@ -49,14 +46,16 @@ public class ProductDetailActivity extends AppRetailActivity {
         ImageButton buttonProductDetailArrowRight = (ImageButton) findViewById(R.id.buttonProductDetailArrowRight);
         ImageView imageViewProductDetail = (ImageView) findViewById(R.id.imageViewProductDetail);
 
-        try {
-            TwoWayViewAdapterModel adapter = new TwoWayViewAdapterModel(ProductModel.createContactsList(10));
-            TwoWayView lvTest = (TwoWayView) findViewById(R.id.listViewRelatedProduct);
-            lvTest.setAdapter(adapter);
-            //lvTest.setLayoutManager(new LinearLayoutManager(this));
-        }catch (Exception e){
-            System.out.println("ProductDetailActivity - TwoWayViewAdapterModel - Error: " + e.toString());
+        List<ProductModel> contacts = new ArrayList<ProductModel>();
+
+        for (int i = 1; i <= 10; i++) {
+            contacts.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/175/175/food/Product/", 1.99, "Category "+i, "each"));
         }
+
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(contacts, R.layout.product_thumb_item, this);
+        TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewRelatedProduct);
+        lvTest.setAdapter(adapter);
+
     }
 
     private void updateProductAmount(Integer incValue){
