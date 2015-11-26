@@ -15,7 +15,7 @@ public class StoreBrowseActivity extends AppRetailActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping_browse);
+        setContentView(R.layout.activity_store_browse);
 
         this.activityName = storeBrowseActivity;
 
