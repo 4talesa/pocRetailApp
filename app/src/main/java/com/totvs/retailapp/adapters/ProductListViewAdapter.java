@@ -14,7 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class ProductListViewAdapter extends ListViewAdapterModel<ProductModel> {
+public class ProductListViewAdapter extends ListViewAdapterAbstract<ProductModel> {
 
     public ProductListViewAdapter(Context context, int layout, ArrayList<ProductModel> arrayList) {
         super(context, layout, arrayList);
@@ -22,21 +22,18 @@ public class ProductListViewAdapter extends ListViewAdapterModel<ProductModel> {
 
     @Override
     protected void populateView(View v, ProductModel model) {
-        try {
 
-            TextView product_thumb_item_description = (TextView) v.findViewById(R.id.product_thumb_item_description);
-            TextView product_thumb_item_category = (TextView) v.findViewById(R.id.product_thumb_item_category);
-            TextView product_thumb_item_value = (TextView) v.findViewById(R.id.product_thumb_item_value);
-            ImageView product_thumb_item_picture = (ImageView) v.findViewById(R.id.product_thumb_item_picture);
+        TextView product_thumb_item_description = (TextView) v.findViewById(R.id.product_thumb_item_description);
+        TextView product_thumb_item_category = (TextView) v.findViewById(R.id.product_thumb_item_category);
+        TextView product_thumb_item_value = (TextView) v.findViewById(R.id.product_thumb_item_value);
+        ImageView product_thumb_item_picture = (ImageView) v.findViewById(R.id.product_thumb_item_picture);
 
-            product_thumb_item_description.setText(model.getDescription());
-            product_thumb_item_category.setText(model.getCategory());
-            product_thumb_item_value.setText("$ " + String.format("%1$,.2f", model.getValue()));
-            Ion.with(product_thumb_item_picture)
-                    .fitCenter()
-                    .load(model.getUrlPicture());
-        }catch (Exception e){
-            System.out.println("ProductListViewAdapter - populateView - Error: " + e.toString());
-        }
+        product_thumb_item_description.setText(model.getDescription());
+        product_thumb_item_category.setText(model.getCategory());
+        product_thumb_item_value.setText("$ " + String.format("%1$,.2f", model.getValue()));
+        Ion.with(product_thumb_item_picture)
+                .fitCenter()
+                .load(model.getUrlPicture());
+
     }
 }
