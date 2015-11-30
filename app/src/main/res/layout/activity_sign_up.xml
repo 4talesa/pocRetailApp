@@ -89,7 +89,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
-            <ImageView
+            <ImageButton
                 style="@style/largeButtonFacebook"
                 android:layout_width="fill_parent"
                 android:id="@+id/imageViewFacebookSignUp"

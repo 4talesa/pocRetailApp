@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +22,7 @@ public class SignInActivity extends AppCompatActivity {
         Button buttonSignIn = (Button) findViewById(R.id.buttonSignInAct);
         Button buttonSignUp = (Button) findViewById(R.id.buttonOrSignUp);
         Button buttonFacebookSignIn = (Button) findViewById(R.id.buttonFacebookSignIn);
-        ImageView imageViewFacebookSignIn = (ImageView) findViewById(R.id.imageViewFacebookSignIn);
+        ImageButton imageViewFacebookSignIn = (ImageButton) findViewById(R.id.imageViewFacebookSignIn);
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
