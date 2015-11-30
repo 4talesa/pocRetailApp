@@ -35,13 +35,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="1.1">
-        <TextView android:text="@string/app_label_total_quantity"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            style="@style/smallLabelLight"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:id="@+id/purchase_history_total_quantity"/>
         <TextView android:text="@string/app_label_total_amount"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -49,6 +42,13 @@
             android:layout_weight="1"
             android:gravity="right"
             android:id="@+id/purchase_history_total_amount"/>
+        <TextView android:text="@string/app_label_total_quantity"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/smallLabelLight"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:id="@+id/purchase_history_total_quantity"/>
     </LinearLayout>
 
 </LinearLayout>
