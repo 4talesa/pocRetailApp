@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
 
-    public StoreListViewAdapter(Context context, int layout, ArrayList<StoreModel> stores){
-        super(context, layout, stores);
+    public StoreListViewAdapter(Context context, int layout, ArrayList<StoreModel> objects){
+        super(context, layout, objects);
     }
 
     @Override

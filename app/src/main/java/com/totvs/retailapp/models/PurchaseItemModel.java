@@ -12,6 +12,10 @@ public class PurchaseItemModel {
     private String unit;
     private Double unitValue;
     private Double amount;
+    private String urlPicture;
+    private String category;
+    private String brand;
+    private Double quantity;
 
     public String getId(){
         return this.id;
@@ -73,7 +77,23 @@ public class PurchaseItemModel {
         return this.getUnitValue() * this.getAmount();
     }
 
-    public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double amount){
+    public String getUrlPicture() { return this.urlPicture; }
+
+    public void setUrlPicture( String urlPicture ) { this.urlPicture = urlPicture; }
+
+    public String getCategory() { return this.category; }
+
+    public void setCategory( String category ) { this.category = category; }
+
+    public String getBrand() { return this.brand; }
+
+    public void setBrand( String brand ) { this.brand = brand; }
+
+    public Double getQuantity() { return this.quantity; }
+
+    public void setQuantity(Double quantity ) { this.quantity = quantity; }
+
+    public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double amount, String urlPicture, String category, String brand, Double quantity){
         this.id             = id;
         this.idProduct      = idProduct;
         this.idPurchase     = idPurchase;
@@ -81,5 +101,9 @@ public class PurchaseItemModel {
         this.unit           = unit;
         this.unitValue      = unitValue;
         this.amount         = amount;
+        this.urlPicture     = urlPicture;
+        this.category       = category;
+        this.brand          = brand;
+        this.quantity       = quantity;
     }
 }

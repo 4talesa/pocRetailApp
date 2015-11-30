@@ -32,5 +32,6 @@
     <dimen name="button_large_height">45dp</dimen>
     <dimen name="profile_preview_width">175dp</dimen>
     <dimen name="profile_preview_height">175dp</dimen>
+    <dimen name="purchase_history_height">175dp</dimen>
     <dimen name="splitter_height">15dp</dimen>
 </resources>

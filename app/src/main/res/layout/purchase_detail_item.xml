@@ -7,7 +7,7 @@
         style="@style/productThumb"
         android:gravity="center"
         android:src="@drawable/product_preview"
-        android:tag="purchase_detail_item_thumb"/>
+        android:id="@+id/purchase_detail_item_picture"/>
     <LinearLayout
         android:layout_width="@dimen/product_preview_desc_width"
         android:layout_height="@dimen/product_preview_desc_height"
@@ -18,21 +18,21 @@
             style="@style/smallLabelLight"
             android:layout_weight="1"
             android:gravity="left"
-            android:tag="purchase_detail_item_description"/>
+            android:id="@+id/purchase_detail_item_description"/>
         <TextView android:text="@string/app_label_product_preview_category"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             style="@style/smallLabelLight"
             android:layout_weight="1"
             android:gravity="left"
-            android:tag="purchase_detail_item_category"/>
+            android:id="@+id/purchase_detail_item_category"/>
         <TextView android:text="@string/app_label_product_preview_brand"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             style="@style/smallLabelLight"
             android:layout_weight="1"
             android:gravity="left"
-            android:tag="purchase_detail_item_brand"/>
+            android:id="@+id/purchase_detail_item_brand"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="@dimen/product_preview_amount_width"
@@ -49,21 +49,21 @@
                 style="@style/smallLabelLight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="purchase_detail_item_description"/>
+                android:id="@+id/purchase_detail_item_unit_label"/>
             <TextView android:text="@string/app_label_product_preview_quantity"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="purchase_detail_item_category"/>
+                android:id="@+id/purchase_detail_item_quantity_label"/>
             <TextView android:text="@string/app_label_product_preview_total_amount"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="purchase_detail_item_brand"/>
+                android:id="@+id/purchase_detail_item_total_amount_label"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
@@ -76,21 +76,21 @@
                 style="@style/smallLabelLight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="purchase_detail_item_description"/>
+                android:id="@+id/purchase_detail_item_unit_value"/>
             <TextView android:text="@string/app_label_product_preview_quantity_value"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="purchase_detail_item_category"/>
+                android:id="@+id/purchase_detail_item_quantity_value"/>
             <TextView android:text="@string/app_label_product_preview_total_amount_value"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="@style/smallLabelLight"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:tag="purchase_detail_item_brand"/>
+                android:id="@+id/purchase_detail_item_total_amount_value"/>
         </LinearLayout>
     </LinearLayout>
 

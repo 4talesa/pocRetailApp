@@ -13,6 +13,9 @@ public class PurchaseModel {
     private String idUser;
     private String store;
     private String user;
+    private String storeAddress;
+    private Double totalAmount;
+    private Double totalQuantity;
 
     public String getId(){
         return this.id;
@@ -62,12 +65,27 @@ public class PurchaseModel {
         this.user = user;
     }
 
-    public PurchaseModel(String id, Date date, String idStore, String idUser, String store, String user){
-        this.id         = id;
-        this.date       = date;
-        this.idStore    = idStore;
-        this.idUser     = idUser;
-        this.store      = store;
-        this.user       = user;
+    public String getStoreAddress() { return this.storeAddress; }
+
+    public void setStoreAddress(String storeAddress){ this.storeAddress = storeAddress; }
+
+    public Double getTotalAmount() { return this.totalAmount; }
+
+    public void setTotalAmount(Double totalAmount){ this.totalAmount = totalAmount; }
+
+    public Double getTotalQuantity() { return this.totalQuantity; }
+
+    public void setTotalQuantity(Double totalQuantity){ this.totalQuantity = totalQuantity; }
+
+    public PurchaseModel(String id, Date date, String idStore, String idUser, String store, String user, String storeAddress, Double totalAmount, Double totalQuantity){
+        this.id             = id;
+        this.date           = date;
+        this.idStore        = idStore;
+        this.idUser         = idUser;
+        this.store          = store;
+        this.user           = user;
+        this.storeAddress   = storeAddress;
+        this.totalAmount    = totalAmount;
+        this.totalQuantity  = totalQuantity;
     }
 }

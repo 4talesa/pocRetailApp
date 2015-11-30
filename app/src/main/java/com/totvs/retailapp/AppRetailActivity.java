@@ -127,6 +127,16 @@ public class AppRetailActivity extends AppCompatActivity {
                 it = new Intent(this, PurchaseAddActivity.class);
                 this.startActivity(it);
                 return true;
+
+            case R.id.menu_purchase_browse:
+                it = new Intent(this, PurchaseHistoryActivity.class);
+                this.startActivity(it);
+                return true;
+
+            case R.id.menu_purchase_detail:
+                it = new Intent(this, PurchaseDetailActivity.class);
+                this.startActivity(it);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
