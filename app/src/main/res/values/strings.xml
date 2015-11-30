@@ -72,6 +72,9 @@
     <string name="app_label_walk_in">Walk in</string>
     <string name="app_label_scan_product">Scan product</string>
     <string name="app_label_purchase">Purchase</string>
+    <string name="app_label_walk_in_reward_notify">Walk in Notify</string>
+    <string name="app_label_scan_product_reward_notify">Scan product Notify</string>
+    <string name="app_label_purchase_reward_notify">Purchase Notify</string>
     <string name="app_label_purchase_browse">Browse Purchase</string>
     <string name="app_label_purchase_detail">Purchase detail</string>
     <string name="app_label_achievement">Achievement</string>

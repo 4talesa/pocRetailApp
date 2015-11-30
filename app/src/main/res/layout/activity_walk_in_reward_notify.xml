@@ -5,21 +5,24 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.totvs.retailapp.PurchaseAddActivity"
+    tools:context=".WalkInRewardNotifyActivity"
     android:orientation="vertical"
     style="@style/linearLayoutLight">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        style="@style/headerTitle">
         <TextView android:text="@string/app_label_rewards_congratulations"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             style="@style/largeLabelReward"
             android:gravity="center"
             android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
         <TextView android:text="@string/app_label_rewards_achievement_unlocked"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -31,8 +34,8 @@
             android:layout_height="fill_parent"
             android:gravity="left|center"
             android:layout_weight=".8"
-            android:src="@drawable/reward_purchase_icon" />
-        <TextView android:text="@string/app_label_rewards_purchase_msg"
+            android:src="@drawable/reward_walk_in_icon" />
+        <TextView android:text="@string/app_label_rewards_walk_in_msg"
             android:id="@+id/labelFacebookSignIn"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -43,7 +46,7 @@
             style="@style/largeButtonReward"
             android:layout_width="fill_parent"
             android:text="@string/app_button_reward_ok"
-            android:id="@+id/buttonRewardPurchaseOk"/>
+            android:id="@+id/buttonRewardWalkInOk"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -108,13 +108,13 @@ public class AppRetailActivity extends AppCompatActivity {
                 this.startActivity(it);
                 return true;
 
-            case R.id.menu_walk_in_add:
-                it = new Intent(this, WalkInAddActivity.class);
+            case R.id.menu_walk_in_reward_notify:
+                it = new Intent(this, WalkInRewardNotifyActivity.class);
                 this.startActivity(it);
                 return true;
 
-            case R.id.menu_scan_product_add:
-                it = new Intent(this, ScanProductAddActivity.class);
+            case R.id.menu_scan_product_reward_notify:
+                it = new Intent(this, ScanProductRewardNotifyActivity.class);
                 this.startActivity(it);
                 return true;
 
@@ -123,8 +123,8 @@ public class AppRetailActivity extends AppCompatActivity {
                 this.startActivity(it);
                 return true;
 
-            case R.id.menu_purchase_add:
-                it = new Intent(this, PurchaseAddActivity.class);
+            case R.id.menu_purchase_reward_notify:
+                it = new Intent(this, PurchaseRewardNotifyActivity.class);
                 this.startActivity(it);
                 return true;
 
