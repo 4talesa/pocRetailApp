@@ -46,13 +46,22 @@ public class ProductDetailActivity extends AppRetailActivity {
         ImageButton buttonProductDetailArrowRight = (ImageButton) findViewById(R.id.buttonProductDetailArrowRight);
         ImageView imageViewProductDetail = (ImageView) findViewById(R.id.imageViewProductDetail);
 
-        List<ProductModel> contacts = new ArrayList<ProductModel>();
+        List<ProductModel> objects = new ArrayList<ProductModel>();
 
         for (int i = 1; i <= 10; i++) {
-            contacts.add(new ProductModel(String.valueOf(i),"product "+i, String.valueOf(i), "http://lorempixel.com/175/175/food/Product/", 1.99, "Category "+i, "each"));
+            objects.add(
+                    new ProductModel(
+                            String.valueOf(i)
+                            , getResources().getString(R.string.app_label_product)+" "+i
+                            , String.valueOf(i)
+                            , "http://lorempixel.com/175/175/food/Product/"
+                            , 1.99
+                            , getResources().getString(R.string.app_label_category)+" "+i
+                            , getResources().getString(R.string.app_label_product_preview_unit)
+                    ));
         }
 
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(contacts, R.layout.product_thumb_item, this);
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(objects, R.layout.product_thumb_item, this);
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewRelatedProduct);
         lvTest.setAdapter(adapter);
 

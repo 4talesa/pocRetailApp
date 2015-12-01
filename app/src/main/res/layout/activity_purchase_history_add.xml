@@ -29,7 +29,7 @@
         <ImageView
             style="@style/productPicture"
             android:layout_gravity="center"
-            android:src="@drawable/add_purchase"/>
+            android:src="@drawable/add_picture"/>
     </LinearLayout>
     <Button android:text="@string/app_purchase_add_manually"
         android:id="@+id/buttonPurchaseAddManually"

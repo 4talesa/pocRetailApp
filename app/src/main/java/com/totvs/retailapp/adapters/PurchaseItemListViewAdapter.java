@@ -38,11 +38,11 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
         purchase_detail_item_category.setText(model.getCategory());
         purchase_detail_item_brand.setText(model.getBrand());
         purchase_detail_item_unit_label.setText(model.getUnit());
-        purchase_detail_item_unit_value.setText("$ " + String.format("%1$,.2f", model.getUnitValue()));
+        purchase_detail_item_unit_value.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getUnitValue()));
         purchase_detail_item_quantity_label.setText("Quantity");
-        purchase_detail_item_quantity_value.setText("$ " + String.format("%1$,.2f", model.getQuantity()));
+        purchase_detail_item_quantity_value.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getQuantity()));
         purchase_detail_item_total_amount_label.setText("Total amount");
-        purchase_detail_item_total_amount_value.setText("$ " + String.format("%1$,.2f", model.getAmount()));
+        purchase_detail_item_total_amount_value.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getAmount()));
 
         Ion.with(purchase_detail_item_picture)
                 .fitCenter()

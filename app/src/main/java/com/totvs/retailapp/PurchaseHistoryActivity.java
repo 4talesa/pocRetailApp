@@ -26,12 +26,24 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
 
         ListView listView = (ListView) findViewById(R.id.listViewPurchaseItem);
 
-        ArrayList<PurchaseModel> arrayOfStores = new ArrayList<PurchaseModel>();
-        purchaseAdapter = new PurchaseListViewAdapter(this, R.layout.purchase_history_item, arrayOfStores);
+        ArrayList<PurchaseModel> objects = new ArrayList<PurchaseModel>();
+
+        purchaseAdapter = new PurchaseListViewAdapter(this, R.layout.purchase_history_item, objects);
         listView.setAdapter(purchaseAdapter);
 
         for (int i = 0; i<10; i++){
-            arrayOfStores.add(new PurchaseModel(String.valueOf(i), new Date(), String.valueOf(i), String.valueOf(i),"store "+i, "user "+i, "address "+i, 115.75, 11.00));
+            objects.add(
+                    new PurchaseModel(
+                            String.valueOf(i)
+                            , new Date()
+                            , String.valueOf(i)
+                            , String.valueOf(i)
+                            , getResources().getString(R.string.app_label_store)+" "+i
+                            , getResources().getString(R.string.app_label_user)+" "+i
+                            , getResources().getString(R.string.app_label_address)+" "+i
+                            , 115.75
+                            , 11.00
+                    ));
         }
     }
 }

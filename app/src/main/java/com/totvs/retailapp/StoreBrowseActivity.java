@@ -21,12 +21,20 @@ public class StoreBrowseActivity extends AppRetailActivity {
 
         ListView listView = (ListView) findViewById(R.id.listViewStore);
 
-        ArrayList<StoreModel> arrayOfStores = new ArrayList<StoreModel>();
-        storeAdapter = new StoreListViewAdapter(this, R.layout.store_browse_item, arrayOfStores);
+        ArrayList<StoreModel> objects = new ArrayList<StoreModel>();
+
+        storeAdapter = new StoreListViewAdapter(this, R.layout.store_browse_item, objects);
         listView.setAdapter(storeAdapter);
 
         for (int i = 0; i<10; i++){
-            arrayOfStores.add(new StoreModel(String.valueOf(i),"store "+i, "address "+i, "1.5", "http://lorempixel.com/325/175/food/Store/"));
+            objects.add(
+                    new StoreModel(
+                            String.valueOf(i)
+                            , getResources().getString(R.string.app_label_store)+" "+i
+                            , getResources().getString(R.string.app_label_address)+" "+i
+                            , "1.5"
+                            , "http://lorempixel.com/325/175/food/Store/"
+                    ));
         }
     }
 

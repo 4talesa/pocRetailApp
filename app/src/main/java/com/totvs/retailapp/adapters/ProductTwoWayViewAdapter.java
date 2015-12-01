@@ -39,7 +39,7 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
     public void populateView(ProductTwoWayViewAdapter.ViewHolder v, ProductModel model) {
         v.product_thumb_item_description.setText(model.getDescription());
         v.product_thumb_item_category.setText(model.getCategory());
-        v.product_thumb_item_value.setText("$ " + String.format("%1$,.2f", model.getValue()));
+        v.product_thumb_item_value.setText("R$ " + String.format("%1$,.2f", model.getValue()));
         Ion.with(v.product_thumb_item_picture)
                 .fitCenter()
                 .load(model.getUrlPicture());

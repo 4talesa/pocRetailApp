@@ -1,91 +1,92 @@
 <resources>
     <string name="app_name">RetailApp</string>
     <string name="app_title">Retail App</string>
-    <string name="app_welcome_msg">Welcome,
-                                   Sign up for free
-                                   and start to enjoy our app.</string>
-    <string name="app_label_sign_in">Sign In</string>
-    <string name="app_label_sign_out">Sign Out</string>
-    <string name="app_label_sign_up">Create Account</string>
-    <string name="app_label_or">Or</string>
-    <string name="app_label_name">Name</string>
-    <string name="app_label_email">Email</string>
-    <string name="app_label_password">Password</string>
-    <string name="app_label_profile">Profile</string>
-    <string name="app_label_address">Address</string>
-    <string name="app_label_phone">Phone</string>
-    <string name="app_label_browse">Browse</string>
-    <string name="app_label_browse_store">Browse Store</string>
-    <string name="app_label_browse_category">Browse Category</string>
-    <string name="app_label_browse_product">Browse Product</string>
-    <string name="app_label_user_name">User Name Example</string>
-    <string name="app_label_user_email">username@domain.com</string>
+    <string name="app_welcome_msg">Bem-vindo,
+                                   faça seu cadastro gratuitamente
+                                   e comece a usar nosso app.</string>
+    <string name="app_label_sign_in">Entrar</string>
+    <string name="app_label_sign_out">Sair</string>
+    <string name="app_label_sign_up">Criar conta</string>
+    <string name="app_label_or">ou</string>
+    <string name="app_label_name">Nome</string>
+    <string name="app_label_email">E-mail</string>
+    <string name="app_label_password">Senha</string>
+    <string name="app_label_profile">Perfil</string>
+    <string name="app_label_address">Endereço</string>
+    <string name="app_label_phone">Telefone</string>
+    <string name="app_label_browse">Navegar</string>
+    <string name="app_label_browse_store">Navegar Lojas</string>
+    <string name="app_label_browse_category">Navegar Categorias</string>
+    <string name="app_label_browse_product">Navegar Produtos</string>
+    <string name="app_label_user_name">Fulano de Tal</string>
+    <string name="app_label_user_email">fulano@detal.com</string>
     <string name="app_label_user_password">********</string>
-    <string name="app_label_user_address">123 July Street</string>
-    <string name="app_label_user_phone">+1 555 1234-5678</string>
-    <string name="app_label_SignIn_with_in_with_facebook">Sign In with Facebook</string>
-    <string name="app_label_SignUp_with_in_with_facebook">Sign Up with Facebook</string>
+    <string name="app_label_user_address">Rua do Começo, 1234</string>
+    <string name="app_label_user_phone">+55 1234-1234</string>
+    <string name="app_label_SignIn_with_in_with_facebook">Entrar com Facebook</string>
+    <string name="app_label_SignUp_with_in_with_facebook">Criar conta com Facebook</string>
     <string name="app_label_facebook">Facebook</string>
-    <string name="app_label_user_facebook">facebook.com/username</string>
-    <string name="app_label_browse_store_name">Suzan Store</string>
-    <string name="app_label_browse_store_address">123 Suzan Street, Mountain View, CA</string>
-    <string name="app_label_browse_store_distance">1.5 mi</string>
-    <string name="app_label_browse_store_title">Special Day - City</string>
-    <string name="app_label_browse_store_msg">Check what is happening in your city today.
-                                              You can win a price here.</string>
-    <string name="app_label_browse_store_choose_store">Choose a store in 94041</string>
-    <string name="app_label_browse_store_change_zip">Change ZIP</string>
-    <string name="app_label_browse_category_title">Special Day - Store</string>
-    <string name="app_label_browse_category_msg">Check what is happening in this store today.
-                                              You can win a price here.</string>
-    <string name="app_label_browse_product_title">Special Day - Category</string>
-    <string name="app_label_browse_product_msg">Check the promotions for this category today.
-                                              You can win a price here.</string>
-    <string name="app_label_rewards_congratulations">Congratulations</string>
-    <string name="app_label_rewards_achievement_unlocked">Achievement Unlocked!</string>
-    <string name="app_label_rewards_purchase_msg">When you register a purchase you win Purchase points!</string>
-    <string name="app_label_rewards_walk_in_msg">When walk in for the first
-                                                 time in the day
-                                                 you win a Walk In Achiement!</string>
-    <string name="app_label_rewards_scanning_msg">When you scan a product that
-                                                  is available in the scanning list
-                                                  you receive a Scanning Achiement!</string>
+    <string name="app_label_user_facebook">facebook.com/fulanodetal</string>
+    <string name="app_label_browse_store_name">Saccaria</string>
+    <string name="app_label_browse_store_address">Av. Deputado Jamel Cecílio, 3221 - Cidade Jardim, Goiânia - GO</string>
+    <string name="app_label_browse_store_distance">1.5 km</string>
+    <string name="app_label_browse_store_title">Dia especial - cidade</string>
+    <string name="app_label_browse_store_msg">Veja o que está acontecendo na cidade hoje.
+                                              Você pode ganhar um prêmio.</string>
+    <string name="app_label_browse_store_choose_store">Escolha uma loja em 74810-100</string>
+    <string name="app_label_browse_store_change_zip">Trocar CEP</string>
+    <string name="app_label_browse_category_title">Dia especial - loja</string>
+    <string name="app_label_browse_category_msg">Veja o que está acontecendo na loja hoje.
+                                              Você pode ganhar um prêmio.</string>
+    <string name="app_label_browse_product_title">Dia especial - categoria</string>
+    <string name="app_label_browse_product_msg">Veja as promoções dessa categoria hoje.
+                                              Você pode ganhar um prêmio.</string>
+    <string name="app_label_rewards_congratulations">Parabéns</string>
+    <string name="app_label_rewards_achievement_unlocked">Conquista desbloqueada!</string>
+    <string name="app_label_rewards_purchase_msg">Quando você registra uma compra ganha pontos!</string>
+    <string name="app_label_rewards_walk_in_msg">Quando você entra na loja pela primeira vez no dia, ganha pontos de Visita!</string>
+    <string name="app_label_rewards_scanning_msg">Quando você escaneia um produto de nossos fornecedores selecionados ganha pontos!</string>
     <string name="app_button_reward_ok">Ok</string>
-    <string name="app_purchase_title">Purchase</string>
-    <string name="app_purchase_add_all_to_cart">Add all to cart</string>
-    <string name="app_purchase_history_title">Purchases</string>
-    <string name="app_reward_balance_title">Reward Balance</string>
-    <string name="app_button_product_add_to_cart">Add to cart</string>
+    <string name="app_purchase_title">Compra</string>
+    <string name="app_purchase_add_all_to_cart">Adicionar todos ao carrinho</string>
+    <string name="app_purchase_history_title">Compras</string>
+    <string name="app_reward_balance_title">Balanço de recompensas</string>
+    <string name="app_button_product_add_to_cart">Adicionar ao carrinho</string>
     <string name="app_button_plus">+</string>
     <string name="app_button_minus">-</string>
     <string name="app_label_product_preview_description">Haagen Daz Chocolate</string>
-    <string name="app_label_product_preview_category">Icecream</string>
+    <string name="app_label_product_preview_category">Sorvete</string>
     <string name="app_label_product_preview_brand">Haagen Daz</string>
-    <string name="app_label_product_preview_unit">each</string>
-    <string name="app_label_product_preview_unit_value">$2.99</string>
-    <string name="app_label_product_preview_quantity">Quantity</string>
-    <string name="app_label_product_preview_quantity_value">10.00</string>
-    <string name="app_label_product_preview_total_amount">Total amount</string>
-    <string name="app_label_product_preview_total_amount_value">$29.90</string>
-    <string name="app_label_related_items">Related itens</string>
-    <string name="app_label_help">Help</string>
-    <string name="app_label_walk_in">Walk in</string>
-    <string name="app_label_scan_product">Scan product</string>
-    <string name="app_label_purchase">Purchase</string>
-    <string name="app_label_walk_in_reward_notify">Walk in Notify</string>
-    <string name="app_label_scan_product_reward_notify">Scan product Notify</string>
-    <string name="app_label_purchase_reward_notify">Purchase Notify</string>
-    <string name="app_label_purchase_add">Purchase Add</string>
-    <string name="app_label_purchase_browse">Browse Purchase</string>
-    <string name="app_label_purchase_detail">Purchase detail</string>
-    <string name="app_label_achievement">Achievement</string>
-    <string name="app_label_reward_balance">Reward balance</string>
-    <string name="app_label_product_detail">Product detail</string>
+    <string name="app_label_product_preview_unit">cada</string>
+    <string name="app_label_product_preview_unit_value">R$ 2,99</string>
+    <string name="app_label_product_preview_quantity">Quantidade</string>
+    <string name="app_label_product_preview_quantity_value">10,00</string>
+    <string name="app_label_product_preview_total_amount">Total cobrado</string>
+    <string name="app_label_product_preview_total_amount_value">R$ 29,90</string>
+    <string name="app_label_related_items">Itens relacioados</string>
+    <string name="app_label_help">Ajuda</string>
+    <string name="app_label_walk_in">Visita</string>
+    <string name="app_label_scan_product">Escaniar produto</string>
+    <string name="app_label_purchase">Compra</string>
+    <string name="app_label_walk_in_reward_notify">Notificação Visita</string>
+    <string name="app_label_scan_product_reward_notify">Notificação Escaniar produto</string>
+    <string name="app_label_purchase_reward_notify">Notificação Compra</string>
+    <string name="app_label_purchase_add">Adicionar Compra</string>
+    <string name="app_label_purchase_browse">Navegar nas Compras</string>
+    <string name="app_label_purchase_detail">Detalhes da Compra</string>
+    <string name="app_label_achievement">Conquista</string>
+    <string name="app_label_reward_balance">Balanço de recompensas</string>
+    <string name="app_label_product_detail">Detalhes do Produto</string>
     <string name="app_label_product_detail_amount">1</string>
-    <string name="app_label_date_label">Date</string>
-    <string name="app_label_date_value">11/30/2015</string>
-    <string name="app_label_total_amount">$175.00</string>
+    <string name="app_label_date_label">Data</string>
+    <string name="app_label_date_value">30/11/2015</string>
+    <string name="app_label_total_amount">R$ 175,00</string>
     <string name="app_label_total_quantity">4 items</string>
-    <string name="app_purchase_history_add">Add</string>
-    <string name="app_purchase_add_manually">Add Manually</string>
+    <string name="app_purchase_history_add">Adicionar</string>
+    <string name="app_purchase_add_manually">Adicionar manualmente</string>
+    <string name="app_label_store">Loja</string>
+    <string name="app_label_product">Produto</string>
+    <string name="app_label_user">Usuário</string>
+    <string name="app_label_category">Categoria</string>
+    <string name="app_label_dollar">R$</string>
 </resources>

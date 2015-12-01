@@ -29,12 +29,23 @@
             style="@style/mediumLabelDisabled"
             android:gravity="center"
             android:layout_weight="1"/>
-        <ImageView
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:gravity="left|center"
-            android:layout_weight=".8"
-            android:src="@drawable/reward_walk_in_icon" />
+            android:gravity="center"
+            android:layout_weight=".8">
+            <ImageView
+                android:layout_width="@dimen/product_preview_width"
+                android:layout_height="@dimen/product_preview_height"
+                android:gravity="center"
+                android:layout_weight=".8"
+                android:src="@drawable/circle_reward_notify" />
+            <TextView android:text="@string/app_label_walk_in"
+                android:layout_width="@dimen/product_preview_width"
+                android:layout_height="@dimen/product_preview_height"
+                style="@style/mediumLabelDark"
+                android:gravity="center"/>
+        </RelativeLayout>
         <TextView android:text="@string/app_label_rewards_walk_in_msg"
             android:id="@+id/labelFacebookSignIn"
             android:layout_width="fill_parent"

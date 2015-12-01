@@ -36,7 +36,7 @@ public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseMod
         purchase_history_store_name.setText(model.getStore());
         purchase_history_store_address.setText(model.getStoreAddress());
         purchase_history_total_quantity.setText(String.format("%1$,.2f", model.getTotalQuantity()));
-        purchase_history_total_amount.setText("$ " + String.format("%1$,.2f", model.getTotalAmount()));
+        purchase_history_total_amount.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getTotalAmount()));
 
     }
 }

@@ -30,7 +30,7 @@ public class ProductListViewAdapter extends ListViewAdapterAbstract<ProductModel
 
         product_thumb_item_description.setText(model.getDescription());
         product_thumb_item_category.setText(model.getCategory());
-        product_thumb_item_value.setText("$ " + String.format("%1$,.2f", model.getValue()));
+        product_thumb_item_value.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getValue()));
         Ion.with(product_thumb_item_picture)
                 .fitCenter()
                 .load(model.getUrlPicture());
