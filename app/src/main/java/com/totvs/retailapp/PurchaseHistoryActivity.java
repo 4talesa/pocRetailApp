@@ -2,6 +2,7 @@ package com.totvs.retailapp;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.totvs.retailapp.adapters.PurchaseListViewAdapter;
@@ -20,6 +21,8 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
         setContentView(R.layout.activity_purchase_history);
 
         this.activityName = purchaseHistoryActivity;
+
+        Button buttonPurchaseHistoryAdd = (Button) findViewById(R.id.buttonPurchaseHistoryAdd);
 
         ListView listView = (ListView) findViewById(R.id.listViewPurchaseItem);
 

@@ -10,13 +10,20 @@
     style="@style/linearLayoutLight">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="4">
+        style="@style/headerTitle"
+        android:orientation="vertical">
         <TextView android:text="@string/app_purchase_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/largeLabelLight"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            style="@style/mediumLabelLight"
+            android:gravity="center" />
+        <TextView android:text="@string/app_label_date_value"
+            android:id="@+id/textViewDateValue"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            style="@style/smallLabelDisabled"
             android:gravity="center" />
     </LinearLayout>
     <LinearLayout
@@ -29,6 +36,7 @@
             android:id="@+id/listViewPurchaseDetail" />
     </LinearLayout>
     <Button android:text="@string/app_purchase_add_all_to_cart"
+        android:id="@+id/buttonPurchaseDetailAddAllToCart"
         style="@style/largeButtonDark"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

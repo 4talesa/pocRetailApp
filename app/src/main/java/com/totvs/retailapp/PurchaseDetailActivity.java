@@ -2,7 +2,9 @@ package com.totvs.retailapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.totvs.retailapp.adapters.PurchaseItemListViewAdapter;
 import com.totvs.retailapp.models.PurchaseItemModel;
@@ -19,6 +21,11 @@ public class PurchaseDetailActivity extends AppRetailActivity {
         setContentView(R.layout.activity_purchase_detail);
 
         this.activityName = purchaseDetailActivity;
+
+        TextView textViewDateValue = (TextView) findViewById(R.id.textViewDateValue);
+        textViewDateValue.setText("11/30/2015");
+
+        Button buttonPurchaseDetailAddAllToCart = (Button) findViewById(R.id.buttonPurchaseDetailAddAllToCart);
 
         ListView listView = (ListView) findViewById(R.id.listViewPurchaseDetail);
 

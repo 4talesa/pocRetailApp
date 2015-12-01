@@ -22,6 +22,7 @@ public class AppRetailActivity extends AppCompatActivity {
     static final String productDetailActivity   = "productDetailActivity";
     static final String purchaseDetailActivity  = "purchaseDetailActivity";
     static final String purchaseHistoryActivity  = "purchaseHistoryActivity";
+    static final String purchaseHistoryAddActivity  = "purchaseHistoryAddActivity";
 
     protected String activityName = defaultActivity;
 
@@ -135,6 +136,11 @@ public class AppRetailActivity extends AppCompatActivity {
 
             case R.id.menu_purchase_detail:
                 it = new Intent(this, PurchaseDetailActivity.class);
+                this.startActivity(it);
+                return true;
+
+            case R.id.menu_purchase_history_add:
+                it = new Intent(this, PurchaseHistoryAddActivity.class);
                 this.startActivity(it);
                 return true;
         }
