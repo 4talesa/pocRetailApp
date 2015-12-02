@@ -89,4 +89,5 @@
     <string name="app_label_user">Usuário</string>
     <string name="app_label_category">Categoria</string>
     <string name="app_label_dollar">R$</string>
+    <string name="app_album_name">AppRetailPictures</string>
 </resources>

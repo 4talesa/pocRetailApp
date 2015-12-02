@@ -26,10 +26,11 @@
         android:layout_height="fill_parent"
         android:gravity="center"
         android:layout_weight="1">
-        <ImageView
+        <ImageButton
             style="@style/productPicture"
             android:layout_gravity="center"
-            android:src="@drawable/add_picture"/>
+            android:src="@drawable/add_picture"
+            android:id="@+id/imageButtonScanPurchase"/>
     </LinearLayout>
     <Button android:text="@string/app_purchase_add_manually"
         android:id="@+id/buttonPurchaseAddManually"
