@@ -98,6 +98,11 @@
         <item name="android:background">@color/colorBackgroundDark</item>
     </style>
 
+    <style name="smallButtonDisabled" parent="smallButton">
+        <item name="android:textColor">@color/colorLabelLight_Disabled</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+    </style>
+
     <style name="mediumButtonDark" parent="mediumButton">
         <item name="android:textColor">@color/colorLabelDark</item>
         <item name="android:background">@color/colorBackgroundDark</item>
@@ -111,6 +116,16 @@
     <style name="largeButtonFacebook" parent="largeButton">
         <item name="android:textColor">@color/colorFacebookText</item>
         <item name="android:background">@color/colorFacebookBackground</item>
+    </style>
+
+    <style name="smallButtonReward" parent="smallButton">
+        <item name="android:textColor">@color/colorLabelButtonReward</item>
+        <item name="android:background">@color/colorLabelBackgroundButtonReward</item>
+    </style>
+
+    <style name="mediumButtonReward" parent="mediumButton">
+        <item name="android:textColor">@color/colorLabelButtonReward</item>
+        <item name="android:background">@color/colorLabelBackgroundButtonReward</item>
     </style>
 
     <style name="largeButtonReward" parent="largeButton">

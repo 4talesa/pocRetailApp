@@ -40,6 +40,8 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
         v.reward_balance_item_name.setText(model.getName());
         v.reward_balance_item_description.setText(model.getDescription());
         v.reward_balance_item_status.setText(model.getStatus());
+        v.reward_balance_item_status.setEnabled(model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()));
+        v.reward_balance_item_status.setTextAppearance(context, model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()) ? R.style.smallButtonReward : R.style.smallButtonDisabled);
         v.reward_balance_item_amount.setText(String.format("%1$,.2f", model.getAmount()));
         Ion.with(v.reward_balance_item_picture)
                 .fitCenter()
