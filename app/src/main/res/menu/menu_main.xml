@@ -37,6 +37,9 @@
     <item android:id="@+id/menu_purchase_history_add"
         android:orderInCategory="10"
         android:title="@string/app_label_purchase_add"/>
+    <item android:id="@+id/menu_reward_balance"
+        android:orderInCategory="11"
+        android:title="@string/app_label_reward_balance"/>
     <item android:id="@+id/menu_sign_in"
         android:orderInCategory="21"
         android:title="@string/app_label_sign_in" />

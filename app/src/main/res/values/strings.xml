@@ -95,4 +95,8 @@
     <string name="app_label_category">Category</string>
     <string name="app_label_dollar">$</string>
     <string name="app_album_name">AppRetailPictures</string>
+    <string name="app_label_reward">Reward</string>
+    <string name="app_label_available">Available</string>
+    <string name="app_label_unavailable">Unavailable</string>
+    <string name="app_label_reward_description">Reward that can be redeemed</string>
 </resources>

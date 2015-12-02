@@ -91,4 +91,8 @@
     <string name="app_label_category">Categoria</string>
     <string name="app_label_dollar">R$</string>
     <string name="app_album_name">AppRetailPictures</string>
+    <string name="app_label_reward">Recompensa</string>
+    <string name="app_label_available">Disponível</string>
+    <string name="app_label_unavailable">Indisponível</string>
+    <string name="app_label_reward_description">Recompensa que pode ser resgatada</string>
 </resources>

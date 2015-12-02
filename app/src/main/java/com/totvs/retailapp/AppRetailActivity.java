@@ -143,6 +143,11 @@ public class AppRetailActivity extends AppCompatActivity {
                 it = new Intent(this, PurchaseHistoryAddActivity.class);
                 this.startActivity(it);
                 return true;
+
+            case R.id.menu_reward_balance:
+                it = new Intent(this, RewardBalanceActivity.class);
+                this.startActivity(it);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

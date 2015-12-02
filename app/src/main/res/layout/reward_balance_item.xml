@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:gravity="center">
+
+    <ImageView
+        style="@style/productThumb"
+        android:gravity="center"
+        android:src="@drawable/product_preview"
+        android:id="@+id/reward_balance_item_picture"/>
+    <TextView android:text="@string/app_label_reward"
+        android:layout_width="@dimen/product_browse_desc_width"
+        android:layout_height="@dimen/product_browse_desc_height"
+        style="@style/smallLabelLight"
+        android:gravity="center"
+        android:id="@+id/reward_balance_item_name"/>
+    <LinearLayout
+        android:layout_width="@dimen/product_browse_desc_width"
+        android:layout_height="@dimen/product_browse_desc_height"
+        android:orientation="horizontal">
+        <TextView android:text="@string/app_label_available"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/smallLabelDisabled"
+            android:layout_weight=".6"
+            android:gravity="left"
+            android:id="@+id/reward_balance_item_status"/>
+        <TextView android:text="@string/app_label_product_preview_unit_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/smallLabelHighlight"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:id="@+id/reward_balance_item_amount"/>
+    </LinearLayout>
+    <TextView android:text="@string/app_label_reward"
+        android:layout_width="@dimen/product_browse_desc_width"
+        android:layout_height="@dimen/product_browse_desc_height"
+        style="@style/extraSmallLabelDisabled"
+        android:gravity="center"
+        android:id="@+id/reward_balance_item_description"/>
 
 </LinearLayout>
