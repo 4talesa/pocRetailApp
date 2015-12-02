@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RetailApp</string>
+    <string name="app_title">Retail App</string>
+    <string name="app_welcome_msg">Bem-vindo,
+                                   Faça seu cadastro gratuitamente
+                                   e comece a usar nosso app.</string>
+    <string name="app_label_sign_in">Entrar</string>
+    <string name="app_label_sign_out">Sair</string>
+    <string name="app_label_sign_up">Criar conta</string>
+    <string name="app_label_or">ou</string>
+    <string name="app_label_name">Nome</string>
+    <string name="app_label_email">E-mail</string>
+    <string name="app_label_password">Senha</string>
+    <string name="app_label_profile">Perfil</string>
+    <string name="app_label_address">Endereço</string>
+    <string name="app_label_phone">Telefone</string>
+    <string name="app_label_browse">Navegar</string>
+    <string name="app_label_browse_store">Navegar Lojas</string>
+    <string name="app_label_browse_category">Navegar Categorias</string>
+    <string name="app_label_browse_product">Navegar Produtos</string>
+    <string name="app_label_user_name">Fulano de Tal</string>
+    <string name="app_label_user_email">fulano@detal.com</string>
+    <string name="app_label_user_password">********</string>
+    <string name="app_label_user_address">Rua do Começo, 1234</string>
+    <string name="app_label_user_phone">+55 1234-1234</string>
+    <string name="app_label_SignIn_with_in_with_facebook">Entrar com Facebook</string>
+    <string name="app_label_SignUp_with_in_with_facebook">Criar conta com Facebook</string>
+    <string name="app_label_facebook">Facebook</string>
+    <string name="app_label_user_facebook">facebook.com/fulanodetal</string>
+    <string name="app_label_browse_store_name">Saccaria</string>
+    <string name="app_label_browse_store_address">Av. Deputado Jamel Cecílio, 3221 - Cidade Jardim, Goiânia - GO</string>
+    <string name="app_label_browse_store_distance">1.5 km</string>
+    <string name="app_label_browse_store_title">Dia especial - cidade</string>
+    <string name="app_label_browse_store_msg">Veja o que está acontecendo na cidade hoje.
+                                              Você pode ganhar um prêmio.</string>
+    <string name="app_label_browse_store_choose_store">Escolha uma loja em 74810-100</string>
+    <string name="app_label_browse_store_change_zip">Trocar CEP</string>
+    <string name="app_label_browse_category_title">Dia especial - loja</string>
+    <string name="app_label_browse_category_msg">Veja o que está acontecendo na loja hoje.
+                                              Você pode ganhar um prêmio.</string>
+    <string name="app_label_browse_product_title">Dia especial - categoria</string>
+    <string name="app_label_browse_product_msg">Veja as promoções dessa categoria hoje.
+                                              Você pode ganhar um prêmio.</string>
+    <string name="app_label_rewards_congratulations">Parabéns</string>
+    <string name="app_label_rewards_achievement_unlocked">Conquista desbloqueada!</string>
+    <string name="app_label_rewards_purchase_msg">Quando você registra uma compra ganha pontos!</string>
+    <string name="app_label_rewards_walk_in_msg">Quando você entra na loja pela primeira vez no dia, ganha pontos de Visita!</string>
+    <string name="app_label_rewards_scanning_msg">Quando você escaneia um produto de nossos fornecedores selecionados ganha pontos!</string>
+    <string name="app_button_reward_ok">Ok</string>
+    <string name="app_purchase_title">Compra</string>
+    <string name="app_purchase_add_all_to_cart">Adicionar todos ao carrinho</string>
+    <string name="app_purchase_history_title">Compras</string>
+    <string name="app_reward_balance_title">Balanço de recompensas</string>
+    <string name="app_button_product_add_to_cart">Adicionar ao carrinho</string>
+    <string name="app_button_plus">+</string>
+    <string name="app_button_minus">-</string>
+    <string name="app_label_product_preview_description">Haagen Daz Chocolate</string>
+    <string name="app_label_product_preview_category">Sorvete</string>
+    <string name="app_label_product_preview_brand">Haagen Daz</string>
+    <string name="app_label_product_preview_unit">cada</string>
+    <string name="app_label_product_preview_unit_value">R$ 2,99</string>
+    <string name="app_label_product_preview_quantity">Quantidade</string>
+    <string name="app_label_product_preview_quantity_value">10,00</string>
+    <string name="app_label_product_preview_total_amount">Total cobrado</string>
+    <string name="app_label_product_preview_total_amount_value">R$ 29,90</string>
+    <string name="app_label_related_items">Itens relacioados</string>
+    <string name="app_label_help">Ajuda</string>
+    <string name="app_label_walk_in">Visita</string>
+    <string name="app_label_scan_product">Escaniar produto</string>
+    <string name="app_label_purchase">Compra</string>
+    <string name="app_label_walk_in_reward_notify">Notificação Visita</string>
+    <string name="app_label_scan_product_reward_notify">Notificação Escaniar produto</string>
+    <string name="app_label_purchase_reward_notify">Notificação Compra</string>
+    <string name="app_label_purchase_add">Adicionar Compra</string>
+    <string name="app_label_purchase_browse">Navegar nas Compras</string>
+    <string name="app_label_purchase_detail">Detalhes da Compra</string>
+    <string name="app_label_achievement">Conquista</string>
+    <string name="app_label_reward_balance">Balanço de recompensas</string>
+    <string name="app_label_product_detail">Detalhes do Produto</string>
+    <string name="app_label_product_detail_amount">1</string>
+    <string name="app_label_date_label">Data</string>
+    <string name="app_label_date_value">30/11/2015</string>
+    <string name="app_label_total_amount">R$ 175,00</string>
+    <string name="app_label_total_quantity">4 items</string>
+    <string name="app_purchase_history_add">Adicionar</string>
+    <string name="app_purchase_add_manually">Adicionar manualmente</string>
+    <string name="app_label_store">Loja</string>
+    <string name="app_label_product">Produto</string>
+    <string name="app_label_user">Usuário</string>
+    <string name="app_label_category">Categoria</string>
+    <string name="app_label_dollar">R$</string>
+    <string name="app_album_name">AppRetailPictures</string>
+</resources>
