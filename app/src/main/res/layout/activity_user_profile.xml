@@ -25,10 +25,11 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:orientation="vertical">
-            <ImageView
+            <ImageButton
                 style="@style/profilePicture"
                 android:layout_gravity="center"
-                android:src="@drawable/random_user_pic_79"/>
+                android:src="@drawable/random_user_pic_79"
+                android:id="@+id/imageButtonProfilePicture"/>
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"

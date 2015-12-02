@@ -1,12 +1,10 @@
 package com.totvs.retailapp;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
-public class UserProfileActivity extends AppRetailActivity {
+public class UserProfileActivity extends AppRetailPictureActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +12,15 @@ public class UserProfileActivity extends AppRetailActivity {
         setContentView(R.layout.activity_user_profile);
 
         this.activityName = userProfileActivity;
+
+        imageView = (ImageButton) findViewById(R.id.imageButtonProfilePicture);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
+            }
+        });
     }
     
 }
