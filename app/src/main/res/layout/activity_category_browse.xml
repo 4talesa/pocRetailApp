@@ -62,10 +62,10 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:drawSelectorOnTop="false"
-            android:layout_weight=".5"
+            android:layout_weight="1"
             app:twowayview_layoutManager="GridLayoutManager"
-            app:twowayview_numColumns="2"
-            app:twowayview_numRows="3"/>
+            app:twowayview_numColumns="1"
+            app:twowayview_numRows="1"/>
     </LinearLayout>
 
 </LinearLayout>

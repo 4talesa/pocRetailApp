@@ -35,4 +35,5 @@
     <dimen name="profile_preview_height">175dp</dimen>
     <dimen name="purchase_history_height">175dp</dimen>
     <dimen name="splitter_height">15dp</dimen>
+    <dimen name="category_browse_preview_height">350dp</dimen>
 </resources>

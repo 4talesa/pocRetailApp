@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView android:text="@string/app_label_category"
+        android:layout_width="match_parent"
+        style="@style/smallLabelLight"
+        android:gravity="center"
+        android:id="@+id/textViewCategoryTitle"/>
+
+    <org.lucasr.twowayview.widget.TwoWayView
+        android:id="@+id/twoWayViewBrowseCategoryList"
+        style="@style/TwoWayViewProductVertical"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/category_browse_preview_height"
+        android:gravity="center"
+        android:drawSelectorOnTop="false"
+        android:layout_weight="1"
+        app:twowayview_layoutManager="GridLayoutManager"
+        app:twowayview_numColumns="2"
+        app:twowayview_numRows="2"/>
+
+    <LinearLayout
+        style="@style/linearLayoutSplliter">
+    </LinearLayout>
+
+</LinearLayout>

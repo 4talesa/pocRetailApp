@@ -32,7 +32,7 @@
             android:layout_weight="1"
             app:twowayview_layoutManager="GridLayoutManager"
             app:twowayview_numColumns="2"
-            app:twowayview_numRows="5"/>
+            app:twowayview_numRows="3"/>
     </LinearLayout>
 
 </LinearLayout>
