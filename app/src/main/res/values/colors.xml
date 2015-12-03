@@ -16,7 +16,7 @@
     <color name="colorRewardsTitle">#22c064</color>
     <color name="colorRewardsMsg">#adadad</color>
     <color name="colorLabelButtonReward">#FFFFFF</color>
-    <color name="colorLabelBackgroundButtonReward">#22c064</color>
+    <color name="colorBackgroundButtonReward">#22c064</color>
     <color name="colorBackgroundShadow">#adadad</color>
     <color name="colorBackgroundDisabled">#e0e0e0</color>
     <color name="colorBackgroundNotify">#ff5915</color>

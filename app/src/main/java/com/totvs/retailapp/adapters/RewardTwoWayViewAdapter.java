@@ -1,9 +1,11 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,12 +38,18 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
     }
 
     @Override
-    public void populateView(RewardTwoWayViewAdapter.ViewHolder v, RewardModel model) {
+    public void populateView(ViewHolder v, RewardModel model) {
         v.reward_balance_item_name.setText(model.getName());
         v.reward_balance_item_description.setText(model.getDescription());
         v.reward_balance_item_status.setText(model.getStatus());
         v.reward_balance_item_status.setEnabled(model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()));
-        v.reward_balance_item_status.setTextAppearance(context, model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()) ? R.style.smallButtonReward : R.style.smallButtonDisabled);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            v.reward_balance_item_status.setTextColor(model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()) ? context.getColor(R.color.colorLabelButtonReward) : context.getColor(R.color.colorLabelLight_Disabled));
+            v.reward_balance_item_status.setBackgroundColor(model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()) ? context.getColor(R.color.colorBackgroundButtonReward) : context.getColor(R.color.colorBackgroundDisabled));
+        }else{
+            v.reward_balance_item_status.setTextColor(model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()) ? context.getResources().getColor(R.color.colorLabelButtonReward) : context.getResources().getColor(R.color.colorLabelLight_Disabled));
+            v.reward_balance_item_status.setBackgroundColor(model.getStatus().toUpperCase().equals(context.getResources().getString(R.string.app_label_available).toUpperCase()) ? context.getResources().getColor(R.color.colorBackgroundButtonReward) : context.getResources().getColor(R.color.colorBackgroundDisabled));
+        }
         v.reward_balance_item_amount.setText(String.format("%1$,.2f", model.getAmount()));
         Ion.with(v.reward_balance_item_picture)
                 .fitCenter()
@@ -52,7 +60,7 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
 
         final TextView reward_balance_item_name;
         final TextView reward_balance_item_description;
-        final TextView reward_balance_item_status;
+        final Button reward_balance_item_status;
         final TextView reward_balance_item_amount;
         final ImageView reward_balance_item_picture;
 
@@ -61,7 +69,7 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
 
             reward_balance_item_name = (TextView) itemView.findViewById(R.id.reward_balance_item_name);
             reward_balance_item_description = (TextView) itemView.findViewById(R.id.reward_balance_item_description);
-            reward_balance_item_status = (TextView) itemView.findViewById(R.id.reward_balance_item_status);
+            reward_balance_item_status = (Button) itemView.findViewById(R.id.reward_balance_item_status);
             reward_balance_item_amount = (TextView) itemView.findViewById(R.id.reward_balance_item_amount);
             reward_balance_item_picture = (ImageView) itemView.findViewById(R.id.reward_balance_item_picture);
         }

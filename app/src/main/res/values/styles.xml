@@ -120,17 +120,17 @@
 
     <style name="smallButtonReward" parent="smallButton">
         <item name="android:textColor">@color/colorLabelButtonReward</item>
-        <item name="android:background">@color/colorLabelBackgroundButtonReward</item>
+        <item name="android:background">@color/colorBackgroundButtonReward</item>
     </style>
 
     <style name="mediumButtonReward" parent="mediumButton">
         <item name="android:textColor">@color/colorLabelButtonReward</item>
-        <item name="android:background">@color/colorLabelBackgroundButtonReward</item>
+        <item name="android:background">@color/colorBackgroundButtonReward</item>
     </style>
 
     <style name="largeButtonReward" parent="largeButton">
         <item name="android:textColor">@color/colorLabelButtonReward</item>
-        <item name="android:background">@color/colorLabelBackgroundButtonReward</item>
+        <item name="android:background">@color/colorBackgroundButtonReward</item>
     </style>
 
     <style name="extraSmallLabel">

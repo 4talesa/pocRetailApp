@@ -13,8 +13,7 @@
         android:layout_height="@dimen/product_browse_desc_height"
         style="@style/smallButtonReward"
         android:gravity="center"
-        android:id="@+id/reward_balance_item_status"
-        android:enabled="false"/>
+        android:id="@+id/reward_balance_item_status"/>
     <LinearLayout
         android:layout_width="@dimen/product_browse_desc_width"
         android:layout_height="@dimen/product_browse_desc_height"
