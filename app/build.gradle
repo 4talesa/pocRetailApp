@@ -29,7 +29,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 23
         versionCode 2
-        versionName '2.7'
+        versionName '2.8'
     }
     buildTypes {
         release {
@@ -46,6 +46,7 @@ android {
 
 repositories {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/" }
 }
 
 dependencies {
@@ -55,6 +56,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'org.lucasr.twowayview:core:1.0.0-SNAPSHOT@aar'
     compile 'org.lucasr.twowayview:layouts:1.0.0-SNAPSHOT@aar'
-    //compile 'org.lucasr.twowayview:twowayview:0.1.4'
     compile 'com.koushikdutta.ion:ion:2.+'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.embarkmobile:zxing-android-minimal:2.0.0@aar'
+    compile 'com.embarkmobile:zxing-android-integration:2.0.0@aar'
 }
