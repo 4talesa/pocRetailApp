@@ -95,4 +95,6 @@
     <string name="app_label_available">Disponível</string>
     <string name="app_label_unavailable">Indisponível</string>
     <string name="app_label_reward_description">Recompensa que pode ser resgatada</string>
+    <string name="app_label_barcode">Código de barras</string>
+    <string name="app_label_barcode_format">Formato do código de barras</string>
 </resources>

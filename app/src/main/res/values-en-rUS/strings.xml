@@ -99,4 +99,6 @@
     <string name="app_label_available">Available</string>
     <string name="app_label_unavailable">Unavailable</string>
     <string name="app_label_reward_description">Reward that can be redeemed</string>
+    <string name="app_label_barcode">Barcode</string>
+    <string name="app_label_barcode_format">Barcode format</string>
 </resources>

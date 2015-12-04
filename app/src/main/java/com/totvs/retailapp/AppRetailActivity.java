@@ -8,6 +8,9 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.Parse;
+import com.parse.ParseUser;
+
 /**
  * Created by rond.borges on 19/11/2015.
  */
@@ -29,6 +32,8 @@ public class AppRetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Parse.initialize(this, getResources().getString(R.string.app_parse_app_id), getResources().getString(R.string.app_parse_app_key));
 
         try{
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -147,6 +152,11 @@ public class AppRetailActivity extends AppCompatActivity {
             case R.id.menu_reward_balance:
                 it = new Intent(this, RewardBalanceActivity.class);
                 this.startActivity(it);
+                return true;
+
+            case R.id.menu_sign_out:
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
                 return true;
         }
 

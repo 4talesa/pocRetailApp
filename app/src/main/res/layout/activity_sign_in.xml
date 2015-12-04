@@ -60,7 +60,8 @@
                 android:layout_width="fill_parent"
                 style="@style/smallLabelLight"
                 android:gravity="right|center"
-                android:layout_weight=".7"/>
+                android:layout_weight=".7"
+                android:password="true"/>
         </LinearLayout>
         <Button
             style="@style/mediumButtonLight"
