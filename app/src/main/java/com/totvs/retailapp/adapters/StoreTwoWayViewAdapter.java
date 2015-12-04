@@ -1,6 +1,7 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.CategoryBrowseActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.StoreModel;
 
@@ -44,6 +46,14 @@ public class StoreTwoWayViewAdapter extends TwoWayViewAdapterAbstract<StoreModel
         Ion.with(v.store_browse_item_thumb)
                 .fitCenter()
                 .load(model.getUrlPicture());
+
+        v.store_browse_item_thumb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), CategoryBrowseActivity.class);
+                v.getContext().startActivity(it);
+            }
+        });
     }
 
     public class ViewHolder extends TwoWayViewAdapterAbstract.ViewHolderAbstract{

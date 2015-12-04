@@ -1,6 +1,7 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.ProductBrowseActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.CategoryModel;
 import com.totvs.retailapp.models.ProductModel;
@@ -61,6 +63,14 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
 
         ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(products, R.layout.product_thumb_item, context);
         v.twoWayViewBrowseCategoryList.setAdapter(adapter);
+
+        v.textViewCategoryTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), ProductBrowseActivity.class);
+                v.getContext().startActivity(it);
+            }
+        });
     }
 
     public class ViewHolder extends TwoWayViewAdapterAbstract.ViewHolderAbstract{

@@ -1,11 +1,13 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.CategoryBrowseActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.StoreModel;
 
@@ -35,5 +37,12 @@ public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
                 .fitCenter()
                 .load(model.getUrlPicture());
 
+        store_browse_item_thumb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), CategoryBrowseActivity.class);
+                v.getContext().startActivity(it);
+            }
+        });
     }
 }

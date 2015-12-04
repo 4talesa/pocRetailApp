@@ -1,6 +1,7 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.ProductDetailActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.ProductModel;
 
@@ -43,6 +45,14 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
         Ion.with(v.product_thumb_item_picture)
                 .fitCenter()
                 .load(model.getUrlPicture());
+
+        v.product_thumb_item_picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), ProductDetailActivity.class);
+                v.getContext().startActivity(it);
+            }
+        });
     }
 
     public class ViewHolder extends TwoWayViewAdapterAbstract.ViewHolderAbstract{
