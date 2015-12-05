@@ -8,9 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.parse.Parse;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SignUpCallback;
+import com.parse.ParseFacebookUtils;
+import com.facebook.FacebookSdk;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FacebookSdk.sdkInitialize(this);
+
         Parse.initialize(this, getResources().getString(R.string.app_parse_app_id), getResources().getString(R.string.app_parse_app_key));
+        ParseFacebookUtils.initialize(this);
 
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
