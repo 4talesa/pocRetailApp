@@ -15,6 +15,14 @@ def appendVersionName(variant, defaultConfig) {
 }
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'totvs'
+            keyPassword 'one95zero'
+            storeFile file('C:/Users/rond.borges/AndroidStudioProjects/signature.jks')
+            storePassword 'one95zero'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "22.0.1"
     packagingOptions {
