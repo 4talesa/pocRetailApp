@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.FacebookSdk;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -37,6 +38,10 @@ public class SignInActivity extends AppCompatActivity {
         permissions.add("public_profile");
         permissions.add("user_status");
         permissions.add("user_friends");
+        permissions.add("email");
+        permissions.add("user_about_me");
+        permissions.add("user_photos");
+        permissions.add("user_location");
 
         textViewsSignInEmail = (TextView) findViewById(R.id.textViewsSignInEmail);
         textViewsSignInPassword = (TextView) findViewById(R.id.textViewsSignInPassword);

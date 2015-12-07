@@ -105,4 +105,6 @@
     <string name="app_parse_app_id">ZJDcxqIdbJyGRtSlkSXhpj5hA5LE1VC5O2siBrW0</string>
     <string name="app_parse_app_key">b7fBJDoQ1dp07ASO3RQeyxhWyoqUtdFK4e0biBKd</string>
     <string name="app_facebook_app_id">989851321053452</string>
+    <string name="app_estimote_app_id">retailapp-c73</string>
+    <string name="app_estimote_app_token">de8c5a21201bd6f56debc0765d1d5103</string>
 </resources>

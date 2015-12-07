@@ -38,6 +38,10 @@ public class SignUpActivity extends AppCompatActivity {
         permissions.add("public_profile");
         permissions.add("user_status");
         permissions.add("user_friends");
+        permissions.add("email");
+        permissions.add("user_about_me");
+        permissions.add("user_photos");
+        permissions.add("user_location");
 
         textViewsSignUpFullName = (TextView) findViewById(R.id.textViewsSignUpFullName);
         textViewsSignUpEmail = (TextView) findViewById(R.id.textViewsSignUpEmail);

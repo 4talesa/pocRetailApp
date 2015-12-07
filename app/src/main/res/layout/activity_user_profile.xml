@@ -40,6 +40,7 @@
                     android:gravity="left|center"
                     android:layout_weight="1"/>
                 <EditText android:text="@string/app_label_user_name"
+                    android:id="@+id/editTextProfileFullName"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
                     android:layout_weight=".7"/>
@@ -54,6 +55,7 @@
                     android:gravity="left|center"
                     android:layout_weight="1"/>
                 <EditText android:text="@string/app_label_user_address"
+                    android:id="@+id/editTextProfileAddress"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
                     android:layout_weight=".7"/>
@@ -68,6 +70,7 @@
                     android:gravity="left|center"
                     android:layout_weight="1"/>
                 <EditText android:text="@string/app_label_user_phone"
+                    android:id="@+id/editTextProfilePhone"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
                     android:layout_weight=".7"/>
@@ -85,6 +88,7 @@
                     android:gravity="left|center"
                     android:layout_weight="1"/>
                 <EditText android:text="@string/app_label_user_email"
+                    android:id="@+id/editTextProfileEmail"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
                     android:layout_weight=".7"/>
@@ -99,6 +103,7 @@
                     android:gravity="left|center"
                     android:layout_weight="1"/>
                 <EditText android:text="@string/app_label_user_password"
+                    android:id="@+id/editTextProfilePassword"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
                     android:layout_weight=".7"/>
