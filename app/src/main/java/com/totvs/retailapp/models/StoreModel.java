@@ -5,6 +5,8 @@ package com.totvs.retailapp.models;
  */
 public class StoreModel {
 
+    static public String STORE_ID = "storeId";
+
     private String id;
     private String name;
     private String address;

@@ -47,10 +47,14 @@ public class StoreTwoWayViewAdapter extends TwoWayViewAdapterAbstract<StoreModel
                 .fitCenter()
                 .load(model.getUrlPicture());
 
+        v.store_browse_item_thumb.setTag(model.getId());
         v.store_browse_item_thumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(v.getContext(), CategoryBrowseActivity.class);
+
+                it.putExtra(StoreModel.STORE_ID, v.getTag().toString());
+
                 v.getContext().startActivity(it);
             }
         });

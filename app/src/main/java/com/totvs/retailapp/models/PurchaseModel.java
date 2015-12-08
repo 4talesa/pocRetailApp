@@ -7,6 +7,8 @@ import java.util.Date;
  */
 public class PurchaseModel {
 
+    static public String PURCHASE_ID = "purchaseId";
+
     private String id;
     private Date date;
     private String idStore;

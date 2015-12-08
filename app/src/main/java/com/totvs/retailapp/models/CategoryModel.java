@@ -5,6 +5,8 @@ package com.totvs.retailapp.models;
  */
 public class CategoryModel {
 
+    static public String CATEGORY_ID = "categoryId";
+
     private String id;
     private String description;
     private String urlPicture;

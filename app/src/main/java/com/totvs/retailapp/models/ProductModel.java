@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class ProductModel {
 
+    static public String PRODUCT_ID = "productId";
+
     private String id;
     private String description;
     private String idCategory;

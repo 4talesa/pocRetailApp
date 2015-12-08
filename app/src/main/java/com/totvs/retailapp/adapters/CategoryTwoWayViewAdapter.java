@@ -64,10 +64,14 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
         ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(products, R.layout.product_thumb_item, context);
         v.twoWayViewBrowseCategoryList.setAdapter(adapter);
 
+        v.textViewCategoryTitle.setTag(model.getId());
         v.textViewCategoryTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(v.getContext(), ProductBrowseActivity.class);
+
+                it.putExtra(CategoryModel.CATEGORY_ID, v.getTag().toString());
+
                 v.getContext().startActivity(it);
             }
         });

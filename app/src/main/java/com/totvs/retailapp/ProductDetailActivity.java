@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
 import com.totvs.retailapp.models.ProductModel;
@@ -64,6 +65,17 @@ public class ProductDetailActivity extends AppRetailActivity {
         ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(objects, R.layout.product_thumb_item, this);
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewRelatedProduct);
         lvTest.setAdapter(adapter);
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null){
+            if (bundle.containsKey(ProductModel.PRODUCT_ID)) {
+                Toast.makeText(ProductDetailActivity.this, "Product selected: " + bundle.getString(ProductModel.PRODUCT_ID), Toast.LENGTH_LONG).show();
+            }else {
+                Toast.makeText(ProductDetailActivity.this, "Product not selected!", Toast.LENGTH_LONG).show();
+            }
+        }else {
+            Toast.makeText(ProductDetailActivity.this, "Product not selected!", Toast.LENGTH_LONG).show();
+        }
 
     }
 

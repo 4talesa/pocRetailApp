@@ -40,10 +40,14 @@ public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseMod
         purchase_history_total_quantity.setText(String.format("%1$,.2f", model.getTotalQuantity()));
         purchase_history_total_amount.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getTotalAmount()));
 
+        v.setTag(model.getId());
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(v.getContext(), PurchaseDetailActivity.class);
+
+                it.putExtra(PurchaseModel.PURCHASE_ID, v.getTag().toString());
+
                 v.getContext().startActivity(it);
             }
         });

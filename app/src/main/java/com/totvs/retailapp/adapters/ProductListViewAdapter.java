@@ -37,10 +37,14 @@ public class ProductListViewAdapter extends ListViewAdapterAbstract<ProductModel
                 .fitCenter()
                 .load(model.getUrlPicture());
 
+        product_thumb_item_picture.setTag(model.getId());
         product_thumb_item_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(v.getContext(), ProductDetailActivity.class);
+
+                it.putExtra(ProductModel.PRODUCT_ID, v.getTag().toString());
+
                 v.getContext().startActivity(it);
             }
         });
