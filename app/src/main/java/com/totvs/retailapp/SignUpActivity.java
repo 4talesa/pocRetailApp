@@ -68,8 +68,8 @@ public class SignUpActivity extends AppCompatActivity {
                 user.setEmail(textViewsSignUpEmail.getText().toString());
 
                 // other fields can be set just like with ParseObject
-                user.put("phone", "650-555-0000");
-                user.put("FullName", textViewsSignUpFullName.getText().toString());
+                user.put(UserModel.USER_PHONE, "650-555-0000");
+                user.put(UserModel.USER_FULL_NAME, textViewsSignUpFullName.getText().toString());
 
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {

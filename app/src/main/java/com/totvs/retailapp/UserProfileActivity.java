@@ -11,13 +11,9 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.HttpMethod;
 import com.facebook.Profile;
-import com.facebook.ProfileTracker;
 import com.koushikdutta.ion.Ion;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
@@ -25,7 +21,6 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.totvs.retailapp.models.UserModel;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -119,6 +114,8 @@ public class UserProfileActivity extends AppRetailPictureActivity {
                     imageView.setEnabled(false);
                     switchFacebookConnect.setChecked(true);
                     switchFacebookConnect.setEnabled(false);
+                    editTextProfileEmail.setEnabled(false);
+                    editTextProfileFullName.setEnabled(false);
 
                     GraphRequest request = GraphRequest.newMeRequest(
                             AccessToken.getCurrentAccessToken(),
@@ -150,20 +147,60 @@ public class UserProfileActivity extends AppRetailPictureActivity {
                     request.executeAsync();
 
                 }else {
-                    editTextProfileFullName.setText(currentUser.getString("fullName"));
-                    editTextProfilePhone.setText(currentUser.getString("phone"));
+                    editTextProfileFullName.setText(currentUser.getString(UserModel.USER_FULL_NAME));
+                    editTextProfilePhone.setText(currentUser.getString(UserModel.USER_PHONE));
                     editTextProfileEmail.setText(currentUser.getEmail());
-                    editTextProfileAddress.setText(currentUser.getString("address"));
+                    editTextProfileAddress.setText(currentUser.getString(UserModel.USER_ADDRESS));
                     editTextProfilePassword.setText("");
                     editTextProfilePassword.setEnabled(true);
                     imageView.setEnabled(true);
                     switchFacebookConnect.setChecked(false);
                     switchFacebookConnect.setEnabled(true);
+                    editTextProfileEmail.setEnabled(false);
+                    editTextProfileFullName.setEnabled(true);
                 }
             }
         }catch (Exception e) {
             Toast.makeText(UserProfileActivity.this, "currentUser: " + e.toString(), Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        // Save the User updates
+        if (currentUser != null) {
+            if (ParseFacebookUtils.isLinked(currentUser)){
+                currentUser.put(UserModel.USER_FULL_NAME, editTextProfileFullName.getText().toString());
+                currentUser.put(UserModel.USER_PHONE, editTextProfilePhone.getText().toString());
+                currentUser.put(UserModel.USER_ADDRESS, editTextProfileAddress.getText().toString());
+                if(editTextProfilePassword.getText().length()>4 && editTextProfilePassword.isEnabled()) {
+                    currentUser.setPassword(editTextProfilePassword.getText().toString());
+                }
+                currentUser.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                    }
+                });
+            }else{
+                currentUser.put(UserModel.USER_FULL_NAME, editTextProfileFullName.getText().toString());
+                currentUser.put(UserModel.USER_PHONE, editTextProfilePhone.getText().toString());
+                currentUser.put(UserModel.USER_ADDRESS, editTextProfileAddress.getText().toString());
+                if(editTextProfilePassword.getText().length()>4 && editTextProfilePassword.isEnabled()) {
+                    currentUser.setPassword(editTextProfilePassword.getText().toString());
+                }
+                currentUser.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                    }
+                });
+            }
+        }
+
+        super.onBackPressed();
+        finish();
     }
 
 }

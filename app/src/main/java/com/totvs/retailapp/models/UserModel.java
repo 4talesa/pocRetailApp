@@ -8,6 +8,11 @@ import java.util.List;
  */
 public class UserModel {
 
+    static public String USER_FULL_NAME = "fullName";
+    static public String USER_PHONE = "phone";
+    static public String USER_ADDRESS = "address";
+
+
     static public List<String> getPermissions(){
 
         List<String> permissions;
