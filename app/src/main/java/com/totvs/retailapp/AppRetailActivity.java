@@ -266,7 +266,7 @@ public class AppRetailActivity extends AppCompatActivity {
                 try {
                     beaconManager.startRanging(ALL_ESTIMOTE_BEACONS_REGION);
                 } catch (Exception e) {
-                    Log.e("PushNotification", "Cannot start ranging", e);
+                    Log.e(activityName, "Cannot start ranging", e);
                 }
 
                 beaconManager.setRangingListener(new BeaconManager.RangingListener() {
@@ -293,11 +293,11 @@ public class AppRetailActivity extends AppCompatActivity {
         try {
             beaconManager.stopRanging(ALL_ESTIMOTE_BEACONS_REGION);
         } catch (Exception e) {
-            Log.d("Main Activity", "Error while stopping ranging", e);
+            Log.d(activityName, "Error while stopping ranging", e);
         }
     }
 
     private void updateBeaconFound(Beacon beacon){
-        Log.d("Main Activity", "Beacon found: " + beacon.getMacAddress().toString());
+        Log.d(activityName, "Beacon found: " + beacon.getMacAddress().toString());
     }
 }
