@@ -19,6 +19,7 @@ import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+import com.totvs.retailapp.models.UserModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,24 +28,20 @@ public class SignInActivity extends AppCompatActivity {
 
     TextView textViewsSignInEmail;
     TextView textViewsSignInPassword;
-    public List<String> permissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        permissions = new ArrayList<String>();
-        permissions.add("public_profile");
-        permissions.add("user_status");
-        permissions.add("user_friends");
-        permissions.add("email");
-        permissions.add("user_about_me");
-        permissions.add("user_photos");
-        permissions.add("user_location");
+        ParseUser.logOut();
+        ParseUser currentUser = ParseUser.getCurrentUser();
 
         textViewsSignInEmail = (TextView) findViewById(R.id.textViewsSignInEmail);
         textViewsSignInPassword = (TextView) findViewById(R.id.textViewsSignInPassword);
+
+        textViewsSignInEmail.setText("");
+        textViewsSignInPassword.setText("");
 
         Button buttonSignIn = (Button) findViewById(R.id.buttonSignInAct);
         Button buttonSignUp = (Button) findViewById(R.id.buttonOrSignUp);
@@ -89,7 +86,7 @@ public class SignInActivity extends AppCompatActivity {
         buttonFacebookSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignInActivity.this, permissions, new LogInCallback() {
+                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignInActivity.this, UserModel.getPermissions(), new LogInCallback() {
                     @Override
                     public void done(ParseUser user, ParseException err) {
                         if (user == null) {
@@ -113,7 +110,7 @@ public class SignInActivity extends AppCompatActivity {
         imageViewFacebookSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignInActivity.this, permissions, new LogInCallback() {
+                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignInActivity.this, UserModel.getPermissions(), new LogInCallback() {
                     @Override
                     public void done(ParseUser user, ParseException err) {
                         if (user == null) {

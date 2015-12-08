@@ -158,6 +158,13 @@ public class AppRetailActivity extends AppCompatActivity {
             case R.id.menu_sign_out:
                 ParseUser.logOut();
                 ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+                it = new Intent(this, SignInActivity.class);
+                this.startActivity(it);
+                return true;
+
+            case R.id.menu_sign_in:
+                it = new Intent(this, SignInActivity.class);
+                this.startActivity(it);
                 return true;
         }
 
