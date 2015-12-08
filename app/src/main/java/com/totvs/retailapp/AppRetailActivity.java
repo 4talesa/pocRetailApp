@@ -1,16 +1,28 @@
 package com.totvs.retailapp;
 
+import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.estimote.sdk.Beacon;
+import com.estimote.sdk.BeaconManager;
+import com.estimote.sdk.Region;
 import com.facebook.appevents.AppEventsLogger;
 import com.parse.Parse;
 import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by rond.borges on 19/11/2015.
@@ -30,11 +42,31 @@ public class AppRetailActivity extends AppCompatActivity {
 
     protected String activityName = defaultActivity;
 
+    private BeaconManager beaconManager;
+    private static final Region ALL_ESTIMOTE_BEACONS_REGION = new Region("rid", null, null, null);
+    private static final int REQUEST_ENABLE_BT = 1234;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Parse.initialize(this, getResources().getString(R.string.app_parse_app_id), getResources().getString(R.string.app_parse_app_key));
+        beaconManager = new BeaconManager(this);
+
+        //Default values are 5s of scanning and 25s of waiting time to save CPU cycles.
+        beaconManager.setBackgroundScanPeriod(TimeUnit.SECONDS.toMillis(30), 0);
+
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            // Device does not support Bluetooth
+            Toast.makeText(this, "Device does not have Bluetooth Low Energy", Toast.LENGTH_LONG).show();
+        }else{
+            if (!mBluetoothAdapter.isEnabled()) {
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+            }else{
+                connectToService();
+            }
+        }
 
         try{
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -177,6 +209,8 @@ public class AppRetailActivity extends AppCompatActivity {
 
         // Logs 'install' and 'app activate' App Events.
         AppEventsLogger.activateApp(this);
+
+        connectToService();
     }
 
     @Override
@@ -187,4 +221,83 @@ public class AppRetailActivity extends AppCompatActivity {
         AppEventsLogger.deactivateApp(this);
     }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        connectToService();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+
+        // Should be invoked in #onStop.
+        beaconManager.disconnect();
+    }
+
+    @Override
+    protected void onDestroy(){
+        // Destroy beacon manager
+        beaconManager.disconnect();
+
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_ENABLE_BT) {
+            if (resultCode == Activity.RESULT_OK) {
+                connectToService();
+            } else {
+                Toast.makeText(this, "Bluetooth not enabled", Toast.LENGTH_LONG).show();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void connectToService() {
+
+        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+            @Override
+            public void onServiceReady() {
+
+                // Start to discovery beacons in region
+                try {
+                    beaconManager.startRanging(ALL_ESTIMOTE_BEACONS_REGION);
+                } catch (Exception e) {
+                    Log.e("PushNotification", "Cannot start ranging", e);
+                }
+
+                beaconManager.setRangingListener(new BeaconManager.RangingListener() {
+                    @Override
+                    public void onBeaconsDiscovered(Region region, final List<Beacon> rangedBeacons) {
+                        // Run in background, or else will make the app crash
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Beacon foundBeacon = null;
+                                for (Beacon rangedBeacon : rangedBeacons) {
+                                    foundBeacon = rangedBeacon;
+                                    updateBeaconFound(foundBeacon);
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    private void stopBeaconRanging(){
+        try {
+            beaconManager.stopRanging(ALL_ESTIMOTE_BEACONS_REGION);
+        } catch (Exception e) {
+            Log.d("Main Activity", "Error while stopping ranging", e);
+        }
+    }
+
+    private void updateBeaconFound(Beacon beacon){
+        Log.d("Main Activity", "Beacon found: " + beacon.getMacAddress().toString());
+    }
 }
