@@ -73,4 +73,5 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.7.0'
     compile 'com.parse:parsefacebookutils-v4-android:1.10.3@aar'
     compile 'com.estimote:sdk:0.9.4@aar'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
 }

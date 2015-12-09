@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -13,14 +12,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.facebook.appevents.AppEventsLogger;
-import com.parse.Parse;
 import com.parse.ParseUser;
+import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
+import com.totvs.retailapp.helpers.HelperJsonObjectRequest;
 
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -89,8 +96,21 @@ public class AppRetailActivity extends AppCompatActivity {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
 
-                    System.out.println("onQueryTextSubmit: " + query);
+                    Log.d(activityName, "onQueryTextSubmit: " + query);
                     // perform query here
+
+                    String url = "";
+
+                    RequestQueue requestQueue = Volley.newRequestQueue(AppRetailActivity.this);
+
+                    url = "http://beta.json-generator.com/api/json/get/4k20SIgSe";
+                    HelperJsonObjectRequest jsObjRequest = new HelperJsonObjectRequest(Request.Method.POST, url, null, AppRetailActivity.this.createRequestJSONObjectSuccessListener(), AppRetailActivity.this.createRequestErrorListener());
+
+                    url = "http://beta.json-generator.com/api/json/get/NyZwmvxrx";
+                    HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.POST, url, null, AppRetailActivity.this.createRequestJSONArraySuccessListener(), AppRetailActivity.this.createRequestErrorListener());
+
+                    //requestQueue.add(jsObjRequest);
+                    requestQueue.add(jsArrRequest);
                     return true;
 
                 }
@@ -98,7 +118,7 @@ public class AppRetailActivity extends AppCompatActivity {
                 @Override
                 public boolean onQueryTextChange(String newText) {
 
-                    System.out.println("onQueryTextChange: " + newText);
+                    Log.d(activityName, "onQueryTextChange: " + newText);
                     return false;
 
                 }
@@ -111,6 +131,40 @@ public class AppRetailActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public Response.Listener<JSONObject> createRequestJSONObjectSuccessListener() {
+        return new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                // TODO Auto-generated method stub
+                Log.d(activityName, "Response.Listener<JSONObject> " + response.toString());
+            }
+        };
+    }
+
+    public Response.Listener<JSONArray> createRequestJSONArraySuccessListener() {
+        return new Response.Listener<JSONArray>() {
+
+            @Override
+            public void onResponse(JSONArray response) {
+                // TODO Auto-generated method stub
+                Log.d(activityName, "Response.Listener<JSONArray> " + response.toString());
+            }
+        };
+    }
+
+
+    public Response.ErrorListener createRequestErrorListener(){
+        return new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+                Log.d(activityName, "Response.ErrorListener: ", error);
+            }
+        };
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -118,7 +172,7 @@ public class AppRetailActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         Intent it;
 
-        System.out.println("activity: " + this.activityName);
+        Log.d(activityName, "onOptionsItemSelected");
 
         switch (item.getItemId()) {
 
