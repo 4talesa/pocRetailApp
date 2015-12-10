@@ -3,9 +3,10 @@ package com.totvs.retailapp.models;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class CategoryModel extends AppRetailBaseAbstract {
+public class CategoryModel extends AppRetailModelAbstract {
 
     static public String CATEGORY_ID = "categoryId";
+    static public String CATEGORY = "Category";
 
     private String id;
     private String description;
@@ -40,4 +41,5 @@ public class CategoryModel extends AppRetailBaseAbstract {
         this.description    = description;
         this.urlPicture     = urlPicture;
     }
+
 }

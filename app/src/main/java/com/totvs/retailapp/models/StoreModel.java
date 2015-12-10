@@ -3,7 +3,7 @@ package com.totvs.retailapp.models;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class StoreModel extends AppRetailBaseAbstract{
+public class StoreModel extends AppRetailModelAbstract {
 
     static public String STORE_ID = "storeId";
 

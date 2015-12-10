@@ -89,17 +89,16 @@ public class StoreTwoWayViewAdapter extends TwoWayViewAdapterAbstract<StoreModel
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object pos: " + i);
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object data: " + object.toString());
-
-                /*this.objects.add(
-                        new ProductModel(
-                                object.getString("_id")
+                add(
+                        new StoreModel(
+                                object.getString("id")
                                 , object.getString("name")
                                 , object.getString("address")
                                 , "1.5"
                                 , object.getString("pictureurl")
-                        ));*/
+                        )
+                );
+
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
             }

@@ -1,14 +1,12 @@
 package com.totvs.retailapp.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class ProductModel extends AppRetailBaseAbstract {
+public class ProductModel extends AppRetailModelAbstract {
 
     static public String PRODUCT_ID = "productId";
+    static public String PRODUCT = "Product";
 
     private String id;
     private String description;

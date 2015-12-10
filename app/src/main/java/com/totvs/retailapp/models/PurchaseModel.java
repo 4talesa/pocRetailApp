@@ -5,9 +5,10 @@ import java.util.Date;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class PurchaseModel extends AppRetailBaseAbstract {
+public class PurchaseModel extends AppRetailModelAbstract {
 
     static public String PURCHASE_ID = "purchaseId";
+    static public String PURCHASE = "Purchase";
 
     private String id;
     private Date date;
@@ -90,4 +91,5 @@ public class PurchaseModel extends AppRetailBaseAbstract {
         this.totalAmount    = totalAmount;
         this.totalQuantity  = totalQuantity;
     }
+
 }

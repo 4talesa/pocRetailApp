@@ -8,14 +8,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.totvs.retailapp.adapters.PurchaseItemListViewAdapter;
+import com.totvs.retailapp.daos.PurchaseDao;
 import com.totvs.retailapp.models.PurchaseItemModel;
 import com.totvs.retailapp.models.PurchaseModel;
+import com.totvs.retailapp.views.PurchaseView;
 
 import java.util.ArrayList;
 
 public class PurchaseDetailActivity extends AppRetailActivity {
 
-    PurchaseItemListViewAdapter purchaseItemAdapter;
+    protected PurchaseView purchaseView;
+    protected PurchaseDao purchaseDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +27,14 @@ public class PurchaseDetailActivity extends AppRetailActivity {
 
         this.activityName = purchaseDetailActivity;
 
-        TextView textViewDateValue = (TextView) findViewById(R.id.textViewDateValue);
-        textViewDateValue.setText("11/30/2015");
-
-        Button buttonPurchaseDetailAddAllToCart = (Button) findViewById(R.id.buttonPurchaseDetailAddAllToCart);
-
-        ListView listView = (ListView) findViewById(R.id.listViewPurchaseDetail);
-
-        purchaseItemAdapter = new PurchaseItemListViewAdapter(this, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>());
-        listView.setAdapter(purchaseItemAdapter);
+        purchaseView = new PurchaseView(this, this.getWindow().getDecorView().getRootView());
+        purchaseDao = new PurchaseDao(this, purchaseView);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             if (bundle.containsKey(PurchaseModel.PURCHASE_ID)) {
                 Toast.makeText(PurchaseDetailActivity.this, "Purchase selected: " + bundle.getString(PurchaseModel.PURCHASE_ID), Toast.LENGTH_LONG).show();
+                purchaseDao.get(bundle.getString(PurchaseModel.PURCHASE_ID));
             }else {
                 Toast.makeText(PurchaseDetailActivity.this, "Purchase not selected!", Toast.LENGTH_LONG).show();
             }
