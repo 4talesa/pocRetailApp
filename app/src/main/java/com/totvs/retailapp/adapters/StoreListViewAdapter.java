@@ -2,14 +2,23 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.CategoryBrowseActivity;
 import com.totvs.retailapp.R;
+import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.StoreModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -19,7 +28,7 @@ import java.util.ArrayList;
 public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
 
     public StoreListViewAdapter(Context context, int layout, ArrayList<StoreModel> objects){
-        super(context, layout, objects);
+        super(context, layout, objects, "Store");
     }
 
     @Override
@@ -49,4 +58,29 @@ public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
             }
         });
     }
+
+    @Override
+    protected void updateJSONArray(JSONArray response){
+
+        for (int i = 0; i<response.length(); i++){
+            try {
+                JSONObject object = response.getJSONObject(i);
+
+                add(
+                        new StoreModel(
+                                object.getString("id")
+                                , object.getString("name")
+                                , object.getString("address")
+                                , "1.5"
+                                , object.getString("pictureurl")
+                        )
+                );
+
+            } catch (JSONException e) {
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+            }
+        }
+
+    }
+
 }

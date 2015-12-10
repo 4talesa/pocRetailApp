@@ -26,21 +26,7 @@ public class ProductBrowseActivity extends AppRetailActivity {
 
         this.activityName = productBrowseActivity;
 
-        List<ProductModel> objects = new ArrayList<ProductModel>();
-
-        for (int i = 1; i <= 10; i++) {
-            objects.add(
-                    new ProductModel(
-                            String.valueOf(i)
-                            , getResources().getString(R.string.app_label_product)+" "+i
-                            , String.valueOf(i), "http://lorempixel.com/175/175/food/Product/"
-                            , 1.99
-                            , getResources().getString(R.string.app_label_category)+" "+i
-                            , getResources().getString(R.string.app_label_product_preview_unit)
-                    ));
-        }
-
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(objects, R.layout.product_thumb_item, this);
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this);
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseProduct);
         lvTest.setAdapter(adapter);
 

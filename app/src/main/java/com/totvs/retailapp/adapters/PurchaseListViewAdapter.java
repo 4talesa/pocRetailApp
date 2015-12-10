@@ -2,6 +2,7 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,6 +11,10 @@ import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.PurchaseDetailActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.PurchaseModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,7 +26,7 @@ import java.util.ArrayList;
 public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseModel> {
 
     public PurchaseListViewAdapter(Context context, int layout, ArrayList<PurchaseModel> objects){
-        super(context, layout, objects);
+        super(context, layout, objects, "Purchase");
     }
 
     @Override
@@ -53,4 +58,29 @@ public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseMod
         });
 
     }
+    @Override
+    protected void updateJSONArray(JSONArray response){
+
+        for (int i = 0; i<response.length(); i++){
+            try {
+                JSONObject object = response.getJSONObject(i);
+
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> object pos: " + i);
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> object data: " + object.toString());
+
+                /*this.objects.add(
+                        new PurchaseModel(
+                                object.getString("_id")
+                                , object.getString("name")
+                                , object.getString("address")
+                                , "1.5"
+                                , object.getString("pictureurl")
+                        ));*/
+            } catch (JSONException e) {
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+            }
+        }
+
+    }
+
 }

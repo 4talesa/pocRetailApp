@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by rond.borges on 07/12/2015.
  */
-public class UserModel {
+public class UserModel extends AppRetailBaseAbstract {
 
     static public String USER_FULL_NAME = "fullName";
     static public String USER_PHONE = "phone";

@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class PurchaseModel {
+public class PurchaseModel extends AppRetailBaseAbstract {
 
     static public String PURCHASE_ID = "purchaseId";
 

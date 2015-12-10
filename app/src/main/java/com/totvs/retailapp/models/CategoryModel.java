@@ -3,7 +3,7 @@ package com.totvs.retailapp.models;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class CategoryModel {
+public class CategoryModel extends AppRetailBaseAbstract {
 
     static public String CATEGORY_ID = "categoryId";
 

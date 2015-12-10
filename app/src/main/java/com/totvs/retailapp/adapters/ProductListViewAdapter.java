@@ -2,6 +2,7 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,6 +11,11 @@ import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.ProductDetailActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.ProductModel;
+import com.totvs.retailapp.models.StoreModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -19,7 +25,7 @@ import java.util.ArrayList;
 public class ProductListViewAdapter extends ListViewAdapterAbstract<ProductModel> {
 
     public ProductListViewAdapter(Context context, int layout, ArrayList<ProductModel> arrayList) {
-        super(context, layout, arrayList);
+        super(context, layout, arrayList, "Product");
     }
 
     @Override
@@ -49,4 +55,31 @@ public class ProductListViewAdapter extends ListViewAdapterAbstract<ProductModel
             }
         });
     }
+
+    @Override
+    protected void updateJSONArray(JSONArray response){
+
+        for (int i = 0; i<response.length(); i++){
+            try {
+                JSONObject object = response.getJSONObject(i);
+
+                add(
+                        new ProductModel(
+                                object.getString("id")
+                                , object.getString("name")
+                                , "category"
+                                , object.getString("pictureurl")
+                                , 1.99
+                                , object.getString("name")
+                                , "each"
+                        )
+                );
+
+            } catch (JSONException e) {
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+            }
+        }
+
+    }
+
 }

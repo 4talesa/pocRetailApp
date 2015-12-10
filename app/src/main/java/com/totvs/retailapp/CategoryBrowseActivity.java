@@ -24,18 +24,7 @@ public class CategoryBrowseActivity extends AppRetailActivity {
 
         this.activityName = categorytBrowseActivity;
 
-        List<CategoryModel> objects = new ArrayList<CategoryModel>();
-
-        for (int i = 1; i <= 10; i++) {
-            objects.add(
-                    new CategoryModel(
-                            String.valueOf(i)
-                            , getResources().getString(R.string.app_label_category)+" "+i
-                            , "http://lorempixel.com/175/175/food/Product/"
-                    ));
-        }
-
-        CategoryTwoWayViewAdapter adapter = new CategoryTwoWayViewAdapter(objects, R.layout.product_category_list, this);
+        CategoryTwoWayViewAdapter adapter = new CategoryTwoWayViewAdapter(new ArrayList<CategoryModel>(), R.layout.product_category_list, this);
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseCategory);
         lvTest.setAdapter(adapter);
 

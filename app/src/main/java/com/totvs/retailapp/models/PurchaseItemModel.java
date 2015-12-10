@@ -3,7 +3,7 @@ package com.totvs.retailapp.models;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class PurchaseItemModel {
+public class PurchaseItemModel extends AppRetailBaseAbstract {
 
     private String id;
     private String idProduct;

@@ -2,6 +2,7 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,10 @@ import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.RewardModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 /**
@@ -21,7 +26,7 @@ import java.util.List;
 public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardModel, RewardTwoWayViewAdapter.ViewHolder > {
 
     public RewardTwoWayViewAdapter(List<RewardModel> objects, int layout, Context context){
-        super(objects, layout, context);
+        super(objects, layout, context, "Reward");
     }
 
     @Override
@@ -73,6 +78,31 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
             reward_balance_item_amount = (TextView) itemView.findViewById(R.id.reward_balance_item_amount);
             reward_balance_item_picture = (ImageView) itemView.findViewById(R.id.reward_balance_item_picture);
         }
+    }
+
+    @Override
+    protected void updateJSONArray(JSONArray response){
+
+        for (int i = 0; i<response.length(); i++){
+            try {
+                JSONObject object = response.getJSONObject(i);
+
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> object pos: " + i);
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> object data: " + object.toString());
+
+                /*this.objects.add(
+                        new ProductModel(
+                                object.getString("_id")
+                                , object.getString("name")
+                                , object.getString("address")
+                                , "1.5"
+                                , object.getString("pictureurl")
+                        ));*/
+            } catch (JSONException e) {
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+            }
+        }
+
     }
 
 }

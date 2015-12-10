@@ -2,6 +2,7 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,9 @@ import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.CategoryModel;
 import com.totvs.retailapp.models.ProductModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.lucasr.twowayview.widget.TwoWayView;
 
 import java.util.ArrayList;
@@ -25,7 +29,7 @@ import java.util.List;
 public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<CategoryModel, CategoryTwoWayViewAdapter.ViewHolder > {
 
     public CategoryTwoWayViewAdapter(List<CategoryModel> objects, int layout, Context context){
-        super(objects, layout, context);
+        super(objects, layout, context, "Category");
     }
 
     @Override
@@ -46,22 +50,7 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
 
         v.textViewCategoryTitle.setText(model.getDescription());
 
-        List<ProductModel> products = new ArrayList<ProductModel>();
-
-        for (int i = 1; i <= 4; i++) {
-            products.add(
-                    new ProductModel(
-                            String.valueOf(i)
-                            , context.getResources().getString(R.string.app_label_product)+" "+i
-                            , String.valueOf(i)
-                            , "http://lorempixel.com/175/175/food/Product/"
-                            , 1.99
-                            , context.getResources().getString(R.string.app_label_category)+" "+i
-                            , context.getResources().getString(R.string.app_label_product_preview_unit)
-                    ));
-        }
-
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(products, R.layout.product_thumb_item, context);
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context);
         v.twoWayViewBrowseCategoryList.setAdapter(adapter);
 
         v.textViewCategoryTitle.setTag(model.getId());
@@ -89,4 +78,27 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
             textViewCategoryTitle = (TextView) itemView.findViewById(R.id.textViewCategoryTitle);
         }
     }
+
+    @Override
+    protected void updateJSONArray(JSONArray response){
+
+        for (int i = 0; i<response.length(); i++){
+            try {
+                JSONObject object = response.getJSONObject(i);
+
+                add(
+                        new CategoryModel(
+                                object.getString("id")
+                                , object.getString("name")
+                                , object.getString("pictureurl")
+                        )
+                );
+
+            } catch (JSONException e) {
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+            }
+        }
+
+    }
+
 }

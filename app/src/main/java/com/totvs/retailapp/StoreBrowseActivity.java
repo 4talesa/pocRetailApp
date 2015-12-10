@@ -1,10 +1,22 @@
 package com.totvs.retailapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.totvs.retailapp.adapters.StoreListViewAdapter;
+import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
+import com.totvs.retailapp.helpers.HelperJsonObjectRequest;
 import com.totvs.retailapp.models.StoreModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -21,21 +33,9 @@ public class StoreBrowseActivity extends AppRetailActivity {
 
         ListView listView = (ListView) findViewById(R.id.listViewStore);
 
-        ArrayList<StoreModel> objects = new ArrayList<StoreModel>();
-
-        storeAdapter = new StoreListViewAdapter(this, R.layout.store_browse_item, objects);
+        storeAdapter = new StoreListViewAdapter(this, R.layout.store_browse_item, new ArrayList<StoreModel>());
         listView.setAdapter(storeAdapter);
 
-        for (int i = 0; i<10; i++){
-            objects.add(
-                    new StoreModel(
-                            String.valueOf(i)
-                            , getResources().getString(R.string.app_label_store)+" "+i
-                            , getResources().getString(R.string.app_label_address)+" "+i
-                            , "1.5"
-                            , "http://lorempixel.com/325/175/food/Store/"
-                    ));
-        }
     }
 
 }

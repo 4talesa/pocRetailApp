@@ -3,7 +3,7 @@ package com.totvs.retailapp.models;
 /**
  * Created by rond.borges on 02/12/2015.
  */
-public class RewardModel {
+public class RewardModel extends AppRetailBaseAbstract {
 
     private String id;
     private String name;

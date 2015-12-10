@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class ProductModel {
+public class ProductModel extends AppRetailBaseAbstract {
 
     static public String PRODUCT_ID = "productId";
 

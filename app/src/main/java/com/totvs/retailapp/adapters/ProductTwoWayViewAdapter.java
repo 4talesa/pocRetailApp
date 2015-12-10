@@ -2,6 +2,7 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,10 @@ import com.totvs.retailapp.ProductDetailActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.ProductModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 /**
@@ -21,7 +26,7 @@ import java.util.List;
 public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductModel, ProductTwoWayViewAdapter.ViewHolder > {
 
     public ProductTwoWayViewAdapter(List<ProductModel> objects, int layout, Context context){
-        super(objects, layout, context);
+        super(objects, layout, context, "Product");
     }
 
     @Override
@@ -75,5 +80,32 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
             product_thumb_item_picture = (ImageView) itemView.findViewById(R.id.product_thumb_item_picture);
         }
     }
+
+    @Override
+    protected void updateJSONArray(JSONArray response){
+
+        for (int i = 0; i<response.length(); i++){
+            try {
+                JSONObject object = response.getJSONObject(i);
+
+                add(
+                        new ProductModel(
+                                object.getString("id")
+                                , object.getString("name")
+                                , "category"
+                                , object.getString("pictureurl")
+                                , 1.99
+                                , object.getString("name")
+                                , "each"
+                        )
+                );
+
+            } catch (JSONException e) {
+                Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+            }
+        }
+
+    }
+
 }
 
