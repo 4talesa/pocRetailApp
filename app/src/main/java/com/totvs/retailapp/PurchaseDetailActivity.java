@@ -31,13 +31,8 @@ public class PurchaseDetailActivity extends AppRetailActivity {
 
         ListView listView = (ListView) findViewById(R.id.listViewPurchaseDetail);
 
-        ArrayList<PurchaseItemModel> arrayOfStores = new ArrayList<PurchaseItemModel>();
-        purchaseItemAdapter = new PurchaseItemListViewAdapter(this, R.layout.purchase_detail_item, arrayOfStores);
+        purchaseItemAdapter = new PurchaseItemListViewAdapter(this, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>());
         listView.setAdapter(purchaseItemAdapter);
-
-        for (int i = 0; i<10; i++){
-            arrayOfStores.add(new PurchaseItemModel(String.valueOf(i), String.valueOf(i), String.valueOf(i), "product "+i, "each", 4.5, 9.00, "http://lorempixel.com/325/175/food/Store/", "Ice Cream", "Haagen Daz", 2.00));
-        }
 
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){

@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by rond.borges on 23/11/2015.
@@ -65,17 +66,20 @@ public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseMod
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object pos: " + i);
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object data: " + object.toString());
-
-                /*this.objects.add(
+                add(
                         new PurchaseModel(
-                                object.getString("_id")
-                                , object.getString("name")
-                                , object.getString("address")
-                                , "1.5"
-                                , object.getString("pictureurl")
-                        ));*/
+                                object.getString("id")
+                                , new Date()
+                                , object.getString("idstore")
+                                , object.getString("iduser")
+                                , context.getResources().getString(R.string.app_label_store)+" "+object.getString("idstore")
+                                , context.getResources().getString(R.string.app_label_user)+" "+object.getString("iduser")
+                                , context.getResources().getString(R.string.app_label_address)+" "+object.getString("idstore")
+                                , 115.75
+                                , 11.00
+                        )
+                );
+
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
             }

@@ -62,17 +62,21 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object pos: " + i);
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object data: " + object.toString());
-
-                /*this.objects.add(
+                add(
                         new PurchaseItemModel(
-                                object.getString("_id")
-                                , object.getString("name")
-                                , object.getString("address")
-                                , "1.5"
-                                , object.getString("pictureurl")
-                        ));*/
+                                object.getString("id")
+                                , object.getString("idproduct")
+                                , object.getString("idpurchase")
+                                , context.getResources().getString(R.string.app_label_product)+object.getString("idproduct")
+                                , context.getResources().getString(R.string.app_label_product_preview_unit)
+                                , 4.5
+                                , 9.00
+                                , "http://lorempixel.com/325/175/food/PurchaseItem/"
+                                , "Ice Cream"
+                                , "Haagen Daz"
+                                , 2.00)
+                );
+
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
             }
