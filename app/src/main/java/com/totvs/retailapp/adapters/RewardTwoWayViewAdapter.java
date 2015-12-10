@@ -87,17 +87,17 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object pos: " + i);
-                Log.d("updateJSONArray", "Response.Listener<JSONArray> object data: " + object.toString());
-
-                /*this.objects.add(
-                        new ProductModel(
-                                object.getString("_id")
+                add(
+                        new RewardModel(
+                                object.getString("id")
                                 , object.getString("name")
-                                , object.getString("address")
-                                , "1.5"
+                                , object.getString("detail")
+                                , (object.getDouble("amount") <= 10 ? context.getResources().getString(R.string.app_label_available) : context.getResources().getString(R.string.app_label_unavailable))
+                                , object.getDouble("amount")
                                 , object.getString("pictureurl")
-                        ));*/
+                        )
+                );
+
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
             }

@@ -20,24 +20,7 @@ public class RewardBalanceActivity extends AppRetailActivity {
 
         this.activityName = rewardBalanceActivity;
 
-        List<RewardModel> objects = new ArrayList<RewardModel>();
-
-        for (int i = 1; i <= 10; i++) {
-
-            Double rewardAmount = 1 + (Math.random() * 100);
-
-            objects.add(
-                    new RewardModel(
-                            String.valueOf(i)
-                            , getResources().getString(R.string.app_label_reward)+" "+i
-                            , getResources().getString(R.string.app_label_reward_description)
-                            , (rewardAmount < 50 ? getResources().getString(R.string.app_label_available) : getResources().getString(R.string.app_label_unavailable))
-                            , rewardAmount
-                            , "http://lorempixel.com/175/175/food/Product/"
-                    ));
-        }
-
-        RewardTwoWayViewAdapter adapter = new RewardTwoWayViewAdapter(objects, R.layout.reward_balance_item, this);
+        RewardTwoWayViewAdapter adapter = new RewardTwoWayViewAdapter(new ArrayList<RewardModel>(), R.layout.reward_balance_item, this);
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewPurchaseDetail);
         lvTest.setAdapter(adapter);
     }
