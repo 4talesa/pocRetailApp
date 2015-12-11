@@ -10,7 +10,6 @@ import org.json.JSONObject;
  */
 public class PurchaseItemModel extends AppRetailModelAbstract {
 
-    private String id;
     @SerializedName("idproduct") private String idProduct;
     @SerializedName("idpurchase") private String idPurchase;
     private String description;
@@ -21,14 +20,6 @@ public class PurchaseItemModel extends AppRetailModelAbstract {
     private String category;
     private String brand;
     private Double quantity;
-
-    public String getId(){
-        return this.id;
-    }
-
-    public void setId(String id){
-        this.id = id;
-    }
 
     public String getIdProduct(){
         return this.idProduct;

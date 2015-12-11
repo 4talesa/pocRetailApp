@@ -6,10 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.ProductBrowseActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.CategoryModel;
@@ -48,7 +46,7 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
     @Override
     public void populateView(CategoryTwoWayViewAdapter.ViewHolder v, CategoryModel model) {
 
-        v.textViewCategoryTitle.setText(model.getDescription());
+        v.textViewCategoryTitle.setText(model.getName());
 
         ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context);
         v.twoWayViewBrowseCategoryList.setAdapter(adapter);

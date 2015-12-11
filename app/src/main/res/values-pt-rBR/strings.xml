@@ -35,7 +35,7 @@
     <string name="app_label_browse_store_msg">Veja o que está acontecendo na cidade hoje.
                                               Você pode ganhar um prêmio.</string>
     <string name="app_label_browse_store_choose_store">Escolha uma loja em</string>
-    <string name="app_label_browse_store_choose_store_zip">74810-100</string>
+    <string name="app_label_browse_store_choose_store_zip">74810100</string>
     <string name="app_label_browse_store_change_zip">Trocar CEP</string>
     <string name="app_label_browse_category_title">Dia especial - loja</string>
     <string name="app_label_browse_category_msg">Veja o que está acontecendo na loja hoje.

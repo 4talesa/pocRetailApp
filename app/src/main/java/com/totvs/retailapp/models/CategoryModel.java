@@ -13,24 +13,16 @@ public class CategoryModel extends AppRetailModelAbstract {
     static public String CATEGORY_ID = "categoryId";
     static public String CATEGORY = "Category";
 
-    private String id;
-    private String description;
+    private String name;
+    private String detail;
     @SerializedName("pictureurl") private String pictureUrl;
 
-    public String getId(){
-        return this.id;
+    public String getName(){
+        return this.name;
     }
 
-    public void setId(String id){
-        this.id = id;
-    }
-
-    public String getDescription(){
-        return this.description;
-    }
-
-    public void setDescription(String description){
-        this.description= description;
+    public void setName(String name){
+        this.name = name;
     }
 
     public String getPictureUrl(){
@@ -41,10 +33,19 @@ public class CategoryModel extends AppRetailModelAbstract {
         this.pictureUrl = pictureUrl;
     }
 
-    public CategoryModel(String id, String description, String pictureUrl){
+    public String getDetail(){
+        return detail;
+    }
+
+    public void setDetail(String detail){
+        this.detail = detail;
+    }
+
+    public CategoryModel(String id, String name, String pictureUrl, String detail){
         this.id             = id;
-        this.description    = description;
-        this.pictureUrl = pictureUrl;
+        this.name           = name;
+        this.pictureUrl     = pictureUrl;
+        this.detail         = detail;
     }
 
     static public CategoryModel fromJson(JSONObject object) {

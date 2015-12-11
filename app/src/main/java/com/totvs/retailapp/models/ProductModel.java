@@ -13,7 +13,6 @@ public class ProductModel extends AppRetailModelAbstract {
     static public String PRODUCT_ID = "productId";
     static public String PRODUCT = "Product";
 
-    private String id;
     private String name;
     private String detail;
     @SerializedName("idcategory") private String idCategory;
@@ -21,14 +20,6 @@ public class ProductModel extends AppRetailModelAbstract {
     private Double value;
     private String category;
     private String unit;
-
-    public String getId(){
-        return this.id;
-    }
-
-    public void setId(String id){
-        this.id = id;
-    }
 
     public String getName() {
         return name;

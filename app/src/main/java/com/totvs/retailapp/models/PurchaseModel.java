@@ -14,7 +14,6 @@ public class PurchaseModel extends AppRetailModelAbstract {
     static public String PURCHASE_ID = "purchaseId";
     static public String PURCHASE = "Purchase";
 
-    private String id;
     private Date date;
     private String idStore;
     private String idUser;
@@ -23,14 +22,6 @@ public class PurchaseModel extends AppRetailModelAbstract {
     private String storeAddress;
     private Double totalAmount;
     private Double totalQuantity;
-
-    public String getId(){
-        return this.id;
-    }
-
-    public void setId(String id){
-        this.id = id;
-    }
 
     public Date getDate(){
         return this.date;
