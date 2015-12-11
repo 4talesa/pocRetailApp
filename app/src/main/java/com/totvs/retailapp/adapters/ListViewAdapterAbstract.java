@@ -28,11 +28,19 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
 
     protected int layout;
     protected Context context;
+    protected String filterField;
+    protected String filterValue;
 
     public ListViewAdapterAbstract(Context context, int layout, ArrayList<T> arrayList, String className){
+        this(context, layout, arrayList, className, "", "");
+    }
+
+    public ListViewAdapterAbstract(Context context, int layout, ArrayList<T> arrayList, String className, String filterField, String filterValue){
         super(context, 0, arrayList);
         this.layout = layout;
         this.context = context;
+        this.filterField = filterField;
+        this.filterValue = filterValue;
         searchData(className);
     }
 
@@ -58,6 +66,9 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         url = "http://protected-bayou-8222.herokuapp.com/api/v1/"+className+"/";
+        if (filterField.length() > 0 && filterValue.length() > 0){
+            url += filterField + "/" + filterValue;
+        }
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, createRequestJSONArraySuccessListener(), createRequestErrorListener());
 
         requestQueue.add(jsArrRequest);

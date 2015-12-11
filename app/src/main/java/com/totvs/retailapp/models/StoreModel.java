@@ -11,12 +11,14 @@ import org.json.JSONObject;
 public class StoreModel extends AppRetailModelAbstract {
 
     static public String STORE_ID = "storeId";
+    static public String POSTAL_CODE = "PostalCode";
 
     private String id;
     private String name;
     private String address;
     private String distance;
     @SerializedName("pictureurl") private String pictureUrl;
+    @SerializedName("postalcode") private String postalCode;
 
     public String getId(){
         return this.id;
@@ -58,12 +60,21 @@ public class StoreModel extends AppRetailModelAbstract {
         this.pictureUrl = pictureUrl;
     }
 
-    public StoreModel(String id, String name, String address, String distance, String pictureUrl){
+    public String getPostalCode(){
+        return this.postalCode;
+    }
+
+    public void setPostalCode(String postalCode){
+        this.postalCode = postalCode;
+    }
+
+    public StoreModel(String id, String name, String address, String distance, String pictureUrl, String postalCode){
         this.id             = id;
         this.name           = name;
         this.address        = address;
         this.distance       = distance;
-        this.pictureUrl = pictureUrl;
+        this.pictureUrl     = pictureUrl;
+        this.postalCode     = postalCode;
     }
 
     static public StoreModel fromJson(JSONObject object) {

@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -28,6 +31,10 @@ public class SignUpActivity extends AppCompatActivity {
     TextView textViewsSignUpFullName;
     TextView textViewsSignUpEmail;
     TextView textViewsSignUpPassword;
+    Button buttonSignIn;
+    Button buttonSignUp;
+    Button buttonFacebookSignUp;
+    ImageButton imageViewFacebookSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +52,67 @@ public class SignUpActivity extends AppCompatActivity {
         textViewsSignUpEmail.setText("");
         textViewsSignUpPassword.setText("");
 
-        Button buttonSignIn = (Button) findViewById(R.id.buttonOrSignIn);
-        Button buttonSignUp = (Button) findViewById(R.id.buttonSignUpAct);
-        Button buttonFacebookSignUp = (Button) findViewById(R.id.buttonFacebookSignUp);
-        ImageButton imageViewFacebookSignUp = (ImageButton) findViewById(R.id.imageViewFacebookSignUp);
+        buttonSignIn = (Button) findViewById(R.id.buttonOrSignIn);
+        buttonSignUp = (Button) findViewById(R.id.buttonSignUpAct);
+        buttonFacebookSignUp = (Button) findViewById(R.id.buttonFacebookSignUp);
+        imageViewFacebookSignUp = (ImageButton) findViewById(R.id.imageViewFacebookSignUp);
 
-        buttonSignIn.setOnClickListener(new View.OnClickListener() {
+        buttonSignIn.setOnClickListener(getOnSignInClick());
+
+        buttonSignUp.setOnClickListener(getOnSignUpClick());
+
+        buttonFacebookSignUp.setOnClickListener(getOnFacebookClick());
+
+        imageViewFacebookSignUp.setOnClickListener(getOnFacebookClick());
+
+        textViewsSignUpPassword.setOnKeyListener(getOnKeyListener());
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent it = new Intent(SignUpActivity.this, WelcomeActivity.class);
+        SignUpActivity.this.startActivity(it);
+
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ParseFacebookUtils.onActivityResult(requestCode, resultCode, data);
+    }
+
+    protected View.OnClickListener getOnFacebookClick(){
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(v.getContext(), SignInActivity.class);
+                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignUpActivity.this, UserModel.getPermissions(), new LogInCallback() {
+                    @Override
+                    public void done(ParseUser user, ParseException err) {
+                        if (user == null) {
+                            Log.d("MyApp", "Uh oh. The user cancelled the Facebook login.");
+                        } else if (user.isNew()) {
+                            Log.d("MyApp", "User signed up and logged in through Facebook!");
+                            Intent it = new Intent(SignUpActivity.this, StoreBrowseActivity.class);
 
-                v.getContext().startActivity(it);
+                            SignUpActivity.this.startActivity(it);
+                        } else {
+                            Log.d("MyApp", "User logged in through Facebook!");
+                            Intent it = new Intent(SignUpActivity.this, StoreBrowseActivity.class);
+
+                            SignUpActivity.this.startActivity(it);
+                        }
+                    }
+                });
             }
-        });
+        };
+    }
 
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+    protected View.OnClickListener getOnSignUpClick(){
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ParseUser user = new ParseUser();
@@ -92,70 +145,36 @@ public class SignUpActivity extends AppCompatActivity {
                 });
 
             }
-        });
+        };
+    }
 
-        buttonFacebookSignUp.setOnClickListener(new View.OnClickListener() {
+    protected View.OnClickListener getOnSignInClick(){
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignUpActivity.this, UserModel.getPermissions(), new LogInCallback() {
-                    @Override
-                    public void done(ParseUser user, ParseException err) {
-                        if (user == null) {
-                            Log.d("MyApp", "Uh oh. The user cancelled the Facebook login.");
-                        } else if (user.isNew()) {
-                            Log.d("MyApp", "User signed up and logged in through Facebook!");
-                            Intent it = new Intent(SignUpActivity.this, StoreBrowseActivity.class);
+                Intent it = new Intent(v.getContext(), SignInActivity.class);
 
-                            SignUpActivity.this.startActivity(it);
-                        } else {
-                            Log.d("MyApp", "User logged in through Facebook!");
-                            Intent it = new Intent(SignUpActivity.this, StoreBrowseActivity.class);
-
-                            SignUpActivity.this.startActivity(it);
-                        }
-                    }
-                });
+                v.getContext().startActivity(it);
             }
-        });
+        };
+    }
 
-        imageViewFacebookSignUp.setOnClickListener(new View.OnClickListener(){
+    protected View.OnKeyListener getOnKeyListener(){
+        return new View.OnKeyListener() {
             @Override
-            public void onClick(View v){
-                ParseFacebookUtils.logInWithReadPermissionsInBackground(SignUpActivity.this, UserModel.getPermissions(), new LogInCallback() {
-                    @Override
-                    public void done(ParseUser user, ParseException err) {
-                        if (user == null) {
-                            Log.d("MyApp", "Uh oh. The user cancelled the Facebook login.");
-                        } else if (user.isNew()) {
-                            Log.d("MyApp", "User signed up and logged in through Facebook!");
-                            Intent it = new Intent(SignUpActivity.this, StoreBrowseActivity.class);
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
 
-                            SignUpActivity.this.startActivity(it);
-                        } else {
-                            Log.d("MyApp", "User logged in through Facebook!");
-                            Intent it = new Intent(SignUpActivity.this, StoreBrowseActivity.class);
+                    buttonSignUp.performClick();
 
-                            SignUpActivity.this.startActivity(it);
-                        }
-                    }
-                });
+                    return true;
+                }
+                return false;
             }
-        });
+        };
     }
 
-    @Override
-    public void onBackPressed() {
-
-        Intent it = new Intent(SignUpActivity.this, WelcomeActivity.class);
-        SignUpActivity.this.startActivity(it);
-
-        super.onBackPressed();
-        finish();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        ParseFacebookUtils.onActivityResult(requestCode, resultCode, data);
-    }
 }

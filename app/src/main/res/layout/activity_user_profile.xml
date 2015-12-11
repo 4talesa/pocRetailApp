@@ -43,7 +43,8 @@
                     android:id="@+id/editTextProfileFullName"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight=".7"/>
+                    android:layout_weight=".7"
+                    android:singleLine="true"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -58,7 +59,8 @@
                     android:id="@+id/editTextProfileAddress"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight=".7"/>
+                    android:layout_weight=".7"
+                    android:singleLine="true"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -73,7 +75,8 @@
                     android:id="@+id/editTextProfilePhone"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight=".7"/>
+                    android:layout_weight=".7"
+                    android:singleLine="true"/>
             </LinearLayout>
             <LinearLayout
                 style="@style/linearLayoutSplliter">
@@ -91,7 +94,8 @@
                     android:id="@+id/editTextProfileEmail"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight=".7"/>
+                    android:layout_weight=".7"
+                    android:singleLine="true"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -106,7 +110,8 @@
                     android:id="@+id/editTextProfilePassword"
                     style="@style/smallLabelLight"
                     android:gravity="right|center"
-                    android:layout_weight=".7"/>
+                    android:layout_weight=".7"
+                    android:singleLine="true"/>
             </LinearLayout>
             <LinearLayout
                 style="@style/linearLayoutSplliter">

@@ -34,7 +34,8 @@
     <string name="app_label_browse_store_title">Special Day - City</string>
     <string name="app_label_browse_store_msg">Check what is happening in your city today.
                                               You can win a price here.</string>
-    <string name="app_label_browse_store_choose_store">Choose a store in 94041</string>
+    <string name="app_label_browse_store_choose_store">Choose a store in</string>
+    <string name="app_label_browse_store_choose_store_zip">94041</string>
     <string name="app_label_browse_store_change_zip">Change ZIP</string>
     <string name="app_label_browse_category_title">Special Day - Store</string>
     <string name="app_label_browse_category_msg">Check what is happening in this store today.
