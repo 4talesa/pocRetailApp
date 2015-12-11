@@ -1,5 +1,9 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +15,6 @@ public class UserModel extends AppRetailModelAbstract {
     static public String USER_FULL_NAME = "fullName";
     static public String USER_PHONE = "phone";
     static public String USER_ADDRESS = "address";
-
 
     static public List<String> getPermissions(){
 
@@ -32,6 +35,12 @@ public class UserModel extends AppRetailModelAbstract {
 
     UserModel(){
 
+    }
+
+    static public UserModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), UserModel.class);
     }
 
 }

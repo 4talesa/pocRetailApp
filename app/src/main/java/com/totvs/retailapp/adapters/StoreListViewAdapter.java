@@ -7,13 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.CategoryBrowseActivity;
 import com.totvs.retailapp.R;
-import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.StoreModel;
 
 import org.json.JSONArray;
@@ -44,7 +40,7 @@ public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
         store_browse_item_store_distance.setText(model.getDistance());
         Ion.with(store_browse_item_thumb)
                 .fitCenter()
-                .load(model.getUrlPicture());
+                .load(model.getPictureUrl());
 
         store_browse_item_thumb.setTag(model.getId());
         store_browse_item_thumb.setOnClickListener(new View.OnClickListener() {
@@ -66,15 +62,7 @@ public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new StoreModel(
-                                object.getString("id")
-                                , object.getString("name")
-                                , object.getString("address")
-                                , "1.5"
-                                , object.getString("pictureurl")
-                        )
-                );
+                add(StoreModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

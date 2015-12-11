@@ -2,7 +2,6 @@ package com.totvs.retailapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,7 +49,7 @@ public class StoreTwoWayViewAdapter extends TwoWayViewAdapterAbstract<StoreModel
         v.store_browse_item_store_distance.setText(model.getDistance());
         Ion.with(v.store_browse_item_thumb)
                 .fitCenter()
-                .load(model.getUrlPicture());
+                .load(model.getPictureUrl());
 
         v.store_browse_item_thumb.setTag(model.getId());
         v.store_browse_item_thumb.setOnClickListener(new View.OnClickListener() {
@@ -89,15 +88,7 @@ public class StoreTwoWayViewAdapter extends TwoWayViewAdapterAbstract<StoreModel
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new StoreModel(
-                                object.getString("id")
-                                , object.getString("name")
-                                , object.getString("address")
-                                , "1.5"
-                                , object.getString("pictureurl")
-                        )
-                );
+                add(StoreModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

@@ -1,5 +1,10 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
+
 /**
  * Created by rond.borges on 23/11/2015.
  */
@@ -9,9 +14,10 @@ public class ProductModel extends AppRetailModelAbstract {
     static public String PRODUCT = "Product";
 
     private String id;
-    private String description;
-    private String idCategory;
-    private String urlPicture;
+    private String name;
+    private String detail;
+    @SerializedName("idcategory") private String idCategory;
+    @SerializedName("pictureurl") private String pictureUrl;
     private Double value;
     private String category;
     private String unit;
@@ -24,12 +30,20 @@ public class ProductModel extends AppRetailModelAbstract {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail){
+        this.detail = detail;
     }
 
     public String getIdCategory() {
@@ -40,12 +54,12 @@ public class ProductModel extends AppRetailModelAbstract {
         this.idCategory = idCategory;
     }
 
-    public String getUrlPicture() {
-        return urlPicture;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public void setUrlPicture(String urlPicture) {
-        this.urlPicture = urlPicture;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public Double getValue(){
@@ -72,14 +86,21 @@ public class ProductModel extends AppRetailModelAbstract {
         this.unit = unit;
     }
 
-    public ProductModel(String id, String description, String idCategory, String urlPicture, Double value, String category, String unit){
+    public ProductModel(String id, String name, String detail, String idCategory, String pictureUrl, Double value, String category, String unit){
         this.id             = id;
-        this.description    = description;
+        this.name           = name;
+        this.detail         = detail;
         this.idCategory     = idCategory;
-        this.urlPicture     = urlPicture;
+        this.pictureUrl     = pictureUrl;
         this.value          = value;
         this.category       = category;
         this.unit           = unit;
+    }
+
+    static public ProductModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), ProductModel.class);
     }
 
 }

@@ -74,5 +74,5 @@ dependencies {
     compile 'com.parse:parsefacebookutils-v4-android:1.10.3@aar'
     compile 'com.estimote:sdk:0.9.4@aar'
     compile 'com.mcxiaoke.volley:library:1.0.19'
-    //compile 'com.fasterxml:jackson-module-json-org:0.9.1'
+    compile 'com.google.code.gson:gson:2.5'
 }

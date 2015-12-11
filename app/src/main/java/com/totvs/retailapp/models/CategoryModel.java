@@ -1,5 +1,10 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
+
 /**
  * Created by rond.borges on 23/11/2015.
  */
@@ -10,7 +15,7 @@ public class CategoryModel extends AppRetailModelAbstract {
 
     private String id;
     private String description;
-    private String urlPicture;
+    @SerializedName("pictureurl") private String pictureUrl;
 
     public String getId(){
         return this.id;
@@ -28,18 +33,24 @@ public class CategoryModel extends AppRetailModelAbstract {
         this.description= description;
     }
 
-    public String getUrlPicture(){
-        return this.urlPicture;
+    public String getPictureUrl(){
+        return this.pictureUrl;
     }
 
-    public void setUrlPicture(String urlPicture){
-        this.urlPicture = urlPicture;
+    public void setPictureUrl(String pictureUrl){
+        this.pictureUrl = pictureUrl;
     }
 
-    public CategoryModel(String id, String description, String urlPicture){
+    public CategoryModel(String id, String description, String pictureUrl){
         this.id             = id;
         this.description    = description;
-        this.urlPicture     = urlPicture;
+        this.pictureUrl = pictureUrl;
+    }
+
+    static public CategoryModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), CategoryModel.class);
     }
 
 }

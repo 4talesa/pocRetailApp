@@ -53,13 +53,13 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
         buttonProductDetailArrowLeft.setEnabled(false);
         buttonProductDetailArrowRight.setEnabled(false);
 
-        labelProductDetailName.setText(model.getDescription());
+        labelProductDetailName.setText(model.getName());
         labelProductDetailUnit.setText(model.getUnit());
         labelProductDetailPrice.setText(context.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getValue()));
 
         Ion.with(imageViewProductDetail)
                 .fitCenter()
-                .load(model.getUrlPicture());
+                .load(model.getPictureUrl());
 
         buttonProductDetailMinus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,18 +103,7 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                ProductModel model =
-                        new ProductModel(
-                                object.getString("id")
-                                , object.getString("name")
-                                , context.getResources().getString(R.string.app_label_category)
-                                , object.getString("pictureurl")
-                                , 1.99
-                                , object.getString("name")
-                                , context.getResources().getString(R.string.app_label_product_preview_unit)
-                        );
-
-                populateView(model);
+                populateView(ProductModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

@@ -44,12 +44,12 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
 
     @Override
     public void populateView(ProductTwoWayViewAdapter.ViewHolder v, ProductModel model) {
-        v.product_thumb_item_description.setText(model.getDescription());
+        v.product_thumb_item_description.setText(model.getName());
         v.product_thumb_item_category.setText(model.getCategory());
         v.product_thumb_item_value.setText(context.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getValue()));
         Ion.with(v.product_thumb_item_picture)
                 .fitCenter()
-                .load(model.getUrlPicture());
+                .load(model.getPictureUrl());
 
         v.product_thumb_item_picture.setTag(model.getId());
         v.product_thumb_item_picture.setOnClickListener(new View.OnClickListener() {
@@ -88,17 +88,7 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new ProductModel(
-                                object.getString("id")
-                                , object.getString("name")
-                                , "category"
-                                , object.getString("pictureurl")
-                                , 1.99
-                                , object.getString("name")
-                                , "each"
-                        )
-                );
+                add(ProductModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

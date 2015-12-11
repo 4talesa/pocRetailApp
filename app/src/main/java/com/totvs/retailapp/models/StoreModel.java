@@ -1,5 +1,10 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
+
 /**
  * Created by rond.borges on 23/11/2015.
  */
@@ -11,7 +16,7 @@ public class StoreModel extends AppRetailModelAbstract {
     private String name;
     private String address;
     private String distance;
-    private String urlPicture;
+    @SerializedName("pictureurl") private String pictureUrl;
 
     public String getId(){
         return this.id;
@@ -45,20 +50,26 @@ public class StoreModel extends AppRetailModelAbstract {
         this.distance = distance;
     }
 
-    public String getUrlPicture() {
-        return urlPicture;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public void setUrlPicture(String urlPicture) {
-        this.urlPicture = urlPicture;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
-    public StoreModel(String id, String name, String address, String distance, String urlPicture){
+    public StoreModel(String id, String name, String address, String distance, String pictureUrl){
         this.id             = id;
         this.name           = name;
         this.address        = address;
         this.distance       = distance;
-        this.urlPicture     = urlPicture;
+        this.pictureUrl = pictureUrl;
+    }
+
+    static public StoreModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), StoreModel.class);
     }
 
 }

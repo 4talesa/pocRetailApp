@@ -1,5 +1,10 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
+
 /**
  * Created by rond.borges on 02/12/2015.
  */
@@ -10,7 +15,7 @@ public class RewardModel extends AppRetailModelAbstract {
     private String description;
     private String status;
     private Double amount;
-    private String urlPicture;
+    @SerializedName("pictureurl") private String pictureUrl;
 
     public String getId(){
         return this.id;
@@ -48,21 +53,27 @@ public class RewardModel extends AppRetailModelAbstract {
         this.amount = amount;
     }
 
-    public String getUrlPicture() {
-        return urlPicture;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public void setUrlPicture(String urlPicture) {
-        this.urlPicture = urlPicture;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
-    public RewardModel(String id, String name, String description, String status, Double amount, String urlPicture){
+    public RewardModel(String id, String name, String description, String status, Double amount, String pictureUrl){
         this.id             = id;
         this.name           = name;
         this.description    = description;
         this.amount         = amount;
-        this.urlPicture     = urlPicture;
+        this.pictureUrl = pictureUrl;
         this.status         = status;
+    }
+
+    static public RewardModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), RewardModel.class);
     }
 
 }

@@ -66,19 +66,7 @@ public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseMod
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new PurchaseModel(
-                                object.getString("id")
-                                , new Date()
-                                , object.getString("idstore")
-                                , object.getString("iduser")
-                                , context.getResources().getString(R.string.app_label_store)+" "+object.getString("idstore")
-                                , context.getResources().getString(R.string.app_label_user)+" "+object.getString("iduser")
-                                , context.getResources().getString(R.string.app_label_address)+" "+object.getString("idstore")
-                                , 115.75
-                                , 11.00
-                        )
-                );
+                add(PurchaseModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

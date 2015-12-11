@@ -1,5 +1,9 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
 import java.util.Date;
 
 /**
@@ -90,6 +94,12 @@ public class PurchaseModel extends AppRetailModelAbstract {
         this.storeAddress   = storeAddress;
         this.totalAmount    = totalAmount;
         this.totalQuantity  = totalQuantity;
+    }
+
+    static public PurchaseModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), PurchaseModel.class);
     }
 
 }

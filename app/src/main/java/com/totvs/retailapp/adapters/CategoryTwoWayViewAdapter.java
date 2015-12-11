@@ -86,13 +86,7 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new CategoryModel(
-                                object.getString("id")
-                                , object.getString("name")
-                                , object.getString("pictureurl")
-                        )
-                );
+                add(CategoryModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

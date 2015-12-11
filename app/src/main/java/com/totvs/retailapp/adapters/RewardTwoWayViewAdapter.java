@@ -58,7 +58,7 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
         v.reward_balance_item_amount.setText(String.format("%1$,.2f", model.getAmount()));
         Ion.with(v.reward_balance_item_picture)
                 .fitCenter()
-                .load(model.getUrlPicture());
+                .load(model.getPictureUrl());
     }
 
     public class ViewHolder extends TwoWayViewAdapterAbstract.ViewHolderAbstract{
@@ -87,16 +87,7 @@ public class RewardTwoWayViewAdapter extends TwoWayViewAdapterAbstract<RewardMod
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new RewardModel(
-                                object.getString("id")
-                                , object.getString("name")
-                                , object.getString("detail")
-                                , (object.getDouble("amount") <= 10 ? context.getResources().getString(R.string.app_label_available) : context.getResources().getString(R.string.app_label_unavailable))
-                                , object.getDouble("amount")
-                                , object.getString("pictureurl")
-                        )
-                );
+                add(RewardModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

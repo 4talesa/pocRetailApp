@@ -51,7 +51,7 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
 
         Ion.with(purchase_detail_item_picture)
                 .fitCenter()
-                .load(model.getUrlPicture());
+                .load(model.getPictureUrl());
 
     }
 
@@ -62,20 +62,7 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                add(
-                        new PurchaseItemModel(
-                                object.getString("id")
-                                , object.getString("idproduct")
-                                , object.getString("idpurchase")
-                                , context.getResources().getString(R.string.app_label_product)+object.getString("idproduct")
-                                , context.getResources().getString(R.string.app_label_product_preview_unit)
-                                , 4.5
-                                , 9.00
-                                , "http://lorempixel.com/325/175/food/PurchaseItem/"
-                                , "Ice Cream"
-                                , "Haagen Daz"
-                                , 2.00)
-                );
+                add(PurchaseItemModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

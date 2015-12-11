@@ -1,18 +1,23 @@
 package com.totvs.retailapp.models;
 
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
+
 /**
  * Created by rond.borges on 23/11/2015.
  */
 public class PurchaseItemModel extends AppRetailModelAbstract {
 
     private String id;
-    private String idProduct;
-    private String idPurchase;
+    @SerializedName("idproduct") private String idProduct;
+    @SerializedName("idpurchase") private String idPurchase;
     private String description;
     private String unit;
-    private Double unitValue;
+    @SerializedName("unitvalue") private Double unitValue;
     private Double amount;
-    private String urlPicture;
+    @SerializedName("pictureurl") private String pictureUrl;
     private String category;
     private String brand;
     private Double quantity;
@@ -77,9 +82,9 @@ public class PurchaseItemModel extends AppRetailModelAbstract {
         return this.getUnitValue() * this.getAmount();
     }
 
-    public String getUrlPicture() { return this.urlPicture; }
+    public String getPictureUrl() { return this.pictureUrl; }
 
-    public void setUrlPicture( String urlPicture ) { this.urlPicture = urlPicture; }
+    public void setPictureUrl(String pictureUrl) { this.pictureUrl = pictureUrl; }
 
     public String getCategory() { return this.category; }
 
@@ -93,7 +98,7 @@ public class PurchaseItemModel extends AppRetailModelAbstract {
 
     public void setQuantity(Double quantity ) { this.quantity = quantity; }
 
-    public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double amount, String urlPicture, String category, String brand, Double quantity){
+    public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double amount, String pictureUrl, String category, String brand, Double quantity){
         this.id             = id;
         this.idProduct      = idProduct;
         this.idPurchase     = idPurchase;
@@ -101,10 +106,16 @@ public class PurchaseItemModel extends AppRetailModelAbstract {
         this.unit           = unit;
         this.unitValue      = unitValue;
         this.amount         = amount;
-        this.urlPicture     = urlPicture;
+        this.pictureUrl = pictureUrl;
         this.category       = category;
         this.brand          = brand;
         this.quantity       = quantity;
+    }
+
+    static public PurchaseItemModel fromJson(JSONObject object) {
+        Gson gson = new Gson();
+
+        return gson.fromJson(object.toString(), PurchaseItemModel.class);
     }
 
 }
