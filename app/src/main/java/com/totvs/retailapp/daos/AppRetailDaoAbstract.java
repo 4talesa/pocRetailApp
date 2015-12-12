@@ -16,6 +16,7 @@ public abstract class AppRetailDaoAbstract<T> {
 
     protected final Context context;
     protected final AppRetailViewAbsctrat view;
+    static public final String URL_API = "http://protected-bayou-8222.herokuapp.com/api/v1/";
 
     public AppRetailDaoAbstract(Context context, AppRetailViewAbsctrat view) {
         this.context = context;

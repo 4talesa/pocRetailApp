@@ -4,37 +4,35 @@ import android.content.Context;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
+import com.totvs.retailapp.models.BeaconStoreModel;
 import com.totvs.retailapp.models.ProductModel;
-import com.totvs.retailapp.views.ProductView;
-
-import org.json.JSONArray;
+import com.totvs.retailapp.views.AppRetailViewAbsctrat;
 
 import java.util.List;
 
 /**
- * Created by rond.borges on 10/12/2015.
+ * Created by rond.borges on 11/12/2015.
  */
-public class ProductDao extends AppRetailDaoAbstract<ProductModel> {
+public class BeaconStoreDao extends AppRetailDaoAbstract<BeaconStoreModel> {
 
-    public ProductDao(Context context, ProductView productView) {
-        super(context, productView);
+    public BeaconStoreDao(Context context, AppRetailViewAbsctrat view) {
+        super(context, view);
     }
 
     @Override
-    public void save(ProductModel model) {
-
-    }
-
-    @Override
-    public void delete(ProductModel model) {
+    public void save(BeaconStoreModel model) {
 
     }
 
     @Override
-    public List list() {
+    public void delete(BeaconStoreModel model) {
+
+    }
+
+    @Override
+    public List<BeaconStoreModel> list() {
         return null;
     }
 
@@ -49,10 +47,9 @@ public class ProductDao extends AppRetailDaoAbstract<ProductModel> {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = AppRetailDaoAbstract.URL_API+ProductModel.PRODUCT+"/"+id;
+        url = AppRetailDaoAbstract.URL_API+ BeaconStoreModel.BEACONSTORE+"/"+id;
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, view.getListener(), view.getErrorListener());
 
         requestQueue.add(jsArrRequest);
     }
-
 }

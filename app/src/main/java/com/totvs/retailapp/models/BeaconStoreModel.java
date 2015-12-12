@@ -9,6 +9,8 @@ import org.json.JSONObject;
  */
 public class BeaconStoreModel extends AppRetailModelAbstract {
 
+    static public String BEACONSTORE = "BeaconStore";
+
     private String idStore;
 
     public String getIdStore(){

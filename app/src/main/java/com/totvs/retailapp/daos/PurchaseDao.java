@@ -46,7 +46,7 @@ public class PurchaseDao extends AppRetailDaoAbstract<PurchaseModel> {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = "http://protected-bayou-8222.herokuapp.com/api/v1/"+ PurchaseModel.PURCHASE+"/"+id;
+        url = AppRetailDaoAbstract.URL_API+ PurchaseModel.PURCHASE+"/"+id;
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, view.getListener(), view.getErrorListener());
 
         requestQueue.add(jsArrRequest);

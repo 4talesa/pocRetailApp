@@ -12,6 +12,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.totvs.retailapp.daos.AppRetailDaoAbstract;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.StoreModel;
 
@@ -65,7 +66,7 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = "http://protected-bayou-8222.herokuapp.com/api/v1/"+className+"/";
+        url = AppRetailDaoAbstract.URL_API+className+"/";
         if (filterField.length() > 0 && filterValue.length() > 0){
             url += filterField + "/" + filterValue;
         }
