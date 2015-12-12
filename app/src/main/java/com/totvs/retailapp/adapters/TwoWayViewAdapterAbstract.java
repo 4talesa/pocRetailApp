@@ -28,6 +28,8 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
     protected final Context context;
     protected int layout;
     protected List<T> objects;
+    protected String filterField;
+    protected String filterValue;
 
     public static class ViewHolderAbstract extends RecyclerView.ViewHolder{
 
@@ -37,9 +39,15 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
     }
 
     public TwoWayViewAdapterAbstract(List<T> objects, int layout, Context context, String className) {
-        this.objects    = objects;
-        this.layout     = layout;
-        this.context    = context;
+        this(objects, layout, context, className, "", "");
+    }
+
+    public TwoWayViewAdapterAbstract(List<T> objects, int layout, Context context, String className, String filterField, String filterValue) {
+        this.objects     = objects;
+        this.layout      = layout;
+        this.context     = context;
+        this.filterField = filterField;
+        this.filterValue = filterValue;
         searchData(className);
     }
 
@@ -77,6 +85,9 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         url = "http://protected-bayou-8222.herokuapp.com/api/v1/"+className+"/";
+        if (filterField.length() > 0 && filterValue.length() > 0){
+            url += filterField + "/" + filterValue;
+        }
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, createRequestJSONArraySuccessListener(), createRequestErrorListener());
 
         requestQueue.add(jsArrRequest);

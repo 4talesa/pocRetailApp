@@ -25,6 +25,10 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
         super(context, layout, objects, "PurchaseItem");
     }
 
+    public PurchaseItemListViewAdapter(Context context, int layout, ArrayList<PurchaseItemModel> objects, String filterField, String filterValue){
+        super(context, layout, objects, "PurchaseItem", filterField, filterValue);
+    }
+
     @Override
     protected void populateView(View v, PurchaseItemModel model) {
 

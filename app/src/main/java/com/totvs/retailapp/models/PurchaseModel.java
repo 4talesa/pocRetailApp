@@ -1,6 +1,7 @@
 package com.totvs.retailapp.models;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONObject;
 
@@ -18,10 +19,9 @@ public class PurchaseModel extends AppRetailModelAbstract {
     private String idStore;
     private String idUser;
     private String store;
-    private String user;
-    private String storeAddress;
-    private Double totalAmount;
-    private Double totalQuantity;
+    @SerializedName("storeaddress") private String storeAddress;
+    @SerializedName("totalamount") private Double totalAmount;
+    @SerializedName("totalquantity") private Double totalQuantity;
 
     public Date getDate(){
         return this.date;
@@ -55,14 +55,6 @@ public class PurchaseModel extends AppRetailModelAbstract {
         this.store = store;
     }
 
-    public String getUser(){
-        return this.user;
-    }
-
-    public void setUser(String user){
-        this.user = user;
-    }
-
     public String getStoreAddress() { return this.storeAddress; }
 
     public void setStoreAddress(String storeAddress){ this.storeAddress = storeAddress; }
@@ -75,13 +67,12 @@ public class PurchaseModel extends AppRetailModelAbstract {
 
     public void setTotalQuantity(Double totalQuantity){ this.totalQuantity = totalQuantity; }
 
-    public PurchaseModel(String id, Date date, String idStore, String idUser, String store, String user, String storeAddress, Double totalAmount, Double totalQuantity){
+    public PurchaseModel(String id, Date date, String idStore, String idUser, String store, String storeAddress, Double totalAmount, Double totalQuantity){
         this.id             = id;
         this.date           = date;
         this.idStore        = idStore;
         this.idUser         = idUser;
         this.store          = store;
-        this.user           = user;
         this.storeAddress   = storeAddress;
         this.totalAmount    = totalAmount;
         this.totalQuantity  = totalQuantity;

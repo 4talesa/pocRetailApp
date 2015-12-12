@@ -14,12 +14,12 @@ public class PurchaseItemModel extends AppRetailModelAbstract {
     @SerializedName("idpurchase") private String idPurchase;
     private String description;
     private String unit;
-    @SerializedName("unitvalue") private Double unitValue;
-    private Double amount;
+    @SerializedName("unitprice") private Double unitValue;
+    @SerializedName("totalitem") private Double amount;
     @SerializedName("pictureurl") private String pictureUrl;
-    private String category;
-    private String brand;
-    private Double quantity;
+    @SerializedName("categoryname") private String category;
+    @SerializedName("brandname") private String brand;
+    @SerializedName("amountpurchased") private Double quantity;
 
     public String getIdProduct(){
         return this.idProduct;

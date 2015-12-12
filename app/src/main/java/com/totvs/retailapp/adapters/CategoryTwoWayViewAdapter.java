@@ -30,6 +30,10 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
         super(objects, layout, context, "Category");
     }
 
+    public CategoryTwoWayViewAdapter(List<CategoryModel> objects, int layout, Context context , String filterField, String filterValue){
+        super(objects, layout, context, "Category", filterField, filterValue);
+    }
+
     @Override
     public CategoryTwoWayViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -48,7 +52,7 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
 
         v.textViewCategoryTitle.setText(model.getName());
 
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context);
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context, CategoryModel.CATEGORY, model.getId());
         v.twoWayViewBrowseCategoryList.setAdapter(adapter);
 
         v.textViewCategoryTitle.setTag(model.getId());

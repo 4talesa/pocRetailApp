@@ -18,6 +18,7 @@ import java.util.List;
 public class ProductBrowseActivity extends AppRetailActivity {
 
     private ProductListViewAdapter productAdapter;
+    TwoWayView lvTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +27,14 @@ public class ProductBrowseActivity extends AppRetailActivity {
 
         this.activityName = productBrowseActivity;
 
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this);
-        TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseProduct);
-        lvTest.setAdapter(adapter);
+        lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseProduct);
+        searchProduct("","");
 
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             if (bundle.containsKey(CategoryModel.CATEGORY_ID)) {
-                Toast.makeText(ProductBrowseActivity.this, "Category selected: " + bundle.getString(CategoryModel.CATEGORY_ID), Toast.LENGTH_LONG).show();
+                //Toast.makeText(ProductBrowseActivity.this, "Category selected: " + bundle.getString(CategoryModel.CATEGORY_ID), Toast.LENGTH_LONG).show();
+                searchProduct( CategoryModel.CATEGORY, bundle.getString(CategoryModel.CATEGORY_ID));
             }else {
                 Toast.makeText(ProductBrowseActivity.this, "Category not selected!", Toast.LENGTH_LONG).show();
             }
@@ -41,5 +42,10 @@ public class ProductBrowseActivity extends AppRetailActivity {
             Toast.makeText(ProductBrowseActivity.this, "Category not selected!", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    private void searchProduct(String filterField, String filterValue){
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this, filterField, filterValue);
+        lvTest.setAdapter(adapter);
     }
 }

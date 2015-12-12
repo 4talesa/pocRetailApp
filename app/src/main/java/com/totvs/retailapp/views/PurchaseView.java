@@ -48,7 +48,7 @@ public class PurchaseView extends AppRetailViewAbsctrat<PurchaseModel> {
         textViewDateValue.setText(dateFormat.format(model.getDate()));
         textViewPurchaseTitle.setText(context.getResources().getString(R.string.app_label_purchase) + " #" + model.getId());
 
-        purchaseItemAdapter = new PurchaseItemListViewAdapter(context, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>());
+        purchaseItemAdapter = new PurchaseItemListViewAdapter(context, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>(), PurchaseModel.PURCHASE, model.getId());
         listView.setAdapter(purchaseItemAdapter);
     }
 

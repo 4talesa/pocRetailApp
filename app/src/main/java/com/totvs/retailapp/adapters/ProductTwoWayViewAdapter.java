@@ -29,6 +29,10 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
         super(objects, layout, context, "Product");
     }
 
+    public ProductTwoWayViewAdapter(List<ProductModel> objects, int layout, Context context, String filterField, String filterValue){
+        super(objects, layout, context, "Product", filterField, filterValue);
+    }
+
     @Override
     public ProductTwoWayViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
