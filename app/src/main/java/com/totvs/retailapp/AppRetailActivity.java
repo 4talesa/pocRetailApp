@@ -49,6 +49,7 @@ public class AppRetailActivity extends AppCompatActivity {
     static final String purchaseDetailActivity  = "purchaseDetailActivity";
     static final String purchaseHistoryActivity  = "purchaseHistoryActivity";
     static final String purchaseHistoryAddActivity  = "purchaseHistoryAddActivity";
+    static final String purchaseScanProductAddActivity = "purchaseScanProductAddActivity";
 
     protected String activityName = defaultActivity;
 
@@ -205,7 +206,7 @@ public class AppRetailActivity extends AppCompatActivity {
                 this.startActivity(it);
                 return true;
 
-            case R.id.menu_walk_in_reward_notify:
+            /*case R.id.menu_walk_in_reward_notify:
                 it = new Intent(this, WalkInRewardNotifyActivity.class);
                 this.startActivity(it);
                 return true;
@@ -215,13 +216,13 @@ public class AppRetailActivity extends AppCompatActivity {
                 this.startActivity(it);
                 return true;
 
-            case R.id.menu_product_detail:
-                it = new Intent(this, ProductDetailActivity.class);
-                this.startActivity(it);
-                return true;
-
             case R.id.menu_purchase_reward_notify:
                 it = new Intent(this, PurchaseRewardNotifyActivity.class);
+                this.startActivity(it);
+                return true;*/
+
+            case R.id.menu_product_detail:
+                it = new Intent(this, ProductDetailActivity.class);
                 this.startActivity(it);
                 return true;
 
@@ -254,6 +255,11 @@ public class AppRetailActivity extends AppCompatActivity {
 
             case R.id.menu_sign_in:
                 it = new Intent(this, SignInActivity.class);
+                this.startActivity(it);
+                return true;
+
+            case R.id.menu_scan_product_add:
+                it = new Intent(this, ScanProductAddActivity.class);
                 this.startActivity(it);
                 return true;
         }

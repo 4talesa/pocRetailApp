@@ -40,7 +40,9 @@ public class PurchaseHistoryAddActivity extends AppRetailActivity {
         buttonPurchaseAddManually.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: 03/12/2015 confirm the manual code
+            Intent it = new Intent(PurchaseHistoryAddActivity.this, PurchaseRewardNotifyActivity.class);
+
+            PurchaseHistoryAddActivity.this.startActivity(it);
             }
         });
 

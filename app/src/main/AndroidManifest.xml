@@ -3,19 +3,24 @@
     package="com.totvs.retailapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"  android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <provider android:authorities="com.facebook.app.FacebookContentProvider1234"
+    <provider
         android:name="com.facebook.FacebookContentProvider"
+        android:authorities="com.facebook.app.FacebookContentProvider1234"
         android:exported="true" />
 
     <application
@@ -37,62 +42,65 @@
         <activity
             android:name=".WelcomeActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignInActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignUpActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StoreBrowseActivity"
-            android:label="@string/app_label_browse_store"></activity>
+            android:label="@string/app_label_browse_store" />
         <activity
             android:name=".WalkInRewardNotifyActivity"
             android:label="@string/app_label_achievement"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PurchaseRewardNotifyActivity"
             android:label="@string/app_label_achievement"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ScanProductRewardNotifyActivity"
             android:label="@string/app_label_achievement"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PurchaseHistoryActivity"
-            android:label="@string/app_label_purchase"></activity>
+            android:label="@string/app_label_purchase" />
         <activity
             android:name=".CategoryBrowseActivity"
-            android:label="@string/app_label_browse_category"></activity>
+            android:label="@string/app_label_browse_category" />
         <activity
             android:name=".ProductBrowseActivity"
-            android:label="@string/app_label_browse_product"></activity>
+            android:label="@string/app_label_browse_product" />
         <activity
             android:name=".RewardBalanceActivity"
-            android:label="@string/app_label_reward_balance"></activity>
+            android:label="@string/app_label_reward_balance" />
         <activity
             android:name=".PurchaseDetailActivity"
-            android:label="@string/app_label_purchase"></activity>
+            android:label="@string/app_label_purchase" />
         <activity
             android:name=".ProductDetailActivity"
-            android:label="@string/app_label_browse_product"></activity>
+            android:label="@string/app_label_browse_product" />
         <activity
             android:name=".UserProfileActivity"
-            android:label="@string/app_label_profile"></activity>
+            android:label="@string/app_label_profile" />
         <activity
             android:name=".PurchaseHistoryAddActivity"
-            android:label="@string/app_label_purchase_add"></activity>
+            android:label="@string/app_label_purchase_add" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/app_facebook_app_id"/>
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
+            android:value="@string/app_facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".ScanProductAddActivity"></activity>
     </application>
 
 </manifest>
