@@ -4,6 +4,8 @@ package com.totvs.retailapp.helpers;
  * Created by rond.borges on 08/12/2015.
  */
 
+import android.util.Log;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 import org.json.JSONException;
@@ -27,6 +29,7 @@ public class HelperJsonArrayRequest extends Request<JSONArray> {
         super(Method.GET, url, errorListener);
         this.listener = reponseListener;
         this.params = params;
+        Log.d("HelperJsonArrayRequest", "Url: " + url);
     }
 
     public HelperJsonArrayRequest(int method, String url, Map<String, String> params,
@@ -34,6 +37,7 @@ public class HelperJsonArrayRequest extends Request<JSONArray> {
         super(method, url, errorListener);
         this.listener = reponseListener;
         this.params = params;
+        Log.d("HelperJsonArrayRequest", "Url: " + url);
     }
 
     protected Map<String, String> getParams()

@@ -76,6 +76,7 @@ public class StoreBrowseActivity extends AppRetailActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                connectToService();
                 searchStore();
             }
         };

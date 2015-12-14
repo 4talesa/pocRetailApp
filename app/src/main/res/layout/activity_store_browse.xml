@@ -73,7 +73,8 @@
             android:layout_height="fill_parent"
             android:gravity="right|center"
             android:layout_weight="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"/>
+
     </LinearLayout>
 
     <LinearLayout

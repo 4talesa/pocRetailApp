@@ -20,10 +20,13 @@ import com.android.volley.toolbox.Volley;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
+import com.estimote.sdk.Utils;
 import com.facebook.appevents.AppEventsLogger;
 import com.parse.ParseUser;
+import com.totvs.retailapp.daos.BeaconStoreDao;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.helpers.HelperJsonObjectRequest;
+import com.totvs.retailapp.views.BeaconStoreView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -310,7 +313,7 @@ public class AppRetailActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void connectToService() {
+    protected void connectToService() {
 
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
@@ -352,6 +355,12 @@ public class AppRetailActivity extends AppCompatActivity {
     }
 
     private void updateBeaconFound(Beacon beacon){
-        Log.d(activityName, "Beacon found: " + beacon.getMacAddress().toString());
+        if ((Utils.computeAccuracy(beacon) < 0.20)) {
+            Log.d(activityName, "Near Beacon found: " + beacon.getMacAddress().toString());
+            BeaconStoreView beaconStoreView = new BeaconStoreView(this, this.getWindow().getDecorView().getRootView());
+            BeaconStoreDao beaconStoreDao = new BeaconStoreDao(this, beaconStoreView);
+            beaconStoreDao.get(beacon.getMacAddress().toString());
+            stopBeaconRanging();
+        }
     }
 }

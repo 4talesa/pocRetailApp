@@ -47,7 +47,7 @@ public class BeaconStoreDao extends AppRetailDaoAbstract<BeaconStoreModel> {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = AppRetailDaoAbstract.URL_API+ BeaconStoreModel.BEACONSTORE+"/"+id;
+        url = AppRetailDaoAbstract.URL_API + BeaconStoreModel.BEACONSTORE+"/"+id;
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, view.getListener(), view.getErrorListener());
 
         requestQueue.add(jsArrRequest);

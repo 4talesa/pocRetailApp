@@ -1,6 +1,7 @@
 package com.totvs.retailapp.models;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONObject;
 
@@ -11,7 +12,7 @@ public class BeaconStoreModel extends AppRetailModelAbstract {
 
     static public String BEACONSTORE = "BeaconStore";
 
-    private String idStore;
+    @SerializedName("idstore") private String idStore;
 
     public String getIdStore(){
         return idStore;
