@@ -29,8 +29,8 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
         super(objects, layout, context, "Product");
     }
 
-    public ProductTwoWayViewAdapter(List<ProductModel> objects, int layout, Context context, String filterField, String filterValue){
-        super(objects, layout, context, "Product", filterField, filterValue);
+    public ProductTwoWayViewAdapter(List<ProductModel> objects, int layout, Context context, String[] urlFilters){
+        super(objects, layout, context, "Product", urlFilters);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class ProductTwoWayViewAdapter extends TwoWayViewAdapterAbstract<ProductM
     public void populateView(ProductTwoWayViewAdapter.ViewHolder v, ProductModel model) {
         v.product_thumb_item_description.setText(model.getName());
         v.product_thumb_item_category.setText(model.getCategory());
-        v.product_thumb_item_value.setText(context.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getValue()));
+        v.product_thumb_item_value.setText(context.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getPrice()));
         Ion.with(v.product_thumb_item_picture)
                 .fitCenter()
                 .load(model.getPictureUrl());

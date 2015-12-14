@@ -17,8 +17,8 @@ public class ProductModel extends AppRetailModelAbstract {
     private String detail;
     @SerializedName("idcategory") private String idCategory;
     @SerializedName("pictureurl") private String pictureUrl;
-    private Double value;
-    private String category;
+    private Double price;
+    @SerializedName("namecategory") private String category;
     private String unit;
 
     public String getName() {
@@ -53,12 +53,12 @@ public class ProductModel extends AppRetailModelAbstract {
         this.pictureUrl = pictureUrl;
     }
 
-    public Double getValue(){
-        return this.value;
+    public Double getPrice(){
+        return this.price;
     }
 
-    public void setValue(Double value){
-        this.value = value;
+    public void setPrice(Double price){
+        this.price = price;
     }
 
     public String getCategory(){
@@ -77,13 +77,13 @@ public class ProductModel extends AppRetailModelAbstract {
         this.unit = unit;
     }
 
-    public ProductModel(String id, String name, String detail, String idCategory, String pictureUrl, Double value, String category, String unit){
+    public ProductModel(String id, String name, String detail, String idCategory, String pictureUrl, Double price, String category, String unit){
         this.id             = id;
         this.name           = name;
         this.detail         = detail;
         this.idCategory     = idCategory;
         this.pictureUrl     = pictureUrl;
-        this.value          = value;
+        this.price          = price;
         this.category       = category;
         this.unit           = unit;
     }

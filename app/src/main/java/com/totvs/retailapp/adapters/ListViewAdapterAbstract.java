@@ -29,19 +29,18 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
 
     protected int layout;
     protected Context context;
-    protected String filterField;
-    protected String filterValue;
+    protected String[] urlFilters;
 
     public ListViewAdapterAbstract(Context context, int layout, ArrayList<T> arrayList, String className){
-        this(context, layout, arrayList, className, "", "");
+        this(context, layout, arrayList, className, null);
     }
 
-    public ListViewAdapterAbstract(Context context, int layout, ArrayList<T> arrayList, String className, String filterField, String filterValue){
+    public ListViewAdapterAbstract(Context context, int layout, ArrayList<T> arrayList, String className, String[] urlFilters){
         super(context, 0, arrayList);
-        this.layout = layout;
-        this.context = context;
-        this.filterField = filterField;
-        this.filterValue = filterValue;
+        this.layout     = layout;
+        this.context    = context;
+        this.urlFilters = urlFilters;
+
         searchData(className);
     }
 
@@ -66,10 +65,8 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = AppRetailDaoAbstract.URL_API+className+"/";
-        if (filterField.length() > 0 && filterValue.length() > 0){
-            url += filterField + "/" + filterValue;
-        }
+        url = AppRetailDaoAbstract.URL_API+className+"/"+getUrlFilters();
+
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, createRequestJSONArraySuccessListener(), createRequestErrorListener());
 
         requestQueue.add(jsArrRequest);
@@ -103,6 +100,23 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
                 Log.d("ListViewAdapter", "Response.ErrorListener: ", error);
             }
         };
+    }
+
+    public String getUrlFilters(){
+        if (urlFilters == null){
+            return "";
+        }else {
+            String newUrlFilter = "";
+            for(int i = 0; i < urlFilters.length; i++){
+                if (urlFilters[i].length()>0) {
+                    if (newUrlFilter != "") {
+                        newUrlFilter += "/";
+                    }
+                    newUrlFilter += urlFilters[i];
+                }
+            }
+            return newUrlFilter;
+        }
     }
 
 }

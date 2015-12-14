@@ -25,8 +25,8 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
         super(context, layout, objects, "PurchaseItem");
     }
 
-    public PurchaseItemListViewAdapter(Context context, int layout, ArrayList<PurchaseItemModel> objects, String filterField, String filterValue){
-        super(context, layout, objects, "PurchaseItem", filterField, filterValue);
+    public PurchaseItemListViewAdapter(Context context, int layout, ArrayList<PurchaseItemModel> objects, String[] urlFilters){
+        super(context, layout, objects, "PurchaseItem", urlFilters);
     }
 
     @Override

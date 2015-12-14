@@ -29,8 +29,7 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
     protected final Context context;
     protected int layout;
     protected List<T> objects;
-    protected String filterField;
-    protected String filterValue;
+    protected String[] urlFilters;
 
     public static class ViewHolderAbstract extends RecyclerView.ViewHolder{
 
@@ -40,15 +39,15 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
     }
 
     public TwoWayViewAdapterAbstract(List<T> objects, int layout, Context context, String className) {
-        this(objects, layout, context, className, "", "");
+        this(objects, layout, context, className, null);
     }
 
-    public TwoWayViewAdapterAbstract(List<T> objects, int layout, Context context, String className, String filterField, String filterValue) {
-        this.objects     = objects;
-        this.layout      = layout;
-        this.context     = context;
-        this.filterField = filterField;
-        this.filterValue = filterValue;
+    public TwoWayViewAdapterAbstract(List<T> objects, int layout, Context context, String className, String[] urlFilters) {
+        this.objects    = objects;
+        this.layout     = layout;
+        this.context    = context;
+        this.urlFilters = urlFilters;
+
         searchData(className);
     }
 
@@ -85,10 +84,8 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = AppRetailDaoAbstract.URL_API+className+"/";
-        if (filterField.length() > 0 && filterValue.length() > 0){
-            url += filterField + "/" + filterValue;
-        }
+        url = AppRetailDaoAbstract.URL_API+className+"/"+getUrlFilters();
+
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, createRequestJSONArraySuccessListener(), createRequestErrorListener());
 
         requestQueue.add(jsArrRequest);
@@ -123,4 +120,22 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
             }
         };
     }
+
+    public String getUrlFilters(){
+        if (urlFilters == null){
+            return "";
+        }else {
+            String newUrlFilter = "";
+            for(int i = 0; i < urlFilters.length; i++){
+                if (urlFilters[i].length()>0) {
+                    if (newUrlFilter != "") {
+                        newUrlFilter += "/";
+                    }
+                    newUrlFilter += urlFilters[i];
+                }
+            }
+            return newUrlFilter;
+        }
+    }
+
 }

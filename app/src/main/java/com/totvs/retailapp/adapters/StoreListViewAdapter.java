@@ -27,8 +27,8 @@ public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
         super(context, layout, objects, "Store");
     }
 
-    public StoreListViewAdapter(Context context, int layout, ArrayList<StoreModel> objects, String filterField, String filterValue){
-        super(context, layout, objects, "Store", filterField, filterValue);
+    public StoreListViewAdapter(Context context, int layout, ArrayList<StoreModel> objects, String[] urlFilters){
+        super(context, layout, objects, "Store", urlFilters);
     }
 
     @Override

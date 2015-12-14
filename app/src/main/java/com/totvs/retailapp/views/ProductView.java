@@ -55,7 +55,7 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
 
         labelProductDetailName.setText(model.getName());
         labelProductDetailUnit.setText(model.getUnit());
-        labelProductDetailPrice.setText(context.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getValue()));
+        labelProductDetailPrice.setText(context.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getPrice()));
 
         Ion.with(imageViewProductDetail)
                 .fitCenter()

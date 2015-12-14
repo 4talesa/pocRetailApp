@@ -83,7 +83,7 @@ public class StoreBrowseActivity extends AppRetailActivity {
     }
 
     protected void searchStore(){
-        storeAdapter = new StoreListViewAdapter(StoreBrowseActivity.this, R.layout.store_browse_item, new ArrayList<StoreModel>(), StoreModel.POSTAL_CODE, editTextStoreBrowseZip.getText().toString());
+        storeAdapter = new StoreListViewAdapter(StoreBrowseActivity.this, R.layout.store_browse_item, new ArrayList<StoreModel>(), new String[]{StoreModel.POSTAL_CODE, editTextStoreBrowseZip.getText().toString()});
         listView.setAdapter(storeAdapter);
     }
 

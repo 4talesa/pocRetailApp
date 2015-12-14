@@ -28,13 +28,13 @@ public class ProductBrowseActivity extends AppRetailActivity {
         this.activityName = productBrowseActivity;
 
         lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseProduct);
-        searchProduct("","");
+        searchProduct(null);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             if (bundle.containsKey(CategoryModel.CATEGORY_ID)) {
                 //Toast.makeText(ProductBrowseActivity.this, "Category selected: " + bundle.getString(CategoryModel.CATEGORY_ID), Toast.LENGTH_LONG).show();
-                searchProduct( CategoryModel.CATEGORY, bundle.getString(CategoryModel.CATEGORY_ID));
+                searchProduct( new String[] {CategoryModel.CATEGORY, bundle.getString(CategoryModel.CATEGORY_ID)});
             }else {
                 Toast.makeText(ProductBrowseActivity.this, "Category not selected!", Toast.LENGTH_LONG).show();
             }
@@ -44,8 +44,8 @@ public class ProductBrowseActivity extends AppRetailActivity {
 
     }
 
-    private void searchProduct(String filterField, String filterValue){
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this, filterField, filterValue);
+    private void searchProduct(String[] urlFilters){
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this, urlFilters);
         lvTest.setAdapter(adapter);
     }
 }
