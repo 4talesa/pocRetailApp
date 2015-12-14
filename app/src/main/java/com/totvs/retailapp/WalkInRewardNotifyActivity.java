@@ -10,6 +10,8 @@ import com.totvs.retailapp.models.StoreModel;
 
 public class WalkInRewardNotifyActivity extends AppRetailActivity {
 
+    public String idStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class WalkInRewardNotifyActivity extends AppRetailActivity {
         if(bundle!=null){
             if (bundle.containsKey(StoreModel.STORE_ID)) {
                 Toast.makeText(WalkInRewardNotifyActivity.this, "Store selected: " + bundle.getString(StoreModel.STORE_ID), Toast.LENGTH_LONG).show();
+                this.idStore = bundle.getString(StoreModel.STORE_ID);
             }else {
                 Toast.makeText(WalkInRewardNotifyActivity.this, "Store not selected!", Toast.LENGTH_LONG).show();
             }
@@ -35,7 +38,9 @@ public class WalkInRewardNotifyActivity extends AppRetailActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(v.getContext(), StoreBrowseActivity.class);
+                Intent it = new Intent(v.getContext(), CategoryBrowseActivity.class);
+
+                it.putExtra(StoreModel.STORE_ID, WalkInRewardNotifyActivity.this.idStore);
 
                 v.getContext().startActivity(it);
             }
