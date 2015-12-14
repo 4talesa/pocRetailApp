@@ -55,6 +55,7 @@ public class AppRetailActivity extends AppCompatActivity {
     private BeaconManager beaconManager;
     private static final Region ALL_ESTIMOTE_BEACONS_REGION = new Region("rid", null, null, null);
     private static final int REQUEST_ENABLE_BT = 1234;
+    private Beacon beaconSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -315,6 +316,8 @@ public class AppRetailActivity extends AppCompatActivity {
 
     protected void connectToService() {
 
+        beaconSelected = null;
+
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
@@ -354,13 +357,33 @@ public class AppRetailActivity extends AppCompatActivity {
         }
     }
 
-    private void updateBeaconFound(Beacon beacon){
+    private Boolean newBeaconNear(Beacon beacon){
         if ((Utils.computeAccuracy(beacon) < 0.20)) {
+            if (beaconSelected == null){
+                beaconSelected = beacon;
+                return true;
+            }else {
+                if (!beaconSelected.getMacAddress().equals(beacon.getMacAddress())){
+                    beaconSelected = beacon;
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }else{
+            return false;
+        }
+    }
+
+    private void updateBeaconFound(Beacon beacon){
+        if (newBeaconNear(beacon)) {
             Log.d(activityName, "Near Beacon found: " + beacon.getMacAddress().toString());
+
             BeaconStoreView beaconStoreView = new BeaconStoreView(this, this.getWindow().getDecorView().getRootView());
             BeaconStoreDao beaconStoreDao = new BeaconStoreDao(this, beaconStoreView);
             beaconStoreDao.get(beacon.getMacAddress().toString());
-            stopBeaconRanging();
+
+            //stopBeaconRanging();
         }
     }
 }

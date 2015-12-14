@@ -51,6 +51,10 @@ public class PurchaseHistoryAddActivity extends AppRetailActivity {
         if (scan != null) {
             editTextPurchaseBarcodeFormat.setText(scan.getFormatName());
             editTextPurchaseBarcode.setText(scan.getContents());
+
+            Intent it = new Intent(PurchaseHistoryAddActivity.this, PurchaseRewardNotifyActivity.class);
+
+            PurchaseHistoryAddActivity.this.startActivity(it);
         }
     }
 
