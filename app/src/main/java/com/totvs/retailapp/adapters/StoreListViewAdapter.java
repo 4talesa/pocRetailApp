@@ -8,9 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.AppRetailActivity;
 import com.totvs.retailapp.CategoryBrowseActivity;
 import com.totvs.retailapp.R;
+import com.totvs.retailapp.daos.StoreDao;
 import com.totvs.retailapp.models.StoreModel;
+import com.totvs.retailapp.views.StoreView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,6 +57,15 @@ public class StoreListViewAdapter extends ListViewAdapterAbstract<StoreModel> {
 
                 it.putExtra(StoreModel.STORE_ID, v.getTag().toString());
                 StoreModel.getInstance().setId(v.getTag().toString());
+
+                try {
+                    StoreView storeView = new StoreView(context, ((AppRetailActivity) context).getWindow().getDecorView().getRootView());
+                    StoreDao storeDao = new StoreDao(context, storeView);
+                    storeDao.get(StoreModel.getInstance().getId());
+                    Log.d("StoreListViewAdapter", "storeDao started");
+                }catch (Exception e){
+                    Log.d("StoreListViewAdapter", "Error", e);
+                }
 
                 v.getContext().startActivity(it);
             }

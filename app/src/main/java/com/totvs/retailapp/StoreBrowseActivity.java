@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -33,6 +34,8 @@ public class StoreBrowseActivity extends AppRetailActivity {
     EditText editTextStoreBrowseZip;
     Button buttonStoreBrowseChangeZip;
     ListView listView;
+    TextView textViewStoreBrowseTitle;
+    TextView textViewStoreBrowseMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,9 @@ public class StoreBrowseActivity extends AppRetailActivity {
         editTextStoreBrowseZip.setOnKeyListener(getOnKeyListener());
 
         listView = (ListView) findViewById(R.id.listViewStore);
+
+        textViewStoreBrowseTitle = (TextView) findViewById(R.id.textViewStoreBrowseTitle);
+        textViewStoreBrowseMsg = (TextView) findViewById(R.id.textViewStoreBrowseMsg);
 
         searchStore();
 

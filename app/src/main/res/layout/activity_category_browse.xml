@@ -39,7 +39,8 @@
             android:layout_alignParentBottom="true"
             android:textAlignment="gravity"
             android:gravity="top|center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:id="@+id/textViewCategoryBrowseTitle"/>
         <TextView android:text="@string/app_label_browse_category_msg"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -47,7 +48,8 @@
             android:layout_alignParentBottom="true"
             android:textAlignment="gravity"
             android:gravity="bottom|center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:id="@+id/textViewCategoryBrowseMsg"/>
     </RelativeLayout>
 
     <LinearLayout

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.totvs.retailapp.adapters.CategoryTwoWayViewAdapter;
@@ -18,6 +19,8 @@ import java.util.List;
 public class CategoryBrowseActivity extends AppRetailActivity {
 
     TwoWayView lvTest;
+    TextView textViewCategoryBrowseTitle;
+    TextView textViewCategoryBrowseMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +32,15 @@ public class CategoryBrowseActivity extends AppRetailActivity {
         lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseCategory);
         searchCategory(null);
 
+        textViewCategoryBrowseTitle = (TextView) findViewById(R.id.textViewCategoryBrowseTitle);
+        textViewCategoryBrowseMsg = (TextView) findViewById(R.id.textViewCategoryBrowseMsg);
+
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             if (bundle.containsKey(StoreModel.STORE_ID)) {
                 //Toast.makeText(CategoryBrowseActivity.this, "Store selected: " + bundle.getString(StoreModel.STORE_ID), Toast.LENGTH_LONG).show();
                 searchCategory(new String[] {"", ""});
+                textViewCategoryBrowseTitle.setText(this.getResources().getString(R.string.app_label_store) + " #" + bundle.getString(StoreModel.STORE_ID));
             }else {
                 Toast.makeText(CategoryBrowseActivity.this, "Store not selected!", Toast.LENGTH_LONG).show();
             }

@@ -10,6 +10,7 @@ import org.json.JSONObject;
  */
 public class StoreModel extends AppRetailModelAbstract {
 
+    static public String STORE = "Store";
     static public String STORE_ID = "storeId";
     static public String POSTAL_CODE = "PostalCode";
 
@@ -26,6 +27,10 @@ public class StoreModel extends AppRetailModelAbstract {
             store = new StoreModel();
         }
         return store;
+    }
+
+    public static void setStoreModel(StoreModel model){
+        store = model;
     }
 
     public String getName() {

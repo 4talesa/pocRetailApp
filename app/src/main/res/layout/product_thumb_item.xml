@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:gravity="center">
+    android:layout_height="match_parent" android:gravity="center"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <ImageView
         style="@style/productThumb"
@@ -22,7 +26,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="@style/smallLabelDisabled"
-                android:layout_weight=".6"
+                android:layout_weight=".7"
                 android:gravity="left"
                 android:id="@+id/product_thumb_item_category"/>
             <TextView android:text="@string/app_label_product_preview_unit_value"

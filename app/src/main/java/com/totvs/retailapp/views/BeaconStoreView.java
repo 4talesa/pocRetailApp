@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.totvs.retailapp.AppRetailActivity;
 import com.totvs.retailapp.WalkInRewardNotifyActivity;
+import com.totvs.retailapp.daos.StoreDao;
 import com.totvs.retailapp.models.BeaconStoreModel;
 import com.totvs.retailapp.models.StoreModel;
 
@@ -32,6 +34,18 @@ public class BeaconStoreView extends AppRetailViewAbsctrat<BeaconStoreModel> {
 
             it.putExtra(StoreModel.STORE_ID, model.getIdStore());
             StoreModel.getInstance().setId(model.getIdStore());
+            StoreModel.getInstance().setName(model.getNameStore());
+            StoreModel.getInstance().setAddress(model.getAddressStore());
+            StoreModel.getInstance().setPictureUrl(model.getPictureUrlStore());
+
+            try {
+                StoreView storeView = new StoreView(context, ((AppRetailActivity) context).getWindow().getDecorView().getRootView());
+                StoreDao storeDao = new StoreDao(context, storeView);
+                storeDao.get(StoreModel.getInstance().getId());
+                Log.d("StoreListViewAdapter", "storeDao started");
+            }catch (Exception e){
+                Log.d("StoreListViewAdapter", "Error", e);
+            }
 
             context.startActivity(it);
         }catch (Exception e){
