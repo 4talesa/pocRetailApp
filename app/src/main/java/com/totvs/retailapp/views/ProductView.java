@@ -10,11 +10,16 @@ import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.R;
+import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
+import com.totvs.retailapp.models.CategoryModel;
 import com.totvs.retailapp.models.ProductModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.lucasr.twowayview.widget.TwoWayView;
+
+import java.util.ArrayList;
 
 /**
  * Created by rond.borges on 10/12/2015.
@@ -31,6 +36,8 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
     protected Button buttonProductDetailMinus;
     protected Button buttonProductDetailPlus;
     protected Button buttonProductDetailAddToCart;
+    protected TwoWayView twoWayViewRelatedProduct;
+    protected ProductTwoWayViewAdapter adapter;
 
     public ProductView(Context context, View view) {
         super(context, view);
@@ -82,6 +89,14 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
             }
         });
 
+        try {
+            adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context, new String[]{CategoryModel.CATEGORY, model.getIdCategory(), "1"});
+            twoWayViewRelatedProduct = (TwoWayView) view.findViewById(R.id.twoWayViewRelatedProduct);
+            twoWayViewRelatedProduct.setAdapter(adapter);
+        }catch (Exception e){
+            Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
+        }
+
     }
 
     private void updateProductAmount(Integer incValue){
@@ -93,7 +108,7 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
             }
             editTextProductDetailAmount.setText(currentAmount.toString());
         }catch (Exception e){
-            System.out.println("Error - updateProductAmount: " + e.toString());
+            Log.d("updateProductAmount", "Error", e);
         }
     }
 

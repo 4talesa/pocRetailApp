@@ -31,6 +31,7 @@ public class BeaconStoreView extends AppRetailViewAbsctrat<BeaconStoreModel> {
             Intent it = new Intent(context, WalkInRewardNotifyActivity.class);
 
             it.putExtra(StoreModel.STORE_ID, model.getIdStore());
+            StoreModel.getInstance().setId(model.getIdStore());
 
             context.startActivity(it);
         }catch (Exception e){

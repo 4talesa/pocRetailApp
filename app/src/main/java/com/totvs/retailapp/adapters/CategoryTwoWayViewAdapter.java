@@ -12,6 +12,7 @@ import com.totvs.retailapp.ProductBrowseActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.models.CategoryModel;
 import com.totvs.retailapp.models.ProductModel;
+import com.totvs.retailapp.models.StoreModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,7 +53,7 @@ public class CategoryTwoWayViewAdapter extends TwoWayViewAdapterAbstract<Categor
 
         v.textViewCategoryTitle.setText(model.getName());
 
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context, new String[]{CategoryModel.CATEGORY, model.getId(), "1"});
+        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, context, new String[]{CategoryModel.CATEGORY, model.getId(), StoreModel.getInstance().getId()});
         v.twoWayViewBrowseCategoryList.setAdapter(adapter);
 
         v.textViewCategoryTitle.setTag(model.getId());

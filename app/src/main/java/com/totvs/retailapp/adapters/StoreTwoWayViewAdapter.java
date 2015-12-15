@@ -58,6 +58,7 @@ public class StoreTwoWayViewAdapter extends TwoWayViewAdapterAbstract<StoreModel
                 Intent it = new Intent(v.getContext(), CategoryBrowseActivity.class);
 
                 it.putExtra(StoreModel.STORE_ID, v.getTag().toString());
+                StoreModel.getInstance().setId(v.getTag().toString());
 
                 v.getContext().startActivity(it);
             }

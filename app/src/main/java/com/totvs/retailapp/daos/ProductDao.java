@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.ProductModel;
+import com.totvs.retailapp.models.StoreModel;
 import com.totvs.retailapp.views.ProductView;
 
 import org.json.JSONArray;
@@ -49,7 +50,7 @@ public class ProductDao extends AppRetailDaoAbstract<ProductModel> {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = AppRetailDaoAbstract.URL_API+ProductModel.PRODUCT+"/"+id;
+        url = AppRetailDaoAbstract.URL_API+ProductModel.PRODUCT+"/"+id+"/"+ StoreModel.getInstance().getId();
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, view.getListener(), view.getErrorListener());
 
         requestQueue.add(jsArrRequest);

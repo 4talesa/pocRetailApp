@@ -12,6 +12,7 @@ public class ProductModel extends AppRetailModelAbstract {
 
     static public String PRODUCT_ID = "productId";
     static public String PRODUCT = "Product";
+    static public String PRODUCT_STORE = "ProductStore";
 
     private String name;
     private String detail;

@@ -9,6 +9,7 @@ import com.totvs.retailapp.adapters.ProductListViewAdapter;
 import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
 import com.totvs.retailapp.models.CategoryModel;
 import com.totvs.retailapp.models.ProductModel;
+import com.totvs.retailapp.models.StoreModel;
 
 import org.lucasr.twowayview.widget.TwoWayView;
 
@@ -34,7 +35,7 @@ public class ProductBrowseActivity extends AppRetailActivity {
         if(bundle!=null){
             if (bundle.containsKey(CategoryModel.CATEGORY_ID)) {
                 //Toast.makeText(ProductBrowseActivity.this, "Category selected: " + bundle.getString(CategoryModel.CATEGORY_ID), Toast.LENGTH_LONG).show();
-                searchProduct( new String[] {CategoryModel.CATEGORY, bundle.getString(CategoryModel.CATEGORY_ID)});
+                searchProduct( new String[] {CategoryModel.CATEGORY, bundle.getString(CategoryModel.CATEGORY_ID), StoreModel.getInstance().getId()});
             }else {
                 Toast.makeText(ProductBrowseActivity.this, "Category not selected!", Toast.LENGTH_LONG).show();
             }

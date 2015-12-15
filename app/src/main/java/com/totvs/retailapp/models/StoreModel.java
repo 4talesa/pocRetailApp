@@ -13,11 +13,20 @@ public class StoreModel extends AppRetailModelAbstract {
     static public String STORE_ID = "storeId";
     static public String POSTAL_CODE = "PostalCode";
 
+    private static StoreModel store = null;
+
     private String name;
     private String address;
     private String distance;
     @SerializedName("pictureurl") private String pictureUrl;
     @SerializedName("postalcode") private String postalCode;
+
+    public static synchronized StoreModel getInstance(){
+        if(null == store){
+            store = new StoreModel();
+        }
+        return store;
+    }
 
     public String getName() {
         return name;
@@ -57,6 +66,10 @@ public class StoreModel extends AppRetailModelAbstract {
 
     public void setPostalCode(String postalCode){
         this.postalCode = postalCode;
+    }
+
+    private StoreModel(){
+
     }
 
     public StoreModel(String id, String name, String address, String distance, String pictureUrl, String postalCode){

@@ -20,6 +20,7 @@ import com.totvs.retailapp.adapters.ProductTwoWayViewAdapter;
 import com.totvs.retailapp.daos.ProductDao;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.ProductModel;
+import com.totvs.retailapp.models.StoreModel;
 import com.totvs.retailapp.views.ProductView;
 
 import org.json.JSONArray;
@@ -44,10 +45,6 @@ public class ProductDetailActivity extends AppRetailActivity {
 
         productView = new ProductView(this, this.getWindow().getDecorView().getRootView());
         productDao = new ProductDao(this, productView);
-
-        ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this);
-        TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewRelatedProduct);
-        lvTest.setAdapter(adapter);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
