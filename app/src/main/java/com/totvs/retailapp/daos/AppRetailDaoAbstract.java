@@ -2,10 +2,7 @@ package com.totvs.retailapp.daos;
 
 import android.content.Context;
 
-import com.android.volley.Response;
 import com.totvs.retailapp.views.AppRetailViewAbsctrat;
-
-import org.json.JSONArray;
 
 import java.util.List;
 

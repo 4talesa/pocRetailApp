@@ -6,18 +6,14 @@ import android.view.View;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.koushikdutta.ion.Ion;
-import com.totvs.retailapp.R;
-import com.totvs.retailapp.models.ProductModel;
+import com.totvs.retailapp.models.AppRetailModelAbstract;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by rond.borges on 10/12/2015.
  */
-public abstract class AppRetailViewAbsctrat<T> {
+public abstract class AppRetailViewAbsctrat<T extends AppRetailModelAbstract> {
 
     protected final Context context;
     protected final View view;

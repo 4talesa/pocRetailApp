@@ -7,7 +7,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.BeaconStoreModel;
-import com.totvs.retailapp.models.ProductModel;
 import com.totvs.retailapp.views.AppRetailViewAbsctrat;
 
 import java.util.List;

@@ -57,7 +57,7 @@ public class BeaconStoreModel extends AppRetailModelAbstract {
         this.pictureUrlStore= pictureUrlStore;
     }
 
-    static public BeaconStoreModel fromJson(JSONObject object) {
+    public static BeaconStoreModel fromJson(JSONObject object) {
         Gson gson = new Gson();
 
         return gson.fromJson(object.toString(), BeaconStoreModel.class);
