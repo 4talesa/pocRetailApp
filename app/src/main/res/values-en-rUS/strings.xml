@@ -102,4 +102,6 @@
     <string name="app_label_reward_description">Reward that can be redeemed</string>
     <string name="app_label_barcode">Barcode</string>
     <string name="app_label_barcode_format">Barcode format</string>
+    <string name="app_shopping_cart_title">Shopping Cart</string>
+    <string name="app_shopping_cart_place_order">Place order</string>
 </resources>

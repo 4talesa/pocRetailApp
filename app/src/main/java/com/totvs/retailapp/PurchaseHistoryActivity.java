@@ -16,7 +16,6 @@ import java.util.Date;
 public class PurchaseHistoryActivity extends AppRetailActivity {
 
     PurchaseListViewAdapter purchaseAdapter;
-    ParseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +23,6 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
         setContentView(R.layout.activity_purchase_history);
 
         this.activityName = purchaseHistoryActivity;
-
-        currentUser = ParseUser.getCurrentUser();
 
         Button buttonPurchaseHistoryAdd = (Button) findViewById(R.id.buttonPurchaseHistoryAdd);
 

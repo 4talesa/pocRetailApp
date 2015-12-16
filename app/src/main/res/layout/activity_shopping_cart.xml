@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.totvs.retailapp.PurchaseDetailActivity"
+    tools:context="com.totvs.retailapp.ShoppingCartActivity"
     android:orientation="vertical"
     style="@style/linearLayoutLight">
 
     <LinearLayout
         style="@style/headerTitle"
         android:orientation="vertical">
-        <TextView android:text="@string/app_purchase_title"
-            android:id="@+id/textViewPurchaseTitle"
+        <TextView android:text="@string/app_shopping_cart_title"
+            android:id="@+id/textViewShoppingCartTitle"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             style="@style/mediumLabelLight"
             android:gravity="center" />
         <TextView android:text="@string/app_label_date_value"
-            android:id="@+id/textViewPurchaseDate"
+            android:id="@+id/textViewShoppingCartDate"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
@@ -34,10 +36,10 @@
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listViewPurchaseDetail" />
+            android:id="@+id/listViewShoppingCart" />
     </LinearLayout>
-    <Button android:text="@string/app_purchase_add_all_to_cart"
-        android:id="@+id/buttonPurchaseDetailAddAllToCart"
+    <Button android:text="@string/app_shopping_cart_place_order"
+        android:id="@+id/buttonShoppingCartPlaceOrder"
         style="@style/largeButtonDark"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

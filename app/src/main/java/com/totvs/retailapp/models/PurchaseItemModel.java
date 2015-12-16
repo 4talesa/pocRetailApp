@@ -8,26 +8,9 @@ import org.json.JSONObject;
 /**
  * Created by rond.borges on 23/11/2015.
  */
-public class PurchaseItemModel extends AppRetailModelAbstract {
+public class PurchaseItemModel extends ProductItemModelAbstract {
 
-    @SerializedName("idproduct") private String idProduct;
     @SerializedName("idpurchase") private String idPurchase;
-    private String description;
-    private String unit;
-    @SerializedName("unitprice") private Double unitValue;
-    @SerializedName("totalitem") private Double amount;
-    @SerializedName("pictureurl") private String pictureUrl;
-    @SerializedName("categoryname") private String category;
-    @SerializedName("brandname") private String brand;
-    @SerializedName("amountpurchased") private Double quantity;
-
-    public String getIdProduct(){
-        return this.idProduct;
-    }
-
-    public void setIdProduct(String idProduct){
-        this.idProduct = idProduct;
-    }
 
     public String getIdPurchase(){
         return this.idPurchase;
@@ -37,70 +20,10 @@ public class PurchaseItemModel extends AppRetailModelAbstract {
         this.idPurchase = idPurchase;
     }
 
-    public String getDescription(){
-        return this.description;
-    }
-
-    public void setDescription(String description){
-        this.description = description;
-    }
-
-    public String getUnit(){
-        return this.unit;
-    }
-
-    public void setUnit(String unit){
-        this.unit = unit;
-    }
-
-    public Double getUnitValue(){
-        return this.unitValue;
-    }
-
-    public void setUnitValue(Double unitValue){
-        this.unitValue = unitValue;
-    }
-
-    public Double getAmount(){
-        return this.amount;
-    }
-
-    public void setAmount(Double amount){
-        this.amount = amount;
-    }
-
-    public Double getTotalValue(){
-        return this.getUnitValue() * this.getAmount();
-    }
-
-    public String getPictureUrl() { return this.pictureUrl; }
-
-    public void setPictureUrl(String pictureUrl) { this.pictureUrl = pictureUrl; }
-
-    public String getCategory() { return this.category; }
-
-    public void setCategory( String category ) { this.category = category; }
-
-    public String getBrand() { return this.brand; }
-
-    public void setBrand( String brand ) { this.brand = brand; }
-
-    public Double getQuantity() { return this.quantity; }
-
-    public void setQuantity(Double quantity ) { this.quantity = quantity; }
-
     public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double amount, String pictureUrl, String category, String brand, Double quantity){
-        this.id             = id;
-        this.idProduct      = idProduct;
+        super(id, idProduct, description, unit, unitValue, amount, pictureUrl, category, brand, quantity);
+
         this.idPurchase     = idPurchase;
-        this.description    = description;
-        this.unit           = unit;
-        this.unitValue      = unitValue;
-        this.amount         = amount;
-        this.pictureUrl = pictureUrl;
-        this.category       = category;
-        this.brand          = brand;
-        this.quantity       = quantity;
     }
 
     static public PurchaseItemModel fromJson(JSONObject object) {

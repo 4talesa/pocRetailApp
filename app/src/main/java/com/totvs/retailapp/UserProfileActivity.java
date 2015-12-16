@@ -33,7 +33,6 @@ public class UserProfileActivity extends AppRetailPictureActivity {
     EditText editTextProfilePassword;
     ImageButton imageButtonProfilePicture;
     protected Profile currentProfile;
-    protected ParseUser currentUser;
     Switch switchFacebookConnect;
     Boolean loadingProfile;
 
@@ -44,7 +43,6 @@ public class UserProfileActivity extends AppRetailPictureActivity {
 
         this.activityName = userProfileActivity;
 
-        currentUser = ParseUser.getCurrentUser();
         loadingProfile = true;
 
         editTextProfileFullName = (EditText) findViewById(R.id.editTextProfileFullName);

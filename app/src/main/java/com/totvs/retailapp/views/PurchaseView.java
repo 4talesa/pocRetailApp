@@ -26,7 +26,7 @@ import java.util.Date;
  */
 public class PurchaseView extends AppRetailViewAbsctrat<PurchaseModel> {
 
-    protected TextView textViewDateValue;
+    protected TextView textViewPurchaseDate;
     protected TextView textViewPurchaseTitle;
     protected Button buttonPurchaseDetailAddAllToCart;
     protected ListView listView;
@@ -40,12 +40,12 @@ public class PurchaseView extends AppRetailViewAbsctrat<PurchaseModel> {
     public void populateView(PurchaseModel model) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
-        textViewDateValue = (TextView) view.findViewById(R.id.textViewDateValue);
+        textViewPurchaseDate = (TextView) view.findViewById(R.id.textViewPurchaseDate);
         textViewPurchaseTitle = (TextView) view.findViewById(R.id.textViewPurchaseTitle);
         buttonPurchaseDetailAddAllToCart = (Button) view.findViewById(R.id.buttonPurchaseDetailAddAllToCart);
         listView = (ListView) view.findViewById(R.id.listViewPurchaseDetail);
 
-        textViewDateValue.setText(dateFormat.format(model.getDate()));
+        textViewPurchaseDate.setText(dateFormat.format(model.getDate()));
         textViewPurchaseTitle.setText(context.getResources().getString(R.string.app_label_purchase) + " #" + model.getId());
 
         purchaseItemAdapter = new PurchaseItemListViewAdapter(context, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>(), new String[]{PurchaseModel.PURCHASE, model.getId()});

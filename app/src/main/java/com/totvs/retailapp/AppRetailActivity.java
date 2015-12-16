@@ -58,11 +58,15 @@ public class AppRetailActivity extends AppCompatActivity {
     private static final int REQUEST_ENABLE_BT = 1234;
     private Beacon beaconSelected;
 
+    protected ParseUser currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         beaconManager = new BeaconManager(this);
+
+        currentUser = ParseUser.getCurrentUser();
 
         //Default values are 5s of scanning and 25s of waiting time to save CPU cycles.
         beaconManager.setBackgroundScanPeriod(TimeUnit.SECONDS.toMillis(30), 0);

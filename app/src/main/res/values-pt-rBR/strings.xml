@@ -98,4 +98,6 @@
     <string name="app_label_reward_description">Recompensa que pode ser resgatada</string>
     <string name="app_label_barcode">Código de barras</string>
     <string name="app_label_barcode_format">Formato do código de barras</string>
+    <string name="app_shopping_cart_title">Carrinho de compras</string>
+    <string name="app_shopping_cart_place_order">Comprar</string>
 </resources>
