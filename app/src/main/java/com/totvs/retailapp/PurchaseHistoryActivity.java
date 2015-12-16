@@ -5,8 +5,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.parse.ParseUser;
 import com.totvs.retailapp.adapters.PurchaseListViewAdapter;
 import com.totvs.retailapp.models.PurchaseModel;
+import com.totvs.retailapp.models.UserModel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +16,7 @@ import java.util.Date;
 public class PurchaseHistoryActivity extends AppRetailActivity {
 
     PurchaseListViewAdapter purchaseAdapter;
+    ParseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +25,13 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
 
         this.activityName = purchaseHistoryActivity;
 
+        currentUser = ParseUser.getCurrentUser();
+
         Button buttonPurchaseHistoryAdd = (Button) findViewById(R.id.buttonPurchaseHistoryAdd);
 
         ListView listView = (ListView) findViewById(R.id.listViewPurchaseItem);
 
-        purchaseAdapter = new PurchaseListViewAdapter(this, R.layout.purchase_history_item, new ArrayList<PurchaseModel>());
+        purchaseAdapter = new PurchaseListViewAdapter(this, R.layout.purchase_history_item, new ArrayList<PurchaseModel>(), new String[] {UserModel.USER, currentUser.getObjectId()});
         listView.setAdapter(purchaseAdapter);
 
     }

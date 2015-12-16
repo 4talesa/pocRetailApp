@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class UserModel extends AppRetailModelAbstract {
 
+    static public String USER = "User";
     static public String USER_FULL_NAME = "fullName";
     static public String USER_PHONE = "phone";
     static public String USER_ADDRESS = "address";

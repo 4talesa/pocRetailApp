@@ -30,6 +30,10 @@ public class PurchaseListViewAdapter extends ListViewAdapterAbstract<PurchaseMod
         super(context, layout, objects, "Purchase");
     }
 
+    public PurchaseListViewAdapter(Context context, int layout, ArrayList<PurchaseModel> objects, String[] urlFilters){
+        super(context, layout, objects, "Purchase", urlFilters);
+    }
+
     @Override
     protected void populateView(View v, PurchaseModel model) {
 
