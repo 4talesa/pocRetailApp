@@ -1,6 +1,7 @@
 package com.totvs.retailapp.daos;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -9,7 +10,11 @@ import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.ShoppingCartItemModel;
 import com.totvs.retailapp.views.AppRetailViewAbsctrat;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +36,7 @@ public class ShoppingCartItemDao extends AppRetailDaoAbstract<ShoppingCartItemMo
         url = AppRetailDaoAbstract.URL_API+ ShoppingCartItemModel.SHOPPING_CART_ITEM;
 
         Map<String, String> params = new HashMap<>();
+
         params.put("id", model.getId());
         params.put("idShoppingCart", model.getIdShoppingCart());
         params.put("idProduct", model.getIdProduct());

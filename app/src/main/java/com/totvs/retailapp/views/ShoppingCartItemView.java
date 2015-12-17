@@ -1,10 +1,15 @@
 package com.totvs.retailapp.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
+import com.totvs.retailapp.AppRetailActivity;
+import com.totvs.retailapp.ShoppingCartActivity;
+import com.totvs.retailapp.daos.StoreDao;
 import com.totvs.retailapp.models.ShoppingCartItemModel;
+import com.totvs.retailapp.models.StoreModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +28,9 @@ public class ShoppingCartItemView extends AppRetailViewAbsctrat<ShoppingCartItem
     protected void populateView(ShoppingCartItemModel model) {
 
         try{
+            Intent it = new Intent(context, ShoppingCartActivity.class);
 
+            context.startActivity(it);
         }catch (Exception e){
             Log.d("ShoppingCartItemView", "Error:", e);
         }

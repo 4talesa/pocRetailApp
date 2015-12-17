@@ -3,6 +3,7 @@ package com.totvs.retailapp.adapters;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +43,8 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
         TextView shopping_cart_item_quantity_value = (TextView) v.findViewById(R.id.shopping_cart_item_quantity_value);
         TextView shopping_cart_item_total_amount_label = (TextView) v.findViewById(R.id.shopping_cart_item_total_amount_label);
         TextView shopping_cart_item_total_amount_value = (TextView) v.findViewById(R.id.shopping_cart_item_total_amount_value);
+        Button shopping_cart_item_minus = (Button) v.findViewById(R.id.shopping_cart_item_minus);
+        Button shopping_cart_item_plus = (Button) v.findViewById(R.id.shopping_cart_item_plus);
 
         shopping_cart_item_description.setText(model.getDescription());
         shopping_cart_item_category.setText(model.getCategory());
@@ -56,6 +59,23 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
         Ion.with(shopping_cart_item_picture)
                 .fitCenter()
                 .load(model.getPictureUrl());
+
+        shopping_cart_item_minus.setTag(model);
+        shopping_cart_item_plus.setTag(model);
+
+        shopping_cart_item_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateProductAmount(-1, (ShoppingCartItemModel) v.getTag());
+            }
+        });
+
+        shopping_cart_item_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateProductAmount(1, (ShoppingCartItemModel) v.getTag());
+            }
+        });
 
     }
 
@@ -73,6 +93,10 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
             }
         }
 
+    }
+
+    private void updateProductAmount(Integer incValue, ShoppingCartItemModel shoppingCartItemModel){
+        Log.d("updateProductAmount", "update product: "+shoppingCartItemModel.getIdProduct());
     }
 
 }

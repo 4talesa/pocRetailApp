@@ -96,7 +96,7 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
                 @Override
                 public void onClick(View v) {
 
-                    ProductModel productModel = (ProductModel) buttonProductDetailAddToCart.getTag();
+                    ProductModel productModel = (ProductModel) v.getTag();
 
                     ShoppingCartItemModel shoppingCartItemModel = new ShoppingCartItemModel(
                             ParseUser.getCurrentUser().getObjectId()+"."+productModel.getId()
@@ -118,7 +118,6 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
 
                     shoppingCartItemDao.save( shoppingCartItemModel );
 
-                    Log.d("ProductView", "Product: " + productModel.getId());
                 }
             });
 

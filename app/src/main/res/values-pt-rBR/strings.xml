@@ -100,4 +100,5 @@
     <string name="app_label_barcode_format">Formato do código de barras</string>
     <string name="app_shopping_cart_title">Carrinho de compras</string>
     <string name="app_shopping_cart_place_order">Comprar</string>
+    <string name="app_button_remove">X</string>
 </resources>

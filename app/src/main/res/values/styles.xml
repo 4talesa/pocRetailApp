@@ -103,6 +103,11 @@
         <item name="android:background">@color/colorBackgroundLight</item>
     </style>
 
+    <style name="smallButtonWarning" parent="smallButton">
+        <item name="android:textColor">@color/colorLabelLight</item>
+        <item name="android:background">@color/colorBackgroundWarning</item>
+    </style>
+
     <style name="mediumButtonDark" parent="mediumButton">
         <item name="android:textColor">@color/colorLabelDark</item>
         <item name="android:background">@color/colorBackgroundDark</item>

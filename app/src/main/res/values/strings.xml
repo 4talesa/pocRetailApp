@@ -102,12 +102,13 @@
     <string name="app_label_reward_description">Reward that can be redeemed</string>
     <string name="app_label_barcode">Barcode</string>
     <string name="app_label_barcode_format">Barcode format</string>
+    <string name="app_shopping_cart_title">Shopping Cart</string>
+    <string name="app_shopping_cart_place_order">Place order</string>
+    <string name="app_button_remove">X</string>
 
     <string name="app_parse_app_id">ZJDcxqIdbJyGRtSlkSXhpj5hA5LE1VC5O2siBrW0</string>
     <string name="app_parse_app_key">b7fBJDoQ1dp07ASO3RQeyxhWyoqUtdFK4e0biBKd</string>
     <string name="app_facebook_app_id">989851321053452</string>
     <string name="app_estimote_app_id">retailapp-c73</string>
     <string name="app_estimote_app_token">de8c5a21201bd6f56debc0765d1d5103</string>
-    <string name="app_shopping_cart_title">Shopping Cart</string>
-    <string name="app_shopping_cart_place_order">Place order</string>
 </resources>

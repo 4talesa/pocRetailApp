@@ -20,4 +20,5 @@
     <color name="colorBackgroundShadow">#adadad</color>
     <color name="colorBackgroundDisabled">#e0e0e0</color>
     <color name="colorBackgroundNotify">#ff5915</color>
+    <color name="colorBackgroundWarning">#ff0000</color>
 </resources>

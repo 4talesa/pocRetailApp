@@ -30,7 +30,6 @@ public abstract class AppRetailViewAbsctrat<T extends AppRetailModelAbstract> {
             public void onResponse(JSONArray response) {
                 // TODO Auto-generated method stub
                 Log.d("TwoWayViewAdapter", "Response.Listener<JSONArray> data: " + response.toString());
-                Log.d("TwoWayViewAdapter", "Response.Listener<JSONArray> length: " + response.length());
 
                 updateJSONArray(response);
 
