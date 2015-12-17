@@ -38,19 +38,25 @@ public class ShoppingCartView extends AppRetailViewAbsctrat<ShoppingCartModel> {
     }
 
     @Override
-    public void populateView(ShoppingCartModel model) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    protected void populateView(ShoppingCartModel model) {
 
-        textViewShoppingCartDate = (TextView) view.findViewById(R.id.textViewShoppingCartDate);
-        textViewShoppingCartTitle = (TextView) view.findViewById(R.id.textViewShoppingCartTitle);
-        buttonShoppingCartPlaceOrder = (Button) view.findViewById(R.id.buttonShoppingCartPlaceOrder);
-        listView = (ListView) view.findViewById(R.id.listViewShoppingCart);
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
-        textViewShoppingCartDate.setText(dateFormat.format(model.getDate()));
-        textViewShoppingCartTitle.setText(context.getResources().getString(R.string.app_label_purchase) + " #" + model.getId());
+            textViewShoppingCartDate = (TextView) view.findViewById(R.id.textViewShoppingCartDate);
+            textViewShoppingCartTitle = (TextView) view.findViewById(R.id.textViewShoppingCartTitle);
+            buttonShoppingCartPlaceOrder = (Button) view.findViewById(R.id.buttonShoppingCartPlaceOrder);
+            listView = (ListView) view.findViewById(R.id.listViewShoppingCart);
 
-        shoppingCartItemAdapter = new ShoppingCartItemListViewAdapter(context, R.layout.purchase_detail_item, new ArrayList<ShoppingCartItemModel>(), new String[]{ShoppingCartModel.SHOPPING_CART, model.getId()});
-        listView.setAdapter(shoppingCartItemAdapter);
+            textViewShoppingCartDate.setText(dateFormat.format(model.getDate()));
+            textViewShoppingCartTitle.setText(context.getResources().getString(R.string.app_shopping_cart_title) + " #" + model.getId());
+
+            shoppingCartItemAdapter = new ShoppingCartItemListViewAdapter(context, R.layout.shopping_cart_item, new ArrayList<ShoppingCartItemModel>(), new String[]{ShoppingCartModel.SHOPPING_CART, model.getId()});
+            listView.setAdapter(shoppingCartItemAdapter);
+        }catch (Exception e){
+            Log.d("ShoppingCartView", "Error:", e);
+        }
+
     }
 
     @Override

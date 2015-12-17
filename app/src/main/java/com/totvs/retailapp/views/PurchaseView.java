@@ -37,19 +37,25 @@ public class PurchaseView extends AppRetailViewAbsctrat<PurchaseModel> {
     }
 
     @Override
-    public void populateView(PurchaseModel model) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    protected void populateView(PurchaseModel model) {
 
-        textViewPurchaseDate = (TextView) view.findViewById(R.id.textViewPurchaseDate);
-        textViewPurchaseTitle = (TextView) view.findViewById(R.id.textViewPurchaseTitle);
-        buttonPurchaseDetailAddAllToCart = (Button) view.findViewById(R.id.buttonPurchaseDetailAddAllToCart);
-        listView = (ListView) view.findViewById(R.id.listViewPurchaseDetail);
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
-        textViewPurchaseDate.setText(dateFormat.format(model.getDate()));
-        textViewPurchaseTitle.setText(context.getResources().getString(R.string.app_label_purchase) + " #" + model.getId());
+            textViewPurchaseDate = (TextView) view.findViewById(R.id.textViewPurchaseDate);
+            textViewPurchaseTitle = (TextView) view.findViewById(R.id.textViewPurchaseTitle);
+            buttonPurchaseDetailAddAllToCart = (Button) view.findViewById(R.id.buttonPurchaseDetailAddAllToCart);
+            listView = (ListView) view.findViewById(R.id.listViewPurchaseDetail);
 
-        purchaseItemAdapter = new PurchaseItemListViewAdapter(context, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>(), new String[]{PurchaseModel.PURCHASE, model.getId()});
-        listView.setAdapter(purchaseItemAdapter);
+            textViewPurchaseDate.setText(dateFormat.format(model.getDate()));
+            textViewPurchaseTitle.setText(context.getResources().getString(R.string.app_label_purchase) + " #" + model.getId());
+
+            purchaseItemAdapter = new PurchaseItemListViewAdapter(context, R.layout.purchase_detail_item, new ArrayList<PurchaseItemModel>(), new String[]{PurchaseModel.PURCHASE, model.getId()});
+            listView.setAdapter(purchaseItemAdapter);
+        }catch (Exception e){
+            Log.d("BeaconStoreView", "Error:", e);
+        }
+
     }
 
     @Override

@@ -47,7 +47,7 @@ public abstract class AppRetailViewAbsctrat<T extends AppRetailModelAbstract> {
         };
     };
 
-    public abstract void populateView(T model);
+    protected abstract void populateView(T model);
 
     public Response.Listener<JSONArray> getListener() {
         return listener;

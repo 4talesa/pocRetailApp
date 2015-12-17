@@ -25,10 +25,11 @@ public class BeaconStoreView extends AppRetailViewAbsctrat<BeaconStoreModel> {
     }
 
     @Override
-    public void populateView(BeaconStoreModel model) {
-        //Toast.makeText(context, "BeaconStoreModel found Id: "+model.getId()+", idStore: "+model.getIdStore(), Toast.LENGTH_LONG).show();
-        Log.d("BeaconStoreView", "BeaconStoreModel Near Beacon found Id: "+model.getId()+", idStore: "+model.getIdStore());
+    protected void populateView(BeaconStoreModel model) {
+
         try {
+            Log.d("BeaconStoreView", "BeaconStoreModel Near Beacon found Id: "+model.getId()+", idStore: "+model.getIdStore());
+
             Intent it = new Intent(context, WalkInRewardNotifyActivity.class);
 
             it.putExtra(StoreModel.STORE_ID, model.getIdStore());
@@ -50,6 +51,7 @@ public class BeaconStoreView extends AppRetailViewAbsctrat<BeaconStoreModel> {
         }catch (Exception e){
             Log.d("BeaconStoreView", "Error:", e);
         }
+
     }
 
     @Override

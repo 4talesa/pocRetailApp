@@ -33,7 +33,7 @@ public class PurchaseDetailActivity extends AppRetailActivity {
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             if (bundle.containsKey(PurchaseModel.PURCHASE_ID)) {
-                Toast.makeText(PurchaseDetailActivity.this, "Purchase selected: " + bundle.getString(PurchaseModel.PURCHASE_ID), Toast.LENGTH_LONG).show();
+                //Toast.makeText(PurchaseDetailActivity.this, "Purchase selected: " + bundle.getString(PurchaseModel.PURCHASE_ID), Toast.LENGTH_LONG).show();
                 purchaseDao.get(bundle.getString(PurchaseModel.PURCHASE_ID));
             }else {
                 Toast.makeText(PurchaseDetailActivity.this, "Purchase not selected!", Toast.LENGTH_LONG).show();

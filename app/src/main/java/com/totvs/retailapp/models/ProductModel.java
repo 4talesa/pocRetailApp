@@ -21,6 +21,7 @@ public class ProductModel extends AppRetailModelAbstract {
     private Double price;
     @SerializedName("namecategory") private String category;
     private String unit;
+    @SerializedName("namebrand") private String brand;
 
     public String getName() {
         return name;
@@ -78,7 +79,15 @@ public class ProductModel extends AppRetailModelAbstract {
         this.unit = unit;
     }
 
-    public ProductModel(String id, String name, String detail, String idCategory, String pictureUrl, Double price, String category, String unit){
+    public String getBrand(){
+        return brand;
+    }
+
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+
+    public ProductModel(String id, String name, String detail, String idCategory, String pictureUrl, Double price, String category, String unit, String brand){
         this.id             = id;
         this.name           = name;
         this.detail         = detail;
@@ -87,6 +96,7 @@ public class ProductModel extends AppRetailModelAbstract {
         this.price          = price;
         this.category       = category;
         this.unit           = unit;
+        this.brand          = brand;
     }
 
     static public ProductModel fromJson(JSONObject object) {

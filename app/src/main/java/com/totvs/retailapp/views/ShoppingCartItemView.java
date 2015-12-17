@@ -4,28 +4,28 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 
-import com.totvs.retailapp.models.StoreModel;
+import com.totvs.retailapp.models.ShoppingCartItemModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by rond.borges on 15/12/2015.
+ * Created by rond.borges on 17/12/2015.
  */
-public class StoreView extends AppRetailViewAbsctrat<StoreModel> {
+public class ShoppingCartItemView extends AppRetailViewAbsctrat<ShoppingCartItemModel> {
 
-    public StoreView(Context context, View view) {
+    public ShoppingCartItemView(Context context, View view) {
         super(context, view);
     }
 
     @Override
-    protected void populateView(StoreModel model) {
+    protected void populateView(ShoppingCartItemModel model) {
 
-        try {
-            StoreModel.setStoreModel(model);
+        try{
+
         }catch (Exception e){
-            Log.d("StoreView", "Error:", e);
+            Log.d("ShoppingCartItemView", "Error:", e);
         }
 
     }
@@ -36,7 +36,7 @@ public class StoreView extends AppRetailViewAbsctrat<StoreModel> {
             try {
                 JSONObject object = response.getJSONObject(i);
 
-                populateView(StoreModel.fromJson(object));
+                populateView(ShoppingCartItemModel.fromJson(object));
 
             } catch (JSONException e) {
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);

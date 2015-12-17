@@ -374,7 +374,7 @@ public class AppRetailActivity extends AppCompatActivity {
     }
 
     public Boolean newBeaconNear(Beacon beacon){
-        if ((Utils.computeAccuracy(beacon) < 0.20)) {
+        if ((Utils.computeAccuracy(beacon) < 0.10)) {
             if (beaconSelected == null){
                 beaconSelected = beacon;
                 return true;

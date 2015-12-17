@@ -7,9 +7,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 import com.totvs.retailapp.models.ShoppingCartModel;
+import com.totvs.retailapp.models.ShoppingCartItemModel;
 import com.totvs.retailapp.views.AppRetailViewAbsctrat;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by rond.borges on 16/12/2015.

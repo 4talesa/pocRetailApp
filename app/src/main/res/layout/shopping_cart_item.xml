@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/productThumb"
+        android:gravity="center"
+        android:src="@drawable/product_preview"
+        android:id="@+id/shopping_cart_item_picture"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/product_preview_desc_height"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView android:text="@string/app_label_product_preview_description"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/smallLabelLight"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:id="@+id/shopping_cart_item_description"/>
+        <TextView android:text="@string/app_label_product_preview_category"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/smallLabelLight"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:id="@+id/shopping_cart_item_category"/>
+        <TextView android:text="@string/app_label_product_preview_brand"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/smallLabelLight"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:id="@+id/shopping_cart_item_brand"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/product_preview_amount_height"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:text="@string/app_label_product_preview_unit"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/smallLabelLight"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/shopping_cart_item_unit_label"/>
+            <TextView android:text="@string/app_label_product_preview_quantity"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/smallLabelLight"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/shopping_cart_item_quantity_label"/>
+            <TextView android:text="@string/app_label_product_preview_total_amount"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/smallLabelLight"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/shopping_cart_item_total_amount_label"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:text="@string/app_label_product_preview_unit_value"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/smallLabelLight"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/shopping_cart_item_unit_value"/>
+            <TextView android:text="@string/app_label_product_preview_quantity_value"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/smallLabelLight"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/shopping_cart_item_quantity_value"/>
+            <TextView android:text="@string/app_label_product_preview_total_amount_value"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/smallLabelLight"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:id="@+id/shopping_cart_item_total_amount_value"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
