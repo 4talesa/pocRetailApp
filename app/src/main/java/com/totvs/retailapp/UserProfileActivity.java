@@ -41,7 +41,7 @@ public class UserProfileActivity extends AppRetailPictureActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        this.activityName = userProfileActivity;
+        this.activityName = USERPROFILEACTIVITY;
 
         loadingProfile = true;
 

@@ -14,11 +14,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.totvs.retailapp.daos.AppRetailDaoAbstract;
 import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
-import com.totvs.retailapp.models.StoreModel;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 

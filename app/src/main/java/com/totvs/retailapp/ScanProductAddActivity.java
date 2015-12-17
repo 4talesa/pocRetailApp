@@ -22,7 +22,7 @@ public class ScanProductAddActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_product_add);
 
-        this.activityName = purchaseScanProductAddActivity;
+        this.activityName = PURCHASESCANPRODUCTADDACTIVITY;
         editTextScanProductBarcode = (EditText) findViewById(R.id.editTextScanProductBarcode);
         editTextScanProductBarcodeFormat = (EditText) findViewById(R.id.editTextScanProductBarcodeFormat);
         Button buttonScanProductAddManually = (Button) findViewById(R.id.buttonScanProductAddManually);

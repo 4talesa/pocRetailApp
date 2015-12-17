@@ -25,7 +25,7 @@ public class PurchaseDetailActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_detail);
 
-        this.activityName = purchaseDetailActivity;
+        this.activityName = PURCHASEDETAILACTIVITY;
 
         purchaseView = new PurchaseView(this, this.getWindow().getDecorView().getRootView());
         purchaseDao = new PurchaseDao(this, purchaseView);

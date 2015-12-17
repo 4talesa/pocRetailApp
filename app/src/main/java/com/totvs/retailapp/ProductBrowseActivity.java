@@ -29,7 +29,7 @@ public class ProductBrowseActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_browse);
 
-        this.activityName = productBrowseActivity;
+        this.activityName = PRODUCTBROWSEACTIVITY;
 
         lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseProduct);
         searchProduct(null);

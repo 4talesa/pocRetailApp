@@ -18,7 +18,7 @@ public class RewardBalanceActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reward_balance);
 
-        this.activityName = rewardBalanceActivity;
+        this.activityName = REWARDBALANCEACTIVITY;
 
         RewardTwoWayViewAdapter adapter = new RewardTwoWayViewAdapter(new ArrayList<RewardModel>(), R.layout.reward_balance_item, this);
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewPurchaseDetail);

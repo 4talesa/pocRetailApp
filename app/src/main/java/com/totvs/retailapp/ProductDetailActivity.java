@@ -41,7 +41,7 @@ public class ProductDetailActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
-        this.activityName = productDetailActivity;
+        this.activityName = PRODUCTDETAILACTIVITY;
 
         productView = new ProductView(this, this.getWindow().getDecorView().getRootView());
         productDao = new ProductDao(this, productView);

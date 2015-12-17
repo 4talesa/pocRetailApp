@@ -21,7 +21,7 @@ public class PurchaseHistoryAddActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_history_add);
 
-        this.activityName = purchaseHistoryAddActivity;
+        this.activityName = PURCHASEHISTORYADDACTIVITY;
 
         editTextPurchaseBarcode = (EditText) findViewById(R.id.editTextPurchaseBarcode);
         editTextPurchaseBarcodeFormat = (EditText) findViewById(R.id.editTextPurchaseBarcodeFormat);

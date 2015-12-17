@@ -51,4 +51,16 @@ public class ShoppingCartDao extends AppRetailDaoAbstract<ShoppingCartModel> {
 
         requestQueue.add(jsArrRequest);
     }
+
+    public void getByUser(String idUser, String idStore) {
+        String url = "";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        url = AppRetailDaoAbstract.URL_API+ ShoppingCartModel.SHOPPING_CART+"/User/"+idUser+"/"+idStore;
+        HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, view.getListener(), view.getErrorListener());
+
+        requestQueue.add(jsArrRequest);
+    }
+
 }

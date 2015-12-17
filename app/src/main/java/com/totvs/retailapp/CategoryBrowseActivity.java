@@ -27,7 +27,7 @@ public class CategoryBrowseActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_browse);
 
-        this.activityName = categorytBrowseActivity;
+        this.activityName = CATEGORYBROWSEACTIVITY;
 
         lvTest = (TwoWayView) findViewById(R.id.twoWayViewBrowseCategory);
         searchCategory(null);

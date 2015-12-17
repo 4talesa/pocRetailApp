@@ -22,7 +22,7 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_history);
 
-        this.activityName = purchaseHistoryActivity;
+        this.activityName = PURCHASEHISTORYACTIVITY;
 
         Button buttonPurchaseHistoryAdd = (Button) findViewById(R.id.buttonPurchaseHistoryAdd);
 

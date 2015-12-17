@@ -42,7 +42,7 @@ public class StoreBrowseActivity extends AppRetailActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_browse);
 
-        this.activityName = storeBrowseActivity;
+        this.activityName = STOREBROWSEACTIVITY;
 
         editTextStoreBrowseZip = (EditText) findViewById(R.id.editTextStoreBrowseZip);
         buttonStoreBrowseChangeZip = (Button) findViewById(R.id.buttonStoreBrowseChangeZip);

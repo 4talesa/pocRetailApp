@@ -39,19 +39,20 @@ import java.util.concurrent.TimeUnit;
  */
 public class AppRetailActivity extends AppCompatActivity {
 
-    static final String defaultActivity         = "defaultActivity";
-    static final String storeBrowseActivity     = "storeBrowseActivity";
-    static final String productBrowseActivity   = "productBrowseActivity";
-    static final String categorytBrowseActivity = "categorytBrowseActivity";
-    static final String userProfileActivity     = "userProfileActivity";
-    static final String rewardBalanceActivity   = "rewardBalanceActivity";
-    static final String productDetailActivity   = "productDetailActivity";
-    static final String purchaseDetailActivity  = "purchaseDetailActivity";
-    static final String purchaseHistoryActivity  = "purchaseHistoryActivity";
-    static final String purchaseHistoryAddActivity  = "purchaseHistoryAddActivity";
-    static final String purchaseScanProductAddActivity = "purchaseScanProductAddActivity";
+    static final String DEFAULTACTIVITY                 = "defaultActivity";
+    static final String STOREBROWSEACTIVITY             = "storeBrowseActivity";
+    static final String PRODUCTBROWSEACTIVITY           = "productBrowseActivity";
+    static final String CATEGORYBROWSEACTIVITY          = "categoryBrowseActivity";
+    static final String USERPROFILEACTIVITY             = "userProfileActivity";
+    static final String REWARDBALANCEACTIVITY           = "rewardBalanceActivity";
+    static final String PRODUCTDETAILACTIVITY           = "productDetailActivity";
+    static final String PURCHASEDETAILACTIVITY          = "purchaseDetailActivity";
+    static final String PURCHASEHISTORYACTIVITY         = "purchaseHistoryActivity";
+    static final String PURCHASEHISTORYADDACTIVITY      = "purchaseHistoryAddActivity";
+    static final String PURCHASESCANPRODUCTADDACTIVITY  = "purchaseScanProductAddActivity";
+    static final String SHOPPINGCARTACTIVITY            = "ShoppingCartActivity";
 
-    protected String activityName = defaultActivity;
+    protected String activityName = DEFAULTACTIVITY;
 
     private BeaconManager beaconManager;
     private static final Region ALL_ESTIMOTE_BEACONS_REGION = new Region("rid", null, null, null);
@@ -69,7 +70,7 @@ public class AppRetailActivity extends AppCompatActivity {
         currentUser = ParseUser.getCurrentUser();
 
         //Default values are 5s of scanning and 25s of waiting time to save CPU cycles.
-        beaconManager.setBackgroundScanPeriod(TimeUnit.SECONDS.toMillis(30), 0);
+        beaconManager.setBackgroundScanPeriod(TimeUnit.SECONDS.toMillis(60), TimeUnit.SECONDS.toMillis(30));
 
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
@@ -266,6 +267,11 @@ public class AppRetailActivity extends AppCompatActivity {
                 it = new Intent(this, ScanProductAddActivity.class);
                 this.startActivity(it);
                 return true;
+
+            case R.id.menu_shopping_cart:
+                it = new Intent(this, ShoppingCartActivity.class);
+                this.startActivity(it);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -367,7 +373,7 @@ public class AppRetailActivity extends AppCompatActivity {
         }
     }
 
-    private Boolean newBeaconNear(Beacon beacon){
+    public Boolean newBeaconNear(Beacon beacon){
         if ((Utils.computeAccuracy(beacon) < 0.20)) {
             if (beaconSelected == null){
                 beaconSelected = beacon;
