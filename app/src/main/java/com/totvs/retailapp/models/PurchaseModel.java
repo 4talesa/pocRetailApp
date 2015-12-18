@@ -16,8 +16,8 @@ public class PurchaseModel extends AppRetailModelAbstract {
     static public String PURCHASE = "Purchase";
 
     private Date date;
-    private String idStore;
-    private String idUser;
+    @SerializedName("idstore") private String idStore;
+    @SerializedName("iduser") private String idUser;
     private String store;
     @SerializedName("storeaddress") private String storeAddress;
     @SerializedName("totalamount") private Double totalAmount;
