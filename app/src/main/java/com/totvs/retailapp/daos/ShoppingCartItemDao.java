@@ -41,11 +41,11 @@ public class ShoppingCartItemDao extends AppRetailDaoAbstract<ShoppingCartItemMo
         params.put("idShoppingCart", model.getIdShoppingCart());
         params.put("idProduct", model.getIdProduct());
         params.put("status", model.getStatus());
-        params.put("amountRequested", model.getAmount().toString());
-        params.put("amountPurchased", model.getAmount().toString());
+        params.put("amountRequested", model.getAmountPurchased().toString());
+        params.put("amountPurchased", model.getAmountPurchased().toString());
         params.put("unitPrice", model.getUnitValue().toString());
         params.put("pictureUrl", model.getPictureUrl());
-        params.put("totalItem", model.getTotalValue().toString());
+        params.put("totalItem", model.getTotalItem().toString());
 
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.PUT, url, params, view.getListener(), view.getErrorListener());
 

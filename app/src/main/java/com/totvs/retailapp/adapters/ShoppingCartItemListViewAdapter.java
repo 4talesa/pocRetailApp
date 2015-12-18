@@ -56,9 +56,9 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
         shopping_cart_item_unit_label.setText(model.getUnit());
         shopping_cart_item_unit_value.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getUnitValue()));
         shopping_cart_item_quantity_label.setText("Quantity");
-        shopping_cart_item_quantity_value.setText(v.getResources().getString(R.string.app_label_dollar)+" " + String.format("%1$,.2f", model.getQuantity()));
+        shopping_cart_item_quantity_value.setText(String.format("%1$,.2f", model.getAmountRequested()));
         shopping_cart_item_total_amount_label.setText("Total amount");
-        shopping_cart_item_total_amount_value.setText(v.getResources().getString(R.string.app_label_dollar) + " " + String.format("%1$,.2f", model.getAmount()));
+        shopping_cart_item_total_amount_value.setText(v.getResources().getString(R.string.app_label_dollar) + " " + String.format("%1$,.2f", model.getTotalItem()));
 
         Ion.with(shopping_cart_item_picture)
                 .fitCenter()
@@ -116,10 +116,10 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
         ShoppingCartItemView shoppingCartItemView = new ShoppingCartItemView(context, ((AppRetailActivity) context).getWindow().getDecorView().getRootView());
         ShoppingCartItemDao shoppingCartItemDao = new ShoppingCartItemDao(context, shoppingCartItemView);
 
-        shoppingCartItemModel.setQuantity(shoppingCartItemModel.getQuantity() + incValue);
-        if (shoppingCartItemModel.getQuantity() < 0)
+        shoppingCartItemModel.setAmountPurchased(shoppingCartItemModel.getAmountPurchased() + incValue);
+        if (shoppingCartItemModel.getAmountPurchased() < 1)
         {
-            shoppingCartItemModel.setQuantity(1.00);
+            shoppingCartItemModel.setAmountPurchased(1.00);
         }
 
         shoppingCartItemDao.save(shoppingCartItemModel);

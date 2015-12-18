@@ -20,8 +20,8 @@ public class PurchaseItemModel extends ProductItemModelAbstract {
         this.idPurchase = idPurchase;
     }
 
-    public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double amount, String pictureUrl, String category, String brand, Double quantity){
-        super(id, idProduct, description, unit, unitValue, amount, pictureUrl, category, brand, quantity);
+    public PurchaseItemModel(String id, String idProduct, String idPurchase, String description, String unit, Double unitValue, Double totalItem, String pictureUrl, String category, String brand, Double amountPurchased, Double amountRequested){
+        super(id, idProduct, description, unit, unitValue, totalItem, pictureUrl, category, brand, amountPurchased, amountRequested);
 
         this.idPurchase     = idPurchase;
     }

@@ -7,9 +7,7 @@ import android.view.View;
 
 import com.totvs.retailapp.AppRetailActivity;
 import com.totvs.retailapp.ShoppingCartActivity;
-import com.totvs.retailapp.daos.StoreDao;
 import com.totvs.retailapp.models.ShoppingCartItemModel;
-import com.totvs.retailapp.models.StoreModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;

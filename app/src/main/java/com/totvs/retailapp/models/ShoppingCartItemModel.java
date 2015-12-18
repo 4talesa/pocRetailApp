@@ -32,8 +32,8 @@ public class ShoppingCartItemModel extends ProductItemModelAbstract {
         this.status = status;
     }
 
-    public ShoppingCartItemModel(String id, String idProduct, String idShoppingCart, String description, String unit, Double unitValue, Double amount, String pictureUrl, String category, String brand, Double quantity, String status) {
-        super(id, idProduct, description, unit, unitValue, amount, pictureUrl, category, brand, quantity);
+    public ShoppingCartItemModel(String id, String idProduct, String idShoppingCart, String description, String unit, Double unitValue, Double totalItem, String pictureUrl, String category, String brand, Double amountPurchased, Double amountRequested, String status) {
+        super(id, idProduct, description, unit, unitValue, totalItem, pictureUrl, category, brand, amountPurchased, amountRequested);
 
         this.idShoppingCart = idShoppingCart;
         this.status = status;

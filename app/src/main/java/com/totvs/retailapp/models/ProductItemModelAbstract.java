@@ -11,11 +11,12 @@ public abstract class ProductItemModelAbstract extends AppRetailModelAbstract {
     protected String description;
     protected String unit;
     @SerializedName("unitprice") protected Double unitValue;
-    @SerializedName("totalitem") protected Double amount;
+    @SerializedName("totalitem") protected Double totalItem;
     @SerializedName("pictureurl") protected String pictureUrl;
     @SerializedName("categoryname") protected String category;
     @SerializedName("brandname") protected String brand;
-    @SerializedName("amountpurchased") protected Double quantity;
+    @SerializedName("amountpurchased") protected Double amountPurchased;
+    @SerializedName("amountrequested") protected Double amountRequested;
 
     public String getIdProduct(){
         return this.idProduct;
@@ -49,16 +50,12 @@ public abstract class ProductItemModelAbstract extends AppRetailModelAbstract {
         this.unitValue = unitValue;
     }
 
-    public Double getAmount(){
-        return this.amount;
+    public Double getTotalItem(){
+        return this.totalItem;
     }
 
-    public void setAmount(Double amount){
-        this.amount = amount;
-    }
-
-    public Double getTotalValue(){
-        return this.getUnitValue() * this.getAmount();
+    public void setTotalItem(Double totalItem){
+        this.totalItem = totalItem;
     }
 
     public String getPictureUrl() { return this.pictureUrl; }
@@ -73,20 +70,25 @@ public abstract class ProductItemModelAbstract extends AppRetailModelAbstract {
 
     public void setBrand( String brand ) { this.brand = brand; }
 
-    public Double getQuantity() { return this.quantity; }
+    public Double getAmountPurchased() { return this.amountPurchased; }
 
-    public void setQuantity(Double quantity ) { this.quantity = quantity; }
+    public void setAmountPurchased(Double amountPurchased ) { this.amountPurchased = amountPurchased; }
 
-    public ProductItemModelAbstract(String id, String idProduct, String description, String unit, Double unitValue, Double amount, String pictureUrl, String category, String brand, Double quantity){
+    public Double getAmountRequested() { return this.amountRequested; }
+
+    public void setAmountRequested(Double amountRequested ) { this.amountRequested = amountRequested; }
+
+    public ProductItemModelAbstract(String id, String idProduct, String description, String unit, Double unitValue, Double totalItem, String pictureUrl, String category, String brand, Double amountPurchased, Double amountRequested){
         this.id             = id;
         this.idProduct      = idProduct;
         this.description    = description;
         this.unit           = unit;
         this.unitValue      = unitValue;
-        this.amount         = amount;
-        this.pictureUrl = pictureUrl;
+        this.totalItem      = totalItem;
+        this.pictureUrl     = pictureUrl;
         this.category       = category;
         this.brand          = brand;
-        this.quantity       = quantity;
+        this.amountPurchased= amountPurchased;
+        this.amountRequested= amountRequested;
     }
 }

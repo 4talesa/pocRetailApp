@@ -101,7 +101,7 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
                     ShoppingCartItemModel shoppingCartItemModel = new ShoppingCartItemModel(
                             ParseUser.getCurrentUser().getObjectId()+"."+productModel.getId()
                             , productModel.getId()
-                            , ParseUser.getCurrentUser().getObjectId()
+                            , ParseUser.getCurrentUser().getObjectId()+"."+StoreModel.getInstance().getId()
                             , productModel.getDetail()
                             , productModel.getUnit()
                             , productModel.getPrice()
@@ -109,6 +109,7 @@ public class ProductView extends AppRetailViewAbsctrat<ProductModel> {
                             , productModel.getPictureUrl()
                             , productModel.getCategory()
                             , productModel.getBrand()
+                            , Double.parseDouble(editTextProductDetailAmount.getText().toString())
                             , Double.parseDouble(editTextProductDetailAmount.getText().toString())
                             , "pending"
                     );
