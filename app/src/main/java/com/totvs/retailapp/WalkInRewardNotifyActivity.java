@@ -46,4 +46,10 @@ public class WalkInRewardNotifyActivity extends AppRetailActivity {
             }
         };
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

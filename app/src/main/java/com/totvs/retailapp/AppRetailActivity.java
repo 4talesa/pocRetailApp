@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by rond.borges on 19/11/2015.
  */
-public class AppRetailActivity extends AppCompatActivity {
+public abstract class AppRetailActivity extends AppCompatActivity {
 
     static final String DEFAULTACTIVITY                 = "defaultActivity";
     static final String STOREBROWSEACTIVITY             = "storeBrowseActivity";
@@ -402,4 +402,7 @@ public class AppRetailActivity extends AppCompatActivity {
             //stopBeaconRanging();
         }
     }
+
+    public abstract void updateView();
+
 }

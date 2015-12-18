@@ -51,7 +51,12 @@ public class ShoppingCartView extends AppRetailViewAbsctrat<ShoppingCartModel> {
             textViewShoppingCartDate.setText(dateFormat.format(model.getDate()));
             textViewShoppingCartTitle.setText(context.getResources().getString(R.string.app_shopping_cart_title) + " #" + model.getId());
 
-            shoppingCartItemAdapter = new ShoppingCartItemListViewAdapter(context, R.layout.shopping_cart_item, new ArrayList<ShoppingCartItemModel>(), new String[]{ShoppingCartModel.SHOPPING_CART, model.getId()});
+            if(shoppingCartItemAdapter == null){
+                shoppingCartItemAdapter = new ShoppingCartItemListViewAdapter(context, R.layout.shopping_cart_item, new ArrayList<ShoppingCartItemModel>(), new String[]{ShoppingCartModel.SHOPPING_CART, model.getId()});
+            }else {
+                shoppingCartItemAdapter.update();
+            }
+
             listView.setAdapter(shoppingCartItemAdapter);
         }catch (Exception e){
             Log.d("ShoppingCartView", "Error:", e);

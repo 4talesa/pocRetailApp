@@ -60,4 +60,9 @@ public class PurchaseHistoryAddActivity extends AppRetailActivity {
         }
     }
 
+    @Override
+    public void updateView() {
+
+    }
+
 }

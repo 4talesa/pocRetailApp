@@ -56,4 +56,10 @@ public class ProductBrowseActivity extends AppRetailActivity {
         ProductTwoWayViewAdapter adapter = new ProductTwoWayViewAdapter(new ArrayList<ProductModel>(), R.layout.product_thumb_item, this, urlFilters);
         lvTest.setAdapter(adapter);
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

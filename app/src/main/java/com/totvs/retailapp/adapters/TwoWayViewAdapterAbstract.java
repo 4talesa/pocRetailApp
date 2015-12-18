@@ -19,6 +19,7 @@ import com.totvs.retailapp.helpers.HelperJsonArrayRequest;
 
 import org.json.JSONArray;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,10 +31,11 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
     protected int layout;
     protected List<T> objects;
     protected String[] urlFilters;
+    protected String className;
 
-    public static class ViewHolderAbstract extends RecyclerView.ViewHolder{
+    public static class ViewHolderAbstract extends RecyclerView.ViewHolder {
 
-        public ViewHolderAbstract (View v){
+        public ViewHolderAbstract(View v) {
             super(v);
         }
     }
@@ -47,8 +49,9 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
         this.layout     = layout;
         this.context    = context;
         this.urlFilters = urlFilters;
+        this.className  = className;
 
-        searchData(className);
+        searchData();
     }
 
     @Override
@@ -71,20 +74,22 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
         return objects.size();
     }
 
-    public void clear(){
+    public void clear() {
         objects.clear();
     }
 
-    public void add(T model){
+    public void add(T model) {
         objects.add(model);
     }
 
-    protected void searchData(String className){
+    protected void searchData() {
+        clear();
+
         String url = "";
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        url = AppRetailDaoAbstract.URL_API+className+"/"+getUrlFilters();
+        url = AppRetailDaoAbstract.URL_API + className + "/" + getUrlFilters();
 
         HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.GET, url, null, createRequestJSONArraySuccessListener(), createRequestErrorListener());
 
@@ -110,7 +115,7 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
 
     protected abstract void updateJSONArray(JSONArray response);
 
-    public Response.ErrorListener createRequestErrorListener(){
+    public Response.ErrorListener createRequestErrorListener() {
         return new Response.ErrorListener() {
 
             @Override
@@ -121,13 +126,13 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
         };
     }
 
-    public String getUrlFilters(){
-        if (urlFilters == null){
+    public String getUrlFilters() {
+        if (urlFilters == null) {
             return "";
-        }else {
+        } else {
             String newUrlFilter = "";
-            for(int i = 0; i < urlFilters.length; i++){
-                if (urlFilters[i].length()>0) {
+            for (int i = 0; i < urlFilters.length; i++) {
+                if (urlFilters[i].length() > 0) {
                     if (newUrlFilter != "") {
                         newUrlFilter += "/";
                     }
@@ -136,6 +141,10 @@ public abstract class TwoWayViewAdapterAbstract<T, VH extends TwoWayViewAdapterA
             }
             return newUrlFilter;
         }
+    }
+
+    public void update() {
+        searchData();
     }
 
 }

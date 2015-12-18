@@ -8,8 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.AppRetailActivity;
 import com.totvs.retailapp.R;
+import com.totvs.retailapp.daos.ShoppingCartItemDao;
 import com.totvs.retailapp.models.ShoppingCartItemModel;
+import com.totvs.retailapp.views.ShoppingCartItemView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +48,7 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
         TextView shopping_cart_item_total_amount_value = (TextView) v.findViewById(R.id.shopping_cart_item_total_amount_value);
         Button shopping_cart_item_minus = (Button) v.findViewById(R.id.shopping_cart_item_minus);
         Button shopping_cart_item_plus = (Button) v.findViewById(R.id.shopping_cart_item_plus);
+        Button shopping_cart_item_remove = (Button) v.findViewById(R.id.shopping_cart_item_remove);
 
         shopping_cart_item_description.setText(model.getDescription());
         shopping_cart_item_category.setText(model.getCategory());
@@ -62,6 +66,7 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
 
         shopping_cart_item_minus.setTag(model);
         shopping_cart_item_plus.setTag(model);
+        shopping_cart_item_remove.setTag(model);
 
         shopping_cart_item_minus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +79,18 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
             @Override
             public void onClick(View v) {
                 updateProductAmount(1, (ShoppingCartItemModel) v.getTag());
+            }
+        });
+
+        shopping_cart_item_remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShoppingCartItemView shoppingCartItemView = new ShoppingCartItemView(context, ((AppRetailActivity) context).getWindow().getDecorView().getRootView());
+                ShoppingCartItemDao shoppingCartItemDao = new ShoppingCartItemDao(context, shoppingCartItemView);
+
+                ShoppingCartItemModel shoppingCartItemModel = (ShoppingCartItemModel) v.getTag();
+
+                shoppingCartItemDao.delete(shoppingCartItemModel);
             }
         });
 
@@ -96,7 +113,16 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
     }
 
     private void updateProductAmount(Integer incValue, ShoppingCartItemModel shoppingCartItemModel){
-        Log.d("updateProductAmount", "update product: "+shoppingCartItemModel.getIdProduct());
+        ShoppingCartItemView shoppingCartItemView = new ShoppingCartItemView(context, ((AppRetailActivity) context).getWindow().getDecorView().getRootView());
+        ShoppingCartItemDao shoppingCartItemDao = new ShoppingCartItemDao(context, shoppingCartItemView);
+
+        shoppingCartItemModel.setQuantity(shoppingCartItemModel.getQuantity() + incValue);
+        if (shoppingCartItemModel.getQuantity() < 0)
+        {
+            shoppingCartItemModel.setQuantity(1.00);
+        }
+
+        shoppingCartItemDao.save(shoppingCartItemModel);
     }
 
 }

@@ -55,4 +55,9 @@ public class CategoryBrowseActivity extends AppRetailActivity {
         lvTest.setAdapter(adapter);
     }
 
+    @Override
+    public void updateView() {
+
+    }
+
 }

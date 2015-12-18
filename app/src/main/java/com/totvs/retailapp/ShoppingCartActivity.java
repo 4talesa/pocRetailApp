@@ -1,6 +1,7 @@
 package com.totvs.retailapp;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.totvs.retailapp.daos.ShoppingCartDao;
 import com.totvs.retailapp.models.StoreModel;
@@ -23,5 +24,11 @@ public class ShoppingCartActivity extends AppRetailActivity {
 
         shoppingCartDao.getByUser(currentUser.getObjectId(), StoreModel.getInstance().getId());
 
+    }
+
+    @Override
+    public void updateView() {
+        Log.d("ShoppingCartItemView", "populateView");
+        shoppingCartDao.getByUser(currentUser.getObjectId(), StoreModel.getInstance().getId());
     }
 }

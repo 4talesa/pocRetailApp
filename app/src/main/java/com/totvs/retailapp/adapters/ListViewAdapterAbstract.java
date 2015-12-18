@@ -27,6 +27,7 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
     protected int layout;
     protected Context context;
     protected String[] urlFilters;
+    protected String className;
 
     public ListViewAdapterAbstract(Context context, int layout, ArrayList<T> arrayList, String className){
         this(context, layout, arrayList, className, null);
@@ -37,8 +38,9 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
         this.layout     = layout;
         this.context    = context;
         this.urlFilters = urlFilters;
+        this.className  = className;
 
-        searchData(className);
+        searchData();
     }
 
     @Override
@@ -57,7 +59,9 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
 
     protected abstract void populateView(View v, T model);
 
-    protected void searchData(String className){
+    protected void searchData(){
+        clear();
+
         String url = "";
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
@@ -114,6 +118,10 @@ public abstract class ListViewAdapterAbstract<T> extends ArrayAdapter<T> {
             }
             return newUrlFilter;
         }
+    }
+
+    public void update(){
+        searchData();
     }
 
 }

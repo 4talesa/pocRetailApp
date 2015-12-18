@@ -42,4 +42,10 @@ public class PurchaseDetailActivity extends AppRetailActivity {
             Toast.makeText(PurchaseDetailActivity.this, "Purchase not selected!", Toast.LENGTH_LONG).show();
         }
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

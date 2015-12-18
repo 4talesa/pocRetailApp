@@ -32,4 +32,10 @@ public class PurchaseHistoryActivity extends AppRetailActivity {
         listView.setAdapter(purchaseAdapter);
 
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

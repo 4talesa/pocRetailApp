@@ -28,9 +28,8 @@ public class ShoppingCartItemView extends AppRetailViewAbsctrat<ShoppingCartItem
     protected void populateView(ShoppingCartItemModel model) {
 
         try{
-            Intent it = new Intent(context, ShoppingCartActivity.class);
+            updateShoppingCart();
 
-            context.startActivity(it);
         }catch (Exception e){
             Log.d("ShoppingCartItemView", "Error:", e);
         }
@@ -49,5 +48,25 @@ public class ShoppingCartItemView extends AppRetailViewAbsctrat<ShoppingCartItem
                 Log.d("updateJSONArray", "Response.Listener<JSONArray> error", e);
             }
         }
+        updateShoppingCart();
     }
+
+    protected void updateShoppingCart(){
+        try{
+            if (context.getClass() ==  ShoppingCartActivity.class){
+                ((AppRetailActivity) context).updateView();
+
+                Log.d("ShoppingCartItemView", "populateView");
+            }else {
+                Intent it = new Intent(context, ShoppingCartActivity.class);
+
+                context.startActivity(it);
+                Log.d("ShoppingCartItemView", "start new activity");
+            }
+
+        }catch (Exception e){
+            Log.d("ShoppingCartItemView", "updateShoppingCart:", e);
+        }
+    }
+
 }

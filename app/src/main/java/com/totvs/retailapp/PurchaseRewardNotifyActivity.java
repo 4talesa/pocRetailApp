@@ -42,4 +42,10 @@ public class PurchaseRewardNotifyActivity extends AppRetailActivity {
             }
         };
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

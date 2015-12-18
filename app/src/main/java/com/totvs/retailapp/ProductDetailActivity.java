@@ -61,4 +61,9 @@ public class ProductDetailActivity extends AppRetailActivity {
 
     }
 
+    @Override
+    public void updateView() {
+
+    }
+
 }

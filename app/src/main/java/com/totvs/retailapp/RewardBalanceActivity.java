@@ -24,4 +24,10 @@ public class RewardBalanceActivity extends AppRetailActivity {
         TwoWayView lvTest = (TwoWayView) findViewById(R.id.twoWayViewPurchaseDetail);
         lvTest.setAdapter(adapter);
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

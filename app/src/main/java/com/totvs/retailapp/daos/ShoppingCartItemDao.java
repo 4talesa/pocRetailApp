@@ -47,14 +47,23 @@ public class ShoppingCartItemDao extends AppRetailDaoAbstract<ShoppingCartItemMo
         params.put("pictureUrl", model.getPictureUrl());
         params.put("totalItem", model.getTotalValue().toString());
 
-        HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.POST, url, params, view.getListener(), view.getErrorListener());
+        HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.PUT, url, params, view.getListener(), view.getErrorListener());
 
         requestQueue.add(jsArrRequest);
+
     }
 
     @Override
     public void delete(ShoppingCartItemModel model) {
+        String url = "";
 
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        url = AppRetailDaoAbstract.URL_API+ ShoppingCartItemModel.SHOPPING_CART_ITEM+"/"+model.getId();
+
+        HelperJsonArrayRequest jsArrRequest = new HelperJsonArrayRequest(Request.Method.DELETE, url, null, view.getListener(), view.getErrorListener());
+
+        requestQueue.add(jsArrRequest);
     }
 
     @Override

@@ -93,4 +93,9 @@ public class StoreBrowseActivity extends AppRetailActivity {
         listView.setAdapter(storeAdapter);
     }
 
+    @Override
+    public void updateView() {
+
+    }
+
 }

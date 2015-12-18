@@ -42,4 +42,10 @@ public class ScanProductRewardNotifyActivity extends AppRetailActivity {
             }
         };
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }

@@ -201,4 +201,9 @@ public class UserProfileActivity extends AppRetailPictureActivity {
         finish();
     }
 
+    @Override
+    public void updateView() {
+
+    }
+
 }

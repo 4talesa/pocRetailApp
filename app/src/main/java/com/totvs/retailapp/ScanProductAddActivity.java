@@ -59,4 +59,10 @@ public class ScanProductAddActivity extends AppRetailActivity {
             ScanProductAddActivity.this.startActivity(it);
         }
     }
+
+    @Override
+    public void updateView() {
+
+    }
+
 }
