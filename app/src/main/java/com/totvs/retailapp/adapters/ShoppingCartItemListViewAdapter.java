@@ -1,6 +1,7 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,8 +10,10 @@ import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
 import com.totvs.retailapp.AppRetailActivity;
+import com.totvs.retailapp.ProductDetailActivity;
 import com.totvs.retailapp.R;
 import com.totvs.retailapp.daos.ShoppingCartItemDao;
+import com.totvs.retailapp.models.ProductModel;
 import com.totvs.retailapp.models.ShoppingCartItemModel;
 import com.totvs.retailapp.views.ShoppingCartItemView;
 
@@ -91,6 +94,18 @@ public class ShoppingCartItemListViewAdapter extends ListViewAdapterAbstract<Sho
                 ShoppingCartItemModel shoppingCartItemModel = (ShoppingCartItemModel) v.getTag();
 
                 shoppingCartItemDao.delete(shoppingCartItemModel);
+            }
+        });
+
+        shopping_cart_item_picture.setTag(model.getIdProduct());
+        shopping_cart_item_picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), ProductDetailActivity.class);
+
+                it.putExtra(ProductModel.PRODUCT_ID, v.getTag().toString());
+
+                v.getContext().startActivity(it);
             }
         });
 

@@ -1,13 +1,16 @@
 package com.totvs.retailapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
+import com.totvs.retailapp.ProductDetailActivity;
 import com.totvs.retailapp.R;
+import com.totvs.retailapp.models.ProductModel;
 import com.totvs.retailapp.models.PurchaseItemModel;
 
 import org.json.JSONArray;
@@ -57,6 +60,17 @@ public class PurchaseItemListViewAdapter extends ListViewAdapterAbstract<Purchas
                 .fitCenter()
                 .load(model.getPictureUrl());
 
+        purchase_detail_item_picture.setTag(model.getIdProduct());
+        purchase_detail_item_picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(v.getContext(), ProductDetailActivity.class);
+
+                it.putExtra(ProductModel.PRODUCT_ID, v.getTag().toString());
+
+                v.getContext().startActivity(it);
+            }
+        });
     }
 
     @Override
